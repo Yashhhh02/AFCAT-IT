@@ -164,6 +164,9 @@
       setDone,
       counts,
       dayCounts,
+      extraCounts,
+      getCoreProblemsPerDay,
+      setCoreProblemsPerDay,
       exportProgress,
       importProgress,
       buildCountableRegistry,
@@ -1154,7 +1157,7 @@
       // ====================================================================
       await renderSuite("9. Real index.html Bootstrap Smoke Test (E2E Validation)", [
         {
-          name: "Real index.html loads without console errors, renders countdowns, and displays Week 1 Day 1 with AFCAT lecture links",
+          name: "Real index.html loads without console errors, renders countdowns, Day 1 lecture links, and Core/Extra practice controls",
           async run() {
             const frame = document.createElement("iframe");
             frame.src = "index.html";
@@ -1194,8 +1197,8 @@
             const doc = frame.contentDocument;
             const banner = doc.getElementById("dataErrorBanner");
             const bannerVisible = banner && !banner.hidden && banner.textContent.trim().length > 0;
-            const overallProgText = doc.getElementById("overallProgressText")?.textContent.trim();
-            const isZeroProg = overallProgText === "0 of 0 items done" || overallProgText === "0/0";
+            const progText = doc.getElementById("progressText")?.textContent.trim();
+            const isZeroProg = progText === "0 of 0 items done" || progText === "0/0";
             const afcatCd = doc.getElementById("afcatCountdown")?.textContent.trim();
             const isDashCountdown = !afcatCd || afcatCd === "—";
             const week1 = doc.getElementById("week-1");
@@ -1218,6 +1221,39 @@
               }
             }
 
+            // Check Core Problems dropdown
+            const coreSelect = doc.getElementById("coreProblemsSelect");
+            const selectOk = coreSelect && coreSelect.value === "2";
+
+            // Check Day 1 Core and Extra practice groups
+            const coreGroup = doc.querySelector("#dayBody-1 .cv-group.core-group");
+            const extraDetails = doc.querySelector("#dayBody-1 .extra-practice-details");
+            const extraBadge = doc.getElementById("extraBadge-1");
+            const extraBadgeText = extraBadge ? extraBadge.textContent.trim() : "";
+            const day1GroupsOk = !!coreGroup && !!extraDetails && extraBadgeText === "Extra 0/2 done";
+
+            // Check hero Extra practice text
+            const extraPracticeEl = doc.getElementById("extraPracticeText");
+            const extraHeroText = extraPracticeEl ? extraPracticeEl.textContent.trim() : "";
+            const heroExtraOk = extraHeroText.includes("Extra practice:");
+
+            // Test ticking an extra item: moves extra line without changing overall progress percent
+            let extraTickOk = false;
+            const extraCb = doc.querySelector('#dayBody-1 .extra-list input[data-id="1|cv|d1-p3"]');
+            if (extraCb) {
+              const beforePct = doc.getElementById("progressPct")?.textContent.trim();
+              const beforeCountable = doc.getElementById("progressText")?.textContent.trim();
+              extraCb.checked = true;
+              extraCb.dispatchEvent(new Event("change", { bubbles: true }));
+              const afterPct = doc.getElementById("progressPct")?.textContent.trim();
+              const afterCountable = doc.getElementById("progressText")?.textContent.trim();
+              const afterHeroExtra = extraPracticeEl ? extraPracticeEl.textContent.trim() : "";
+              extraTickOk = (beforePct === afterPct && beforeCountable === afterCountable && afterHeroExtra.includes("1 of"));
+              // Uncheck
+              extraCb.checked = false;
+              extraCb.dispatchEvent(new Event("change", { bubbles: true }));
+            }
+
             document.body.removeChild(frame);
 
             const pass = errors.length === 0 &&
@@ -1227,11 +1263,172 @@
                          !!week1 &&
                          !!day1 &&
                          lectureCount >= 3 &&
-                         clickTestPassed;
+                         clickTestPassed &&
+                         selectOk &&
+                         day1GroupsOk &&
+                         heroExtraOk &&
+                         extraTickOk;
 
             return {
               pass,
-              detail: `Errors: ${errors.length}, Banner Hidden: ${!bannerVisible}, Countdown: "${afcatCd}", Progress: "${overallProgText}", Week1: ${!!week1}, Day1: ${!!day1}, Day 1 Lecture Links: ${lectureCount} (Target: 3), Click Isolation: ${clickTestPassed}`
+              detail: `Errors: ${errors.length}, Banner Hidden: ${!bannerVisible}, Countdown: "${afcatCd}", Progress: "${progText}", Day1: ${!!day1}, Lecture Links: ${lectureCount}, Select(N=2): ${selectOk}, Day 1 Core/Extra: ${day1GroupsOk} ("${extraBadgeText}"), Hero Extra: "${extraHeroText}", Extra Tick Isolation: ${extraTickOk}`
+            };
+          }
+        }
+      ]);
+
+      // ====================================================================
+      // SUITE 10: CORE VS EXTRA PRACTICE CLASSIFICATION & DYNAMIC SETTINGS
+      // ====================================================================
+      await renderSuite("10. CodeVita Core vs Extra Classification & Dynamic Settings", [
+        {
+          name: "Classification: N=2 gives core = videos + 2 problems, extra = 4 on Day 17 (6 problems); N=4 gives extra=2; N=All gives extra=0",
+          run() {
+            setCoreProblemsPerDay(2);
+            const d17N2_cv = dayCounts(17).cv;
+            const d17N2_extra = extraCounts(17);
+
+            setCoreProblemsPerDay(4);
+            const d17N4_cv = dayCounts(17).cv;
+            const d17N4_extra = extraCounts(17);
+
+            setCoreProblemsPerDay("all");
+            const d17NAll_cv = dayCounts(17).cv;
+            const d17NAll_extra = extraCounts(17);
+
+            // Reset back to 2
+            setCoreProblemsPerDay(2);
+
+            const pass = d17N2_cv.total === 2 && d17N2_extra.total === 4 &&
+                         d17N4_cv.total === 4 && d17N4_extra.total === 2 &&
+                         d17NAll_cv.total === 6 && d17NAll_extra.total === 0;
+
+            return {
+              pass,
+              detail: `Day 17 (0 videos, 6 problems): N=2 -> core=${d17N2_cv.total}, extra=${d17N2_extra.total} | N=4 -> core=${d17N4_cv.total}, extra=${d17N4_extra.total} | N=All -> core=${d17NAll_cv.total}, extra=${d17NAll_extra.total}`
+            };
+          }
+        },
+        {
+          name: "Ticks preservation: Ticks made before setting change stay ticked on same item after change",
+          run() {
+            setCoreProblemsPerDay(2);
+            const testId = makeItemId(1, "cv", "d1-p3"); // extra when N=2, core when N=4
+            setDone(testId, true);
+            const tickedBefore = isDone(testId);
+
+            // Change to N=4
+            setCoreProblemsPerDay(4);
+            const tickedN4 = isDone(testId);
+
+            // Change to N='all'
+            setCoreProblemsPerDay("all");
+            const tickedAll = isDone(testId);
+
+            // Clean up and reset
+            setDone(testId, false);
+            setCoreProblemsPerDay(2);
+
+            const pass = tickedBefore === true && tickedN4 === true && tickedAll === true;
+            return {
+              pass,
+              detail: `Item 1|cv|d1-p3: Ticked at N=2: ${tickedBefore}, Stays ticked at N=4: ${tickedN4}, Stays ticked at N=All: ${tickedAll}`
+            };
+          }
+        },
+        {
+          name: "Extra ticks reactivity: Extra ticks do not move overall percent or countable done; they move extraCounts line",
+          run() {
+            setCoreProblemsPerDay(2);
+            const initCounts = counts();
+            const initExtra = extraCounts();
+            const extraItem = makeItemId(1, "cv", "d1-p3");
+
+            setDone(extraItem, true);
+            const midCounts = counts();
+            const midExtra = extraCounts();
+
+            setDone(extraItem, false);
+            const finalCounts = counts();
+            const finalExtra = extraCounts();
+
+            const pass = midCounts.done === initCounts.done &&
+                         midCounts.pct === initCounts.pct &&
+                         midExtra.done === initExtra.done + 1 &&
+                         finalCounts.done === initCounts.done &&
+                         finalExtra.done === initExtra.done;
+
+            return {
+              pass,
+              detail: `Initial countable: ${initCounts.done}/${initCounts.total} (${initCounts.pct}%), Extra: ${initExtra.done}/${initExtra.total} -> Ticked extra: countable=${midCounts.done}/${midCounts.total} (${midCounts.pct}%), Extra=${midExtra.done}/${midExtra.total}`
+            };
+          }
+        },
+        {
+          name: "Registry totals: Week 1 total countable = 62 (was 71) and Day 1 countable = 12 (16 tasks total: 12 core + 2 extra + 2 stretch)",
+          run() {
+            setCoreProblemsPerDay(2);
+            const w1 = counts({ week: 1 });
+            const d1 = counts({ day: 1 });
+            const d1Extra = extraCounts(1);
+            const d1Breakdown = dayCounts(1);
+
+            const pass = w1.total === 62 && d1.total === 12 && d1Extra.total === 2 && d1Breakdown.cv.total === 5;
+            return {
+              pass,
+              detail: `Week 1 countable: ${w1.total} (was 71), Day 1 countable: ${d1.total} (AFCAT 3 + Habits 4 + CV Core 5), Day 1 Extra: ${d1Extra.total}, Day 1 Stretch: 2, Total tasks: 16`
+            };
+          }
+        },
+        {
+          name: "Immutability: Mocks, Day 54, 55, 56, Day 0 counts are strictly unchanged across N settings",
+          run() {
+            const checks = [];
+            [2, 4, "all"].forEach((n) => {
+              setCoreProblemsPerDay(n);
+              const d0 = counts({ week: 0 }); // Day 0 + 12 AFCAT Mocks = 8 + 12 = 20
+              const d54 = dayCounts(54); // CV mock 5 = 1
+              const d55 = dayCounts(55); // CV = 0
+              const d56 = dayCounts(56); // CV = 0
+              const d27 = dayCounts(27); // Sat mock = 2
+              checks.push(d0.total === 20 && d54.cv.total === 1 && d55.cv.total === 0 && d56.cv.total === 0 && d27.cv.total === 2);
+            });
+
+            setCoreProblemsPerDay(2);
+
+            const pass = checks.every(Boolean);
+            return {
+              pass,
+              detail: `Checked N=2, N=4, N=All: Day 0 + AFCAT Mocks = 20, Day 54 CV = 1 (Mock 5), Day 55 CV = 0, Day 56 CV = 0, Day 27 CV = 2`
+            };
+          }
+        },
+        {
+          name: "Settings Persistence & Backup: exportProgress includes settings; importProgress restores settings or defaults to 2",
+          run() {
+            setCoreProblemsPerDay(3);
+            const exportedStr = exportProgress();
+            const parsedExport = JSON.parse(exportedStr);
+            const hasSettings = parsedExport.settings && parsedExport.settings.coreProblemsPerDay === 3;
+
+            // Import backup without settings field (legacy compatibility)
+            const legacyBackup = JSON.stringify({
+              version: 1,
+              app: "afcat-cv-plan",
+              done: { "1|cv|d1-v1": true }
+            });
+            const importRes = importProgress(legacyBackup);
+            const restoredState = getState();
+            const fallbackN = restoredState.settings && restoredState.settings.coreProblemsPerDay === 2;
+
+            // Restore clean state
+            setDone("1|cv|d1-v1", false);
+            setCoreProblemsPerDay(2);
+
+            const pass = hasSettings && importRes.success && fallbackN;
+            return {
+              pass,
+              detail: `Export contains settings: ${hasSettings}, Legacy import success: ${importRes.success}, Fallback default N=2: ${fallbackN}`
             };
           }
         }

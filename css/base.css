@@ -222,6 +222,7 @@ a:hover {
 .tag.rest { background: var(--tag-rest-bg); color: var(--tag-rest); }
 .tag.vid { background: rgba(56, 189, 248, 0.12); color: var(--afcat); }
 .tag.exam { background: rgba(245, 158, 11, 0.15); color: var(--amber); }
+.tag.muted, .badge.muted { background: var(--bg-hover); color: var(--ink-muted); border: 1px solid var(--line); }
 
 /* Difficulty Badges */
 .diff {

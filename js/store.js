@@ -17,8 +17,15 @@ let inMemoryStore = null;
 // Items: { id: string, day: number, week: number, track: "afcat" | "cv" | "habit" | "mock" | "check", title?: string }
 let countableItemsRegistry = [];
 
-// Complete list of all items including non-countable items (stretch, rest days)
+// Complete list of all items including non-countable items (stretch, rest days, extra practice)
 let fullItemsRegistry = [];
+
+// Cached data references for dynamic re-registration
+let cachedPlanData = null;
+let cachedCvDaysData = null;
+
+// Problem item types in cv-days.json
+const CV_PROBLEM_TYPES = new Set(["leetcode", "pyq", "official", "other"]);
 
 // Reactive event subscribers
 const listeners = new Set();
@@ -35,7 +42,10 @@ const DEFAULT_STATE = {
   openWeeks: {},       // { [weekNumber]: boolean }
   openDays: {},        // { [dayNumber]: boolean }
   done: {},            // { [itemId]: boolean }
-  mocks: {}            // { [mockId]: { score: number, date: string, completed: boolean } }
+  mocks: {},           // { [mockId]: { score: number, date: string, completed: boolean } }
+  settings: {
+    coreProblemsPerDay: 2 // 1 | 2 | 3 | 4 | "all"
+  }
 };
 
 /**
@@ -59,19 +69,25 @@ function testStorage() {
  */
 export function getState() {
   if (isStorageBlocked) {
-    return inMemoryStore || { ...DEFAULT_STATE };
+    const s = inMemoryStore || { ...DEFAULT_STATE };
+    if (!s.settings) s.settings = { coreProblemsPerDay: 2 };
+    return s;
   }
 
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return { ...DEFAULT_STATE };
+    if (!raw) return { ...DEFAULT_STATE, settings: { coreProblemsPerDay: 2 } };
     const parsed = JSON.parse(raw);
-    return { ...DEFAULT_STATE, ...parsed };
+    const settings = {
+      coreProblemsPerDay: 2,
+      ...((parsed && parsed.settings && typeof parsed.settings === "object") ? parsed.settings : {})
+    };
+    return { ...DEFAULT_STATE, ...parsed, settings };
   } catch (err) {
     console.warn("[store] localStorage access error, falling back to memory:", err);
     isStorageBlocked = true;
     showStorageBlockedNotice();
-    inMemoryStore = inMemoryStore || { ...DEFAULT_STATE };
+    inMemoryStore = inMemoryStore || { ...DEFAULT_STATE, settings: { coreProblemsPerDay: 2 } };
     return inMemoryStore;
   }
 }
@@ -228,6 +244,67 @@ export function getTrackFilter() {
 }
 
 /**
+ * Returns current core problems per day setting: 1, 2, 3, 4, or "all"
+ * @returns {number | "all"}
+ */
+export function getCoreProblemsPerDay() {
+  const state = getState();
+  const val = state.settings && state.settings.coreProblemsPerDay;
+  if (val === "all" || val === "All") return "all";
+  const num = Number(val);
+  return isNaN(num) || num <= 0 ? 2 : num;
+}
+
+/**
+ * Updates core problems per day setting, reclassifies items, and notifies subscribers
+ * @param {number | string} value
+ */
+export function setCoreProblemsPerDay(value) {
+  const state = getState();
+  const normalized = (String(value).toLowerCase() === "all") ? "all" : Math.max(1, Math.min(4, Number(value) || 2));
+  const nextSettings = {
+    ...(state.settings || {}),
+    coreProblemsPerDay: normalized
+  };
+  const nextState = { ...state, settings: nextSettings };
+  if (isStorageBlocked) {
+    inMemoryStore = nextState;
+  } else {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(nextState));
+    } catch (e) {
+      inMemoryStore = nextState;
+    }
+  }
+  if (cachedPlanData && cachedCvDaysData) {
+    buildCountableRegistry(cachedPlanData, cachedCvDaysData);
+  }
+  notifySubscribers(nextState);
+}
+
+/**
+ * Returns done/total counts for extra practice items
+ * @param {number} [day] - Optional day number to filter by
+ * @returns {{ done: number, total: number }}
+ */
+export function extraCounts(day) {
+  const state = getState();
+  const doneMap = state.done || {};
+  let extraItems = fullItemsRegistry.filter((it) => it.isExtra);
+  if (day !== undefined) {
+    extraItems = extraItems.filter((it) => it.day === day);
+  }
+  const total = extraItems.length;
+  let done = 0;
+  for (let i = 0; i < total; i++) {
+    if (doneMap[extraItems[i].id]) {
+      done++;
+    }
+  }
+  return { done, total };
+}
+
+/**
  * Compiles master registry of all items on boot.
  * - Day 0 setup items (0|check|<n>) count in OVERALL progress only (week = 0).
  * - CodeVita items use stable id (e.g. d1-v1, d1-p1) or generate from position, NEVER from title.
@@ -236,6 +313,12 @@ export function getTrackFilter() {
  * @param {object} cvDaysData - from /data/cv-days.json
  */
 export function buildCountableRegistry(planData, cvDaysData) {
+  if (planData) cachedPlanData = planData;
+  if (cvDaysData) cachedCvDaysData = cvDaysData;
+  const pData = planData || cachedPlanData;
+  const cvData = cvDaysData || cachedCvDaysData;
+  const N = getCoreProblemsPerDay();
+
   countableItemsRegistry = [];
   fullItemsRegistry = [];
   const registeredSet = new Set();
@@ -251,8 +334,8 @@ export function buildCountableRegistry(planData, cvDaysData) {
   // 1. Day 0 Setup items (12-15 Nov from plan-data.json day0)
   // ID format: 0|check|<n>. Count in OVERALL progress only (week: 0).
   let day0Idx = 0;
-  if (planData && Array.isArray(planData.day0)) {
-    planData.day0.forEach((d0Group) => {
+  if (pData && Array.isArray(pData.day0)) {
+    pData.day0.forEach((d0Group) => {
       if (Array.isArray(d0Group.tasks)) {
         d0Group.tasks.forEach((taskDesc) => {
           const id = makeItemId(0, "check", String(day0Idx));
@@ -262,7 +345,9 @@ export function buildCountableRegistry(planData, cvDaysData) {
             week: 0, // Not counted in any week 1..11
             track: "check",
             title: taskDesc,
-            dateLabel: d0Group.label
+            dateLabel: d0Group.label,
+            isCore: true,
+            isExtra: false
           }, true);
           day0Idx++;
         });
@@ -275,8 +360,8 @@ export function buildCountableRegistry(planData, cvDaysData) {
 
   // Map of user-entered CodeVita items by day
   const cvItemsByDay = new Map();
-  if (cvDaysData && Array.isArray(cvDaysData.days)) {
-    cvDaysData.days.forEach((d) => {
+  if (cvData && Array.isArray(cvData.days)) {
+    cvData.days.forEach((d) => {
       cvItemsByDay.set(d.day, d.items || []);
       const offsetInWeek = (d.day - 1) % 7;
       if (offsetInWeek === 6 && d.items && d.items.length > 0) {
@@ -290,8 +375,8 @@ export function buildCountableRegistry(planData, cvDaysData) {
   }
 
   // 2. Process 11 Weeks of Plan Data
-  if (planData && Array.isArray(planData.weeks)) {
-    planData.weeks.forEach((w) => {
+  if (pData && Array.isArray(pData.weeks)) {
+    pData.weeks.forEach((w) => {
       const weekNum = w.week;
       const weekStartDay = (weekNum - 1) * 7 + 1;
 
@@ -303,13 +388,13 @@ export function buildCountableRegistry(planData, cvDaysData) {
         // A. AFCAT Track Items
         if (dayTopics) {
           if (dayTopics.blockA && dayTopics.blockA !== "-") {
-            registerItem({ id: makeItemId(day, "afcat", "blockA"), day, week: weekNum, track: "afcat", title: dayTopics.blockA }, true);
+            registerItem({ id: makeItemId(day, "afcat", "blockA"), day, week: weekNum, track: "afcat", title: dayTopics.blockA, isCore: true, isExtra: false }, true);
           }
           if (dayTopics.english && dayTopics.english !== "-") {
-            registerItem({ id: makeItemId(day, "afcat", "english"), day, week: weekNum, track: "afcat", title: dayTopics.english }, true);
+            registerItem({ id: makeItemId(day, "afcat", "english"), day, week: weekNum, track: "afcat", title: dayTopics.english, isCore: true, isExtra: false }, true);
           }
           if (dayTopics.ga && dayTopics.ga !== "-") {
-            registerItem({ id: makeItemId(day, "afcat", "ga"), day, week: weekNum, track: "afcat", title: dayTopics.ga }, true);
+            registerItem({ id: makeItemId(day, "afcat", "ga"), day, week: weekNum, track: "afcat", title: dayTopics.ga, isCore: true, isExtra: false }, true);
           }
         }
 
@@ -317,40 +402,90 @@ export function buildCountableRegistry(planData, cvDaysData) {
         if (day <= CV_TOTAL_DAYS) {
           const userCvItems = cvItemsByDay.get(day);
           if (userCvItems && userCvItems.length > 0) {
+            let problemIdx = 0;
             userCvItems.forEach((item, itemIdx) => {
               const stableKey = item.id || `d${day}-i${itemIdx + 1}`;
               const isStretch = item.type === "stretch" || item.s === true;
-              registerItem({
-                id: makeItemId(day, isStretch ? "stretch" : "cv", stableKey),
-                day,
-                week: weekNum,
-                track: "cv",
-                title: item.title,
-                url: item.url,
-                isStretch
-              }, !isStretch);
+              if (isStretch) {
+                registerItem({
+                  id: makeItemId(day, "stretch", stableKey),
+                  day,
+                  week: weekNum,
+                  track: "cv",
+                  title: item.title,
+                  url: item.url,
+                  type: item.type,
+                  isStretch: true,
+                  isCore: false,
+                  isExtra: false
+                }, false);
+              } else if (item.type === "video" || item.type === "mock") {
+                // Videos (not optional) & mocks (Day 54) are always CORE
+                registerItem({
+                  id: makeItemId(day, "cv", stableKey),
+                  day,
+                  week: weekNum,
+                  track: "cv",
+                  title: item.title,
+                  url: item.url,
+                  type: item.type,
+                  isStretch: false,
+                  isCore: true,
+                  isExtra: false
+                }, true);
+              } else if (CV_PROBLEM_TYPES.has(item.type)) {
+                // Problem items (leetcode, pyq, official, other)
+                problemIdx++;
+                const isCore = (N === "all" || problemIdx <= N);
+                registerItem({
+                  id: makeItemId(day, "cv", stableKey),
+                  day,
+                  week: weekNum,
+                  track: "cv",
+                  title: item.title,
+                  url: item.url,
+                  type: item.type,
+                  isStretch: false,
+                  isCore,
+                  isExtra: !isCore
+                }, isCore);
+              } else {
+                // Fallback for any other non-stretch item: treat as core
+                registerItem({
+                  id: makeItemId(day, "cv", stableKey),
+                  day,
+                  week: weekNum,
+                  track: "cv",
+                  title: item.title,
+                  url: item.url,
+                  type: item.type,
+                  isStretch: false,
+                  isCore: true,
+                  isExtra: false
+                }, true);
+              }
             });
           } else {
             // Default CodeVita Video & Problems slots when cv-days.json item array is empty
-            registerItem({ id: makeItemId(day, "cv", `d${day}-v1`), day, week: weekNum, track: "cv", title: `Site Day ${day}: video` }, true);
-            registerItem({ id: makeItemId(day, "cv", `d${day}-p1`), day, week: weekNum, track: "cv", title: `Site Day ${day}: problems` }, true);
+            registerItem({ id: makeItemId(day, "cv", `d${day}-v1`), day, week: weekNum, track: "cv", title: `Site Day ${day}: video`, isCore: true, isExtra: false }, true);
+            registerItem({ id: makeItemId(day, "cv", `d${day}-p1`), day, week: weekNum, track: "cv", title: `Site Day ${day}: problems`, isCore: true, isExtra: false }, true);
           }
         } else {
           // Days 57-77 (Weeks 9-11): Maintenance problem
-          registerItem({ id: makeItemId(day, "cv", `d${day}-maint`), day, week: weekNum, track: "cv", title: "Maintenance: 1 coding problem" }, true);
+          registerItem({ id: makeItemId(day, "cv", `d${day}-maint`), day, week: weekNum, track: "cv", title: "Maintenance: 1 coding problem", isCore: true, isExtra: false }, true);
         }
 
         // C. Daily Habits (Mon-Fri)
-        registerItem({ id: makeItemId(day, "habit", "exercise"), day, week: weekNum, track: "habit", title: "Morning exercise (06:15)" }, true);
-        registerItem({ id: makeItemId(day, "habit", "revision"), day, week: weekNum, track: "habit", title: "Revision recall (17:30)" }, true);
-        registerItem({ id: makeItemId(day, "habit", "job"), day, week: weekNum, track: "habit", title: "Job applications block (18:15)" }, true);
-        registerItem({ id: makeItemId(day, "habit", "night_drill"), day, week: weekNum, track: "habit", title: "Night recall: vocab + reasoning (20:00)" }, true);
+        registerItem({ id: makeItemId(day, "habit", "exercise"), day, week: weekNum, track: "habit", title: "Morning exercise (06:15)", isCore: true, isExtra: false }, true);
+        registerItem({ id: makeItemId(day, "habit", "revision"), day, week: weekNum, track: "habit", title: "Revision recall (17:30)", isCore: true, isExtra: false }, true);
+        registerItem({ id: makeItemId(day, "habit", "job"), day, week: weekNum, track: "habit", title: "Job applications block (18:15)", isCore: true, isExtra: false }, true);
+        registerItem({ id: makeItemId(day, "habit", "night_drill"), day, week: weekNum, track: "habit", title: "Night recall: vocab + reasoning (20:00)", isCore: true, isExtra: false }, true);
       }
 
       // Saturday (Day 6 of week)
       const satDay = weekStartDay + 5;
       if (w.afcat_saturday && w.afcat_saturday !== "-") {
-        registerItem({ id: makeItemId(satDay, "afcat", "sat"), day: satDay, week: weekNum, track: "afcat", title: w.afcat_saturday }, true);
+        registerItem({ id: makeItemId(satDay, "afcat", "sat"), day: satDay, week: weekNum, track: "afcat", title: w.afcat_saturday, isCore: true, isExtra: false }, true);
       }
       if (satDay <= CV_TOTAL_DAYS) {
         const isFinalRevisionDay = satDay === 55;
@@ -367,7 +502,10 @@ export function buildCountableRegistry(planData, cvDaysData) {
               track: "cv",
               title: item.title,
               url: item.url,
-              isStretch
+              type: item.type,
+              isStretch,
+              isCore: !isStretch,
+              isExtra: false
             }, !isStretch);
           });
         } else if (isFinalRevisionDay) {
@@ -378,7 +516,10 @@ export function buildCountableRegistry(planData, cvDaysData) {
             week: weekNum,
             track: "cv",
             title: "CodeVita Final Revision",
-            isRest: true
+            isRest: true,
+            isStretch: true,
+            isCore: false,
+            isExtra: false
           }, false);
         } else {
           registerItem({
@@ -386,7 +527,9 @@ export function buildCountableRegistry(planData, cvDaysData) {
             day: satDay,
             week: weekNum,
             track: "cv",
-            title: weekNum <= 3 ? "Weekend practice (3h)" : "3-hour mock simulation"
+            title: weekNum <= 3 ? "Weekend practice (3h)" : "3-hour mock simulation",
+            isCore: true,
+            isExtra: false
           }, true);
         }
       }
@@ -394,7 +537,7 @@ export function buildCountableRegistry(planData, cvDaysData) {
       // Sunday (Day 7 of week)
       const sunDay = weekStartDay + 6;
       if (w.afcat_sunday && w.afcat_sunday !== "-") {
-        registerItem({ id: makeItemId(sunDay, "afcat", "sun"), day: sunDay, week: weekNum, track: "afcat", title: w.afcat_sunday }, true);
+        registerItem({ id: makeItemId(sunDay, "afcat", "sun"), day: sunDay, week: weekNum, track: "afcat", title: w.afcat_sunday, isCore: true, isExtra: false }, true);
       }
       // CodeVita Sunday is REST / Exam Eve (Day 56): recorded in full registry but NOT countable in progress!
       const isExamEve = sunDay === 56;
@@ -409,8 +552,11 @@ export function buildCountableRegistry(planData, cvDaysData) {
             track: "cv",
             title: item.title,
             url: item.url,
+            type: item.type,
             isRest: true,
-            isStretch: true
+            isStretch: true,
+            isCore: false,
+            isExtra: false
           }, false);
         });
       }
@@ -420,20 +566,23 @@ export function buildCountableRegistry(planData, cvDaysData) {
         week: weekNum,
         track: "cv",
         title: isExamEve ? "CodeVita Exam Eve" : "CodeVita Rest Day",
-        isRest: true
+        isRest: true,
+        isStretch: true,
+        isCore: false,
+        isExtra: false
       }, false);
     });
   }
 
   // 3. Process 12 Full AFCAT Mocks
-  const afcatMocksList = (planData && (planData.afcat_mocks || planData.mocks)) || [];
+  const afcatMocksList = (pData && (pData.afcat_mocks || pData.mocks)) || [];
   if (Array.isArray(afcatMocksList)) {
     afcatMocksList.forEach((m) => {
-      registerItem({ id: makeItemId(0, "mock", m.id), day: 0, week: 0, track: "mock", title: m.label }, true);
+      registerItem({ id: makeItemId(0, "mock", m.id), day: 0, week: 0, track: "mock", title: m.label, isCore: true, isExtra: false }, true);
     });
   }
 
-  console.log(`[store] Initialized with ${countableItemsRegistry.length} countable items (Day 0 + Plan Weeks + Mocks).`);
+  console.log(`[store] Initialized with ${countableItemsRegistry.length} countable items (Core Problems / Day: ${N}).`);
 }
 
 /**
@@ -599,6 +748,7 @@ export function exportProgress() {
     exportedAt: new Date().toISOString(),
     startDate: state.startDate,
     round1Date: state.round1Date,
+    settings: state.settings || { coreProblemsPerDay: 2 },
     done: state.done,
     mocks: state.mocks
   };
@@ -621,8 +771,13 @@ export function importProgress(jsonString) {
     }
 
     const current = getState();
+    const settings = {
+      coreProblemsPerDay: 2,
+      ...((parsed.settings && typeof parsed.settings === "object") ? parsed.settings : {})
+    };
     const next = {
       ...current,
+      settings,
       done: parsed.done,
       mocks: parsed.mocks || current.mocks,
       startDate: parsed.startDate || current.startDate,
@@ -630,6 +785,9 @@ export function importProgress(jsonString) {
     };
 
     saveState(next);
+    if (cachedPlanData && cachedCvDaysData) {
+      buildCountableRegistry(cachedPlanData, cachedCvDaysData);
+    }
     return { success: true };
   } catch (err) {
     return { success: false, error: err.message };

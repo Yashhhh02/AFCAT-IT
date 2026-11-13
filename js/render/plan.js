@@ -24,6 +24,9 @@ import {
   setDone,
   counts,
   dayCounts,
+  extraCounts,
+  getCoreProblemsPerDay,
+  setCoreProblemsPerDay,
   setDayOpen,
   isDayOpen,
   setTrackFilter,
@@ -83,6 +86,18 @@ export function renderPlan(planData, cvDaysData, afcatLecturesData) {
           <button class="filter-btn ${getTrackFilter() === 'cv' ? 'active' : ''}" data-filter="cv">CodeVita</button>
         </div>
 
+        <!-- Core Problems per Day Setting -->
+        <div class="core-problems-control">
+          <label for="coreProblemsSelect">Core problems/day:</label>
+          <select id="coreProblemsSelect" aria-label="Core problems per day">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="all">All</option>
+          </select>
+        </div>
+
         <button class="btn small ghost" id="planToggleWeeksBtn">Expand all</button>
         <button class="btn small ghost" id="planResetBtn">Reset progress</button>
       </div>
@@ -122,6 +137,11 @@ export function renderPlan(planData, cvDaysData, afcatLecturesData) {
   subscribe(() => {
     updateAllWeekProgressBars();
     updateDay0Progress();
+    updateAllRenderedDays();
+    const coreSelect = document.getElementById("coreProblemsSelect");
+    if (coreSelect && coreSelect.value !== String(getCoreProblemsPerDay())) {
+      coreSelect.value = String(getCoreProblemsPerDay());
+    }
   });
 }
 
@@ -444,7 +464,7 @@ function renderDayCardBody(day, weekNum, dayOffsetInWeek, weekData, sched, isExa
         <span class="track-block-title">🟢 CodeVita Track</span>
         <span class="track-time-slot">${day <= CV_TOTAL_DAYS ? '11:00–15:00' : '45 min daily'}</span>
       </div>
-      <ul class="task-items-list">
+      <p class="track-header-note">Core = about 3 hours (1.5h video + 1.5h problems). Extra is optional.</p>
   `;
 
   if (day <= CV_TOTAL_DAYS) {
@@ -465,12 +485,13 @@ function renderDayCardBody(day, weekNum, dayOffsetInWeek, weekData, sched, isExa
       // Sunday is CodeVita Rest Day / Exam Eve
       const isExamEve = day === 56;
       html += `
-        <li>
-          <div style="display: flex; align-items: center; gap: 8px; padding: 8px 10px;">
-            <span class="tag ${isExamEve ? 'exam' : 'rest'}">${isExamEve ? 'Exam Eve' : 'Rest day'}</span>
-            <span style="font-size: var(--text-sm); color: var(--ink-secondary);">${isExamEve ? 'CodeVita Exam Eve · Rules, checklist & sleep early.' : 'CodeVita Rest Day · No new coding topics. Rest and prepare for next week.'}</span>
-          </div>
-        </li>
+        <ul class="task-items-list">
+          <li>
+            <div style="display: flex; align-items: center; gap: 8px; padding: 8px 10px;">
+              <span class="tag ${isExamEve ? 'exam' : 'rest'}">${isExamEve ? 'Exam Eve' : 'Rest day'}</span>
+              <span style="font-size: var(--text-sm); color: var(--ink-secondary);">${isExamEve ? 'CodeVita Exam Eve · Rules, checklist & sleep early.' : 'CodeVita Rest Day · No new coding topics. Rest and prepare for next week.'}</span>
+            </div>
+          </li>
       `;
       // Preserve any Sunday items (e.g. Day 7, Day 35, Day 56 videos) without silently dropping them
       if (userCvItems && userCvItems.length > 0) {
@@ -481,9 +502,11 @@ function renderDayCardBody(day, weekNum, dayOffsetInWeek, weekData, sched, isExa
           html += renderTaskCheckboxItem(day, "stretch", stableId, `${badge} ${item.title} ${link}`, item.topic || "");
         });
       }
+      html += `</ul>`;
     } else if (sched.isSaturday) {
       // Saturday is Weekend Practice, 3-Hour Mock, or Day 55 Final Revision
       const isFinalRevisionDay = day === 55;
+      html += `<ul class="task-items-list">`;
       if (isFinalRevisionDay) {
         html += `
           <li>
@@ -508,37 +531,106 @@ function renderDayCardBody(day, weekNum, dayOffsetInWeek, weekData, sched, isExa
         const satTitle = weekNum <= 3 ? "Weekend Practice (3 Hours)" : `CodeVita Mock ${weekNum - 3} (3-Hour Contest Simulation)`;
         html += renderTaskCheckboxItem(day, "cv", `d${day}-practice`, satTitle, "Timed session");
       }
+      html += `</ul>`;
     } else {
-      // Weekday Video & Problems
+      // Weekday Learning Days (Mon-Fri, days 1-56): Core vs Extra Classification
+      const N = getCoreProblemsPerDay();
+      const problemTypes = new Set(["leetcode", "pyq", "official", "other"]);
+      const coreItems = [];
+      const extraItems = [];
+      const stretchItems = [];
+
       if (userCvItems && userCvItems.length > 0) {
+        let probCount = 0;
         userCvItems.forEach((item, itemIdx) => {
-          const stableId = item.id || `d${day}-i${itemIdx + 1}`;
           const isStretch = item.type === "stretch" || item.s === true;
-          const link = item.url ? `<a href="${escapeHTML(item.url)}" target="_blank" rel="noopener">↗</a>` : "";
-          const badge = getItemBadge(item, isStretch);
-          html += renderTaskCheckboxItem(day, isStretch ? "stretch" : "cv", stableId, `${badge} ${item.title} ${link}`, item.topic || "");
+          if (isStretch) {
+            stretchItems.push({ item, itemIdx });
+          } else if (item.type === "video" || item.type === "mock") {
+            coreItems.push({ item, itemIdx });
+          } else if (problemTypes.has(item.type)) {
+            probCount++;
+            if (N === "all" || probCount <= N) {
+              coreItems.push({ item, itemIdx });
+            } else {
+              extraItems.push({ item, itemIdx });
+            }
+          } else {
+            coreItems.push({ item, itemIdx });
+          }
         });
+
+        // 1. Core Group (counted)
+        html += `
+          <div class="cv-group core-group">
+            <span class="cv-group-title">Core</span>
+            <ul class="task-items-list core-list">
+        `;
+        coreItems.forEach(({ item, itemIdx }) => {
+          const stableId = item.id || `d${day}-i${itemIdx + 1}`;
+          const link = item.url ? `<a href="${escapeHTML(item.url)}" target="_blank" rel="noopener">↗</a>` : "";
+          const badge = getItemBadge(item, false);
+          html += renderTaskCheckboxItem(day, "cv", stableId, `${badge} ${item.title} ${link}`, item.topic || "");
+        });
+        html += `</ul></div>`;
+
+        // 2. Extra Practice Group (Optional & Collapsed)
+        if (extraItems.length > 0 || stretchItems.length > 0) {
+          const dayExtra = extraCounts(day);
+          html += `
+            <details class="extra-practice-details" id="extraDetails-${day}">
+              <summary class="extra-practice-summary">
+                <span class="extra-title">Extra practice (optional)</span>
+                <span class="badge muted" id="extraBadge-${day}">Extra ${dayExtra.done}/${dayExtra.total} done</span>
+              </summary>
+              <ul class="task-items-list extra-list">
+          `;
+          extraItems.forEach(({ item, itemIdx }) => {
+            const stableId = item.id || `d${day}-i${itemIdx + 1}`;
+            const link = item.url ? `<a href="${escapeHTML(item.url)}" target="_blank" rel="noopener">↗</a>` : "";
+            const badge = getItemBadge(item, false);
+            html += renderTaskCheckboxItem(day, "cv", stableId, `${badge} ${item.title} ${link}`, item.topic || "");
+          });
+          stretchItems.forEach(({ item, itemIdx }) => {
+            const stableId = item.id || `d${day}-i${itemIdx + 1}`;
+            const link = item.url ? `<a href="${escapeHTML(item.url)}" target="_blank" rel="noopener">↗</a>` : "";
+            const badge = getItemBadge(item, true);
+            html += renderTaskCheckboxItem(day, "stretch", stableId, `${badge} ${item.title} ${link}`, item.topic || "");
+          });
+          html += `</ul></details>`;
+        }
       } else {
         // Default video & problem slots with reference site fallback
         const refLink = `${CV_REFERENCE_URL}#day-${day}`;
-        html += renderTaskCheckboxItem(
-          day, "cv", `d${day}-v1`,
-          `Site Day ${day}: Video lecture <a href="${refLink}" target="_blank" rel="noopener">Open Day ${day} on reference site ↗</a>`,
-          "11:00–12:30"
-        );
-        html += renderTaskCheckboxItem(
-          day, "cv", `d${day}-p1`,
-          `Site Day ${day}: Problem solving <a href="${refLink}" target="_blank" rel="noopener">Open problems on reference site ↗</a>`,
-          "13:30–15:00"
-        );
+        html += `
+          <div class="cv-group core-group">
+            <span class="cv-group-title">Core</span>
+            <ul class="task-items-list core-list">
+              ${renderTaskCheckboxItem(
+                day, "cv", `d${day}-v1`,
+                `Site Day ${day}: Video lecture <a href="${refLink}" target="_blank" rel="noopener">Open Day ${day} on reference site ↗</a>`,
+                "11:00–12:30"
+              )}
+              ${renderTaskCheckboxItem(
+                day, "cv", `d${day}-p1`,
+                `Site Day ${day}: Problem solving <a href="${refLink}" target="_blank" rel="noopener">Open problems on reference site ↗</a>`,
+                "13:30–15:00"
+              )}
+            </ul>
+          </div>
+        `;
       }
     }
   } else {
     // Days 57-77: Maintenance problem
-    html += renderTaskCheckboxItem(day, "cv", `d${day}-maint`, "Maintenance: 1 Coding Problem (45 min)", "Keep problem-solving intuition sharp");
+    html += `
+      <ul class="task-items-list">
+        ${renderTaskCheckboxItem(day, "cv", `d${day}-maint`, "Maintenance: 1 Coding Problem (45 min)", "Keep problem-solving intuition sharp")}
+      </ul>
+    `;
   }
 
-  html += `</ul></div>`;
+  html += `</div>`;
 
   // ========================================================
   // 3. HABITS & CAREER BLOCK
@@ -615,17 +707,22 @@ export function updateAllWeekProgressBars() {
 }
 
 /**
- * Updates the mini-badges (AFCAT x/y, CV x/y) on a specific day card
+ * Updates the mini-badges (AFCAT x/y, CV x/y, Extra x/y) on a specific day card
  * @param {number} dayNum
  */
 export function updateDayMiniBadges(dayNum) {
   const afcatEl = document.getElementById(`badgeAfcat-${dayNum}`);
   const cvEl = document.getElementById(`badgeCv-${dayNum}`);
+  const extraBadgeEl = document.getElementById(`extraBadge-${dayNum}`);
   const dayCard = document.getElementById(`dayCard-${dayNum}`);
 
   const countsData = dayCounts(dayNum);
   if (afcatEl) afcatEl.textContent = `AFCAT ${countsData.afcat.done}/${countsData.afcat.total}`;
   if (cvEl) cvEl.textContent = `CV ${countsData.cv.done}/${countsData.cv.total}`;
+  if (extraBadgeEl) {
+    const dayExtra = extraCounts(dayNum);
+    extraBadgeEl.textContent = `Extra ${dayExtra.done}/${dayExtra.total} done`;
+  }
 
   if (dayCard) {
     const isAllDone = (countsData.afcat.total > 0 && countsData.afcat.done === countsData.afcat.total) &&
@@ -635,11 +732,49 @@ export function updateDayMiniBadges(dayNum) {
 }
 
 /**
+ * Updates all rendered day cards in the DOM (badges, and re-renders open day bodies)
+ */
+export function updateAllRenderedDays() {
+  const renderedCards = document.querySelectorAll(".day-card");
+  renderedCards.forEach((card) => {
+    const day = +card.dataset.day;
+    if (!day) return;
+    updateDayMiniBadges(day);
+    if (card.classList.contains("open")) {
+      const bodyEl = document.getElementById(`dayBody-${day}`);
+      if (bodyEl && cachedPlanData) {
+        const wNum = weekNumber(day);
+        const weekData = cachedPlanData.weeks && cachedPlanData.weeks[wNum - 1];
+        const dayOffset = (day - 1) % 7;
+        const sched = getDayScheduleType(day);
+        const isExamDay = day === 77;
+        const wasExtraOpen = bodyEl.querySelector(".extra-practice-details[open]") !== null;
+        bodyEl.innerHTML = renderDayCardBody(day, wNum, dayOffset, weekData, sched, isExamDay);
+        if (wasExtraOpen) {
+          const newDetails = bodyEl.querySelector(".extra-practice-details");
+          if (newDetails) newDetails.open = true;
+        }
+      }
+    }
+  });
+}
+
+/**
  * Wires events on Plan controls, week accordions, day cards, and checkboxes
  */
 function wirePlanControls() {
   const container = document.getElementById("planContainer");
   if (!container) return;
+
+  // 0. Core Problems per Day Setting Dropdown
+  const coreSelect = document.getElementById("coreProblemsSelect");
+  if (coreSelect) {
+    coreSelect.value = String(getCoreProblemsPerDay());
+    coreSelect.addEventListener("change", (e) => {
+      const val = e.target.value === "all" ? "all" : parseInt(e.target.value, 10);
+      setCoreProblemsPerDay(val);
+    });
+  }
 
   // 1. Jump to Today Button
   const jumpBtn = document.getElementById("planJumpTodayBtn");

@@ -17,6 +17,7 @@ import {
   getState,
   updateState,
   counts,
+  extraCounts,
   resetProgress,
   exportProgress,
   importProgress,
@@ -167,6 +168,10 @@ export function renderHero(onDateChangeCallback = null) {
     const cv = counts({ track: "cv" });
     if (cvSubPctEl) cvSubPctEl.textContent = `${cv.done}/${cv.total} (${cv.pct}%)`;
     if (cvSubBarEl) cvSubBarEl.style.width = `${cv.pct}%`;
+
+    const extra = extraCounts();
+    const extraEl = document.getElementById("extraPracticeText");
+    if (extraEl) extraEl.textContent = `Extra practice: ${extra.done} of ${extra.total} done`;
   }
 
   function updateFitNote() {
