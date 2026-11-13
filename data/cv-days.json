@@ -2827,7 +2827,7 @@
         },
         {
           "id": "d54-m2",
-          "type": "mock",
+          "type": "optional",
           "title": "Codeforces Div. 3 — Virtual Contest",
           "url": "https://codeforces.com/contests",
           "topic": "MOCK 5 — Final Dress Rehearsal",
