@@ -244,6 +244,20 @@
     </div>
   </footer>
 
+  <!-- Fail-safe Error Listener (catches early module syntax or import errors) -->
+  <script>
+    window.addEventListener('error', function (event) {
+      var banner = document.getElementById('dataErrorBanner');
+      if (banner) {
+        banner.hidden = false;
+        var fileName = (event.filename || '').split('/').pop() || 'script';
+        banner.innerHTML = '<strong>⚠️ JavaScript Initialization Error (' + fileName + '):</strong> ' +
+          (event.message || 'Unknown error') +
+          '<br><small>File: <code>' + (event.filename || fileName) + '</code> (line ' + (event.lineno || '?') + ')</small>';
+      }
+    });
+  </script>
+
   <!-- Application Entry Script (ES Module) -->
   <script type="module" src="js/main.js"></script>
 </body>
