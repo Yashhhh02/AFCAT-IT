@@ -205,7 +205,7 @@
     let totalTests = 0;
     let passedTests = 0;
 
-    function renderSuite(title, tests) {
+    async function renderSuite(title, tests) {
       const suiteEl = document.createElement("div");
       suiteEl.className = "test-suite";
 
@@ -217,12 +217,12 @@
       const listEl = document.createElement("ul");
       listEl.className = "test-list";
 
-      tests.forEach(t => {
+      for (const t of tests) {
         totalTests++;
         let isPass = false;
         let detail = "";
         try {
-          const res = t.run();
+          const res = await t.run();
           isPass = res.pass;
           detail = res.detail || "";
         } catch (err) {
@@ -242,7 +242,7 @@
           <span class="status-badge ${isPass ? 'pass' : 'fail'}">${isPass ? 'PASS' : 'FAIL'}</span>
         `;
         listEl.appendChild(itemEl);
-      });
+      }
 
       suiteEl.appendChild(listEl);
       resultsContainer.appendChild(suiteEl);
@@ -1144,6 +1144,94 @@
             return {
               pass,
               detail: `Checklists isolated: overall progress strictly unchanged (${duringCounts.done}/${duringCounts.total}), prefix reset verified`
+            };
+          }
+        }
+      ]);
+
+      // ====================================================================
+      // SUITE 9: REAL INDEX.HTML BOOTSTRAP SMOKE TEST
+      // ====================================================================
+      await renderSuite("9. Real index.html Bootstrap Smoke Test (E2E Validation)", [
+        {
+          name: "Real index.html loads without console errors, renders countdowns, and displays Week 1 Day 1 with AFCAT lecture links",
+          async run() {
+            const frame = document.createElement("iframe");
+            frame.src = "index.html";
+            frame.style.width = "800px";
+            frame.style.height = "600px";
+            frame.style.position = "absolute";
+            frame.style.left = "-9999px";
+            document.body.appendChild(frame);
+
+            const errors = [];
+            frame.contentWindow.addEventListener("error", (e) => {
+              errors.push(e.message || "Unknown error");
+            });
+
+            await new Promise((resolve) => {
+              let resolved = false;
+              const check = setInterval(() => {
+                try {
+                  const doc = frame.contentDocument;
+                  const w1 = doc && doc.getElementById("week-1");
+                  const d1 = doc && doc.getElementById("dayCard-1");
+                  if (w1 && d1) {
+                    clearInterval(check);
+                    resolved = true;
+                    resolve();
+                  }
+                } catch (_) {}
+              }, 100);
+              setTimeout(() => {
+                if (!resolved) {
+                  clearInterval(check);
+                  resolve();
+                }
+              }, 5000);
+            });
+
+            const doc = frame.contentDocument;
+            const banner = doc.getElementById("dataErrorBanner");
+            const bannerVisible = banner && !banner.hidden && banner.textContent.trim().length > 0;
+            const overallProgText = doc.getElementById("overallProgressText")?.textContent.trim();
+            const isZeroProg = overallProgText === "0 of 0 items done" || overallProgText === "0/0";
+            const afcatCd = doc.getElementById("afcatCountdown")?.textContent.trim();
+            const isDashCountdown = !afcatCd || afcatCd === "—";
+            const week1 = doc.getElementById("week-1");
+            const day1 = doc.getElementById("dayCard-1");
+
+            // Check Lecture links on Day 1
+            const lectureLinks = doc.querySelectorAll("#dayBody-1 .lecture-link");
+            const lectureCount = lectureLinks.length;
+
+            // Test clicking a lecture link does not toggle checkbox
+            let clickTestPassed = false;
+            if (lectureCount > 0) {
+              const cb1 = doc.querySelector('input[data-id="1|afcat|blockA"]');
+              const beforeChecked = cb1 ? cb1.checked : false;
+              const lec1 = doc.querySelector('#dayBody-1 .lecture-link');
+              if (lec1) {
+                lec1.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true }));
+                const afterChecked = cb1 ? cb1.checked : false;
+                clickTestPassed = (beforeChecked === afterChecked);
+              }
+            }
+
+            document.body.removeChild(frame);
+
+            const pass = errors.length === 0 &&
+                         !bannerVisible &&
+                         !isZeroProg &&
+                         !isDashCountdown &&
+                         !!week1 &&
+                         !!day1 &&
+                         lectureCount >= 3 &&
+                         clickTestPassed;
+
+            return {
+              pass,
+              detail: `Errors: ${errors.length}, Banner Hidden: ${!bannerVisible}, Countdown: "${afcatCd}", Progress: "${overallProgText}", Week1: ${!!week1}, Day1: ${!!day1}, Day 1 Lecture Links: ${lectureCount} (Target: 3), Click Isolation: ${clickTestPassed}`
             };
           }
         }

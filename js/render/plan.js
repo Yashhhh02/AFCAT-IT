@@ -38,6 +38,7 @@ const CV_REFERENCE_URL = "https://perryvegehan.github.io/Codevita/";
 // Cache of loaded data files
 let cachedPlanData = null;
 let cachedCvDaysData = null;
+let cachedAfcatLecturesData = null;
 
 // Track which weeks have been rendered to support lazy DOM generation
 const renderedWeeks = new Set();
@@ -46,13 +47,15 @@ const renderedWeeks = new Set();
  * Main render function for the Plan section
  * @param {object} planData - from /data/plan-data.json
  * @param {object} cvDaysData - from /data/cv-days.json
+ * @param {object} [afcatLecturesData] - from /data/afcat-lectures.json
  */
-export function renderPlan(planData, cvDaysData) {
+export function renderPlan(planData, cvDaysData, afcatLecturesData) {
   const container = document.getElementById("planContainer");
   if (!container) return;
 
   if (planData) cachedPlanData = planData;
   if (cvDaysData) cachedCvDaysData = cvDaysData;
+  if (afcatLecturesData !== undefined) cachedAfcatLecturesData = afcatLecturesData;
 
   const state = getState();
   const startISO = state.startDate || "2026-11-16";
@@ -397,19 +400,32 @@ function renderDayCardBody(day, weekNum, dayOffsetInWeek, weekData, sched, isExa
         <span class="track-block-title">🔵 AFCAT Track</span>
         <span class="track-time-slot">${dayOffsetInWeek < 5 ? '07:30–10:45 & 16:00–16:45' : 'Test & Revision'}</span>
       </div>
+      <p class="track-header-note">Lecture links open a YouTube search. Pick a teacher you like.</p>
       <ul class="task-items-list">
   `;
 
   if (dayOffsetInWeek < 5 && weekData.afcat_weekdays && weekData.afcat_weekdays[dayOffsetInWeek]) {
     const topics = weekData.afcat_weekdays[dayOffsetInWeek];
+    const dayLectures = (cachedAfcatLecturesData && cachedAfcatLecturesData.days && cachedAfcatLecturesData.days[String(day)]) || null;
+
+    const makeLectureLink = (kindKey, topicText) => {
+      if (!dayLectures || !dayLectures[kindKey] || !dayLectures[kindKey].url) return "";
+      const lec = dayLectures[kindKey];
+      const ariaTopic = lec.title || topicText || "topic";
+      return `<a class="lecture-link" href="${escapeHTML(lec.url)}" target="_blank" rel="noopener noreferrer" aria-label="Search lecture on YouTube for ${escapeHTML(ariaTopic)}" onclick="event.stopPropagation();">Lecture ▶</a>`;
+    };
+
     if (topics.blockA && topics.blockA !== "-") {
-      html += renderTaskCheckboxItem(day, "afcat", "blockA", `Block A (Maths/Reasoning): ${topics.blockA}`, "07:30–09:30");
+      const link = makeLectureLink("blockA", topics.blockA);
+      html += renderTaskCheckboxItem(day, "afcat", "blockA", `Block A (Maths/Reasoning): ${escapeHTML(topics.blockA)} ${link}`, "07:30–09:30");
     }
     if (topics.english && topics.english !== "-") {
-      html += renderTaskCheckboxItem(day, "afcat", "english", `English: ${topics.english}`, "09:45–10:45");
+      const link = makeLectureLink("english", topics.english);
+      html += renderTaskCheckboxItem(day, "afcat", "english", `English: ${escapeHTML(topics.english)} ${link}`, "09:45–10:45");
     }
     if (topics.ga && topics.ga !== "-") {
-      html += renderTaskCheckboxItem(day, "afcat", "ga", `General Awareness: ${topics.ga}`, "16:00–16:45");
+      const link = makeLectureLink("ga", topics.ga);
+      html += renderTaskCheckboxItem(day, "afcat", "ga", `General Awareness: ${escapeHTML(topics.ga)} ${link}`, "16:00–16:45");
     }
   } else if (sched.isSaturday) {
     html += renderTaskCheckboxItem(day, "afcat", "sat", weekData.afcat_saturday || "Saturday Sectional Test", "Morning test block");
@@ -690,8 +706,15 @@ function wirePlanControls() {
     });
   }
 
-  // 5. Event Delegation for Week Accordion Headers
+  // 5. Event Delegation for Week Accordion Headers & Links
   container.addEventListener("click", (e) => {
+    // If an anchor tag or link was clicked, allow link to open without bubbling to label
+    const anchor = e.target.closest("a");
+    if (anchor) {
+      e.stopPropagation();
+      return;
+    }
+
     const weekHead = e.target.closest(".week-head");
     if (weekHead) {
       const weekBlock = weekHead.closest(".week-block");

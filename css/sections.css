@@ -911,6 +911,63 @@
   font-weight: 600;
 }
 
+/* Track Header Note */
+.track-header-note {
+  font-size: var(--text-2xs);
+  color: var(--ink-muted);
+  margin: var(--space-1) 0 var(--space-2) 0;
+  line-height: var(--lh-snug);
+}
+
+/* AFCAT Lecture Link */
+.lecture-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: 3px 8px;
+  margin-left: var(--space-2);
+  font-size: var(--text-2xs);
+  font-weight: 700;
+  color: var(--afcat);
+  background: var(--afcat-bg);
+  border: 1px solid var(--afcat-border);
+  border-radius: var(--radius-xs);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.lecture-link:hover {
+  background: var(--afcat);
+  color: #ffffff;
+  border-color: var(--afcat);
+  box-shadow: 0 0 8px var(--afcat-glow);
+  text-decoration: none;
+}
+
+.lecture-link:focus-visible {
+  outline: 2px solid var(--afcat);
+  outline-offset: 2px;
+}
+
+.task-item-label.checked .lecture-link {
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .lecture-link {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0 var(--space-3);
+    margin-top: var(--space-1);
+    display: inline-flex;
+  }
+}
+
 /* Task Checkbox List */
 .task-items-list {
   list-style: none;

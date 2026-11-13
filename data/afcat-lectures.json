@@ -1,0 +1,355 @@
+{
+ "_note": "YouTube SEARCH links (always valid), not specific videos. Pick the lecture from a channel you like (Defence Wallah, Defence Adda247, Major Kalshi Classes etc). Keyed by plan day number; only weeks 1-5 weekdays (new-topic lectures). Mocks, sectionals and revision days have no lecture link.",
+ "days": {
+  "1": {
+   "blockA": {
+    "title": "Block A: Maths: Number system, BODMAS, simplification",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Maths+Number+system+BODMAS+simplification"
+   },
+   "english": {
+    "title": "English: Tenses (basics)",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Tenses"
+   },
+   "ga": {
+    "title": "GA: History: Ancient",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+History+Ancient"
+   }
+  },
+  "2": {
+   "blockA": {
+    "title": "Block A: Reasoning: Series (number/alphabet), analogy",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Reasoning+Series"
+   },
+   "english": {
+    "title": "English: Subject-verb agreement",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Subject+verb+agreement"
+   },
+   "ga": {
+    "title": "GA: History: Medieval",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+History+Medieval"
+   }
+  },
+  "3": {
+   "blockA": {
+    "title": "Block A: Maths: Percentage + fraction table",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Maths+Percentage+%2B+fraction+table"
+   },
+   "english": {
+    "title": "English: Articles, prepositions",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Articles+prepositions"
+   },
+   "ga": {
+    "title": "GA: History: Modern (1857-1947)",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+History+Modern"
+   }
+  },
+  "4": {
+   "blockA": {
+    "title": "Block A: Reasoning: Coding-decoding, odd one out",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Reasoning+Coding+decoding+odd+one+out"
+   },
+   "english": {
+    "title": "English: Error spotting practice",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Error+spotting+practice"
+   },
+   "ga": {
+    "title": "GA: Polity 1: Preamble, FR, DPSP",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Polity+1+Preamble+FR+DPSP"
+   }
+  },
+  "5": {
+   "blockA": {
+    "title": "Block A: Maths: Ratio, proportion, average",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Maths+Ratio+proportion+average"
+   },
+   "english": {
+    "title": "English: Synonyms-antonyms (10 words/day start)",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Synonyms+antonyms"
+   },
+   "ga": {
+    "title": "GA: Polity 2: President, PM, Parliament, judiciary",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Polity+2+President+PM+Parliament+judiciary"
+   }
+  },
+  "8": {
+   "blockA": {
+    "title": "Block A: Maths: Profit-loss, discount",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Maths+Profit+loss+discount"
+   },
+   "english": {
+    "title": "English: Pronouns, adjectives",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Pronouns+adjectives"
+   },
+   "ga": {
+    "title": "GA: Polity 3: Amendments, bodies + Economy basics",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Polity+3+Amendments+bodies+%2B+Economy+basics"
+   }
+  },
+  "9": {
+   "blockA": {
+    "title": "Block A: Reasoning: Blood relations, direction",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Reasoning+Blood+relations+direction"
+   },
+   "english": {
+    "title": "English: Reading comprehension (1 passage)",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Reading+comprehension"
+   },
+   "ga": {
+    "title": "GA: Geography 1: Earth, atmosphere, winds",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Geography+1+Earth+atmosphere+winds"
+   }
+  },
+  "10": {
+   "blockA": {
+    "title": "Block A: Maths: SI and CI",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Maths+SI+and+CI"
+   },
+   "english": {
+    "title": "English: Para jumbles",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Para+jumbles"
+   },
+   "ga": {
+    "title": "GA: Geography 2: India (rivers, soils, climate)",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Geography+2+India"
+   }
+  },
+  "11": {
+   "blockA": {
+    "title": "Block A: Reasoning: Syllogism, Venn",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Reasoning+Syllogism+Venn"
+   },
+   "english": {
+    "title": "English: Cloze test",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Cloze+test"
+   },
+   "ga": {
+    "title": "GA: Geography 3: Agriculture, minerals, parks",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Geography+3+Agriculture+minerals+parks"
+   }
+  },
+  "12": {
+   "blockA": {
+    "title": "Block A: Maths: Time and work, pipes",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Maths+Time+and+work+pipes"
+   },
+   "english": {
+    "title": "English: Idioms (30)",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Idioms"
+   },
+   "ga": {
+    "title": "GA: Physics 1: Motion, force, light",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Physics+1+Motion+force+light"
+   }
+  },
+  "15": {
+   "blockA": {
+    "title": "Block A: Maths: Time-speed-distance, trains",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Maths+Time+speed+distance+trains"
+   },
+   "english": {
+    "title": "English: Sentence improvement",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Sentence+improvement"
+   },
+   "ga": {
+    "title": "GA: Physics 2: Electricity, heat, sound, units",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Physics+2+Electricity+heat+sound+units"
+   }
+  },
+  "16": {
+   "blockA": {
+    "title": "Block A: Reasoning: Ranking, order, basic puzzles",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Reasoning+Ranking+order+basic+puzzles"
+   },
+   "english": {
+    "title": "English: Synonyms-antonyms (30)",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Synonyms+antonyms"
+   },
+   "ga": {
+    "title": "GA: Chemistry: Acids, metals, everyday",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Chemistry+Acids+metals+everyday"
+   }
+  },
+  "17": {
+   "blockA": {
+    "title": "Block A: Maths: Boats-streams, alligation",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Maths+Boats+streams+alligation"
+   },
+   "english": {
+    "title": "English: One-word substitution",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+One+word+substitution"
+   },
+   "ga": {
+    "title": "GA: Biology: Human body, vitamins, diseases",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Biology+Human+body+vitamins+diseases"
+   }
+  },
+  "18": {
+   "blockA": {
+    "title": "Block A: Reasoning: Non-verbal series, patterns",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Reasoning+Non+verbal+series+patterns"
+   },
+   "english": {
+    "title": "English: Active-passive, narration",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Active+passive+narration"
+   },
+   "ga": {
+    "title": "GA: Environment + Static GK",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Environment+%2B+Static+GK"
+   }
+  },
+  "19": {
+   "blockA": {
+    "title": "Block A: Maths: HCF-LCM, divisibility",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Maths+HCF+LCM+divisibility"
+   },
+   "english": {
+    "title": "English: RC (2 passages)",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+RC"
+   },
+   "ga": {
+    "title": "GA: Revision: History, Polity, Geography (25 Q)",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Revision+History+Polity+Geography"
+   }
+  },
+  "22": {
+   "blockA": {
+    "title": "Block A: Maths: Mensuration",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Maths+Mensuration"
+   },
+   "english": {
+    "title": "English: Vocab revision (idioms, OWS)",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Vocab+revision"
+   },
+   "ga": {
+    "title": "GA: Defence 1: IAF history, commands, ranks",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Defence+1+IAF+history+commands+ranks"
+   }
+  },
+  "23": {
+   "blockA": {
+    "title": "Block A: Reasoning: Mirror/water image, paper folding",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Reasoning+Mirror%2Fwater+image+paper+folding"
+   },
+   "english": {
+    "title": "English: Error spotting (mixed)",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Error+spotting"
+   },
+   "ga": {
+    "title": "GA: Defence 2: Aircraft",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Defence+2+Aircraft"
+   }
+  },
+  "24": {
+   "blockA": {
+    "title": "Block A: Maths: Algebra, geometry basics",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Maths+Algebra+geometry+basics"
+   },
+   "english": {
+    "title": "English: Cloze test",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Cloze+test"
+   },
+   "ga": {
+    "title": "GA: Defence 3: Missiles, DRDO, HAL",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Defence+3+Missiles+DRDO+HAL"
+   }
+  },
+  "25": {
+   "blockA": {
+    "title": "Block A: Reasoning: Dice, cubes, embedded figures",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Reasoning+Dice+cubes+embedded+figures"
+   },
+   "english": {
+    "title": "English: Para jumbles",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Para+jumbles"
+   },
+   "ga": {
+    "title": "GA: Defence 4: Exercises, operations, awards",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Defence+4+Exercises+operations+awards"
+   }
+  },
+  "26": {
+   "blockA": {
+    "title": "Block A: Maths: Data interpretation",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Maths+Data+interpretation"
+   },
+   "english": {
+    "title": "English: RC (2 timed passages)",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+RC"
+   },
+   "ga": {
+    "title": "GA: Current affairs: Jun-Aug 2026",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Current+affairs+Jun+Aug+2026"
+   }
+  },
+  "29": {
+   "blockA": {
+    "title": "Block A: Maths: DI + approximation",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Maths+DI+%2B+approximation"
+   },
+   "english": {
+    "title": "English: Sentence correction",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Sentence+correction"
+   },
+   "ga": {
+    "title": "GA: Current affairs: Sep-Oct 2026",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Current+affairs+Sep+Oct+2026"
+   }
+  },
+  "30": {
+   "blockA": {
+    "title": "Block A: Reasoning: Military aptitude, spatial orientation",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Reasoning+Military+aptitude+spatial+orientation"
+   },
+   "english": {
+    "title": "English: Vocab (50 words revision)",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Vocab"
+   },
+   "ga": {
+    "title": "GA: Current affairs: Nov 2026 + Static GK",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Current+affairs+Nov+2026+%2B+Static+GK"
+   }
+  },
+  "31": {
+   "blockA": {
+    "title": "Block A: Maths: Number series, speed-math tables",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Maths+Number+series+speed+math+tables"
+   },
+   "english": {
+    "title": "English: RC (3 passages)",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+RC"
+   },
+   "ga": {
+    "title": "GA: Revision: Science + Environment (25 Q)",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Revision+Science+%2B+Environment"
+   }
+  },
+  "32": {
+   "blockA": {
+    "title": "Block A: Reasoning: Puzzles, seating",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Reasoning+Puzzles+seating"
+   },
+   "english": {
+    "title": "English: Error spotting + idioms",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Error+spotting+%2B+idioms"
+   },
+   "ga": {
+    "title": "GA: Revision: Defence (25 Q)",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Revision+Defence"
+   }
+  },
+  "33": {
+   "blockA": {
+    "title": "Block A: Maths: Weak topics (from error log)",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Maths+Weak+topics"
+   },
+   "english": {
+    "title": "English: Weak English topics",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Weak+English+topics"
+   },
+   "ga": {
+    "title": "GA: Revision: History, Polity, Geography (25 Q)",
+    "url": "https://www.youtube.com/results?search_query=AFCAT+Revision+History+Polity+Geography"
+   }
+  }
+ }
+}

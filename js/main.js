@@ -52,16 +52,17 @@ async function loadApplicationData() {
   };
 
   try {
-    const [planData, cvDaysData, questionsDataWrapper, bonusData] = await Promise.all([
+    const [planData, cvDaysData, questionsDataWrapper, bonusData, afcatLecturesData] = await Promise.all([
       fetchFile("data/plan-data.json", true),
       fetchFile("data/cv-days.json", true),
       fetchFile("data/questions.json", false),
-      fetchFile("data/bonus.json", false)
+      fetchFile("data/bonus.json", false),
+      fetchFile("data/afcat-lectures.json", false)
     ]);
 
     const questionsData = questionsDataWrapper && questionsDataWrapper.questions ? questionsDataWrapper.questions : null;
 
-    return { planData, cvDaysData, questionsData, bonusData };
+    return { planData, cvDaysData, questionsData, bonusData, afcatLecturesData };
   } catch (err) {
     console.error("[main] Data loading failed:", err);
     showDataErrorBanner(err.message);
@@ -113,14 +114,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderHero(() => {
       // Callback when start date or Round 1 date changes in hero
       if (data) {
-        renderPlan(data.planData, data.cvDaysData);
+        renderPlan(data.planData, data.cvDaysData, data.afcatLecturesData);
       }
     });
 
     // 6. Render Section Containers
     renderExam(data ? data.planData : null);
     if (data) {
-      renderPlan(data.planData, data.cvDaysData);
+      renderPlan(data.planData, data.cvDaysData, data.afcatLecturesData);
     }
     renderPyq(data ? data.questionsData : null);
     renderMocks();
