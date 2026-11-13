@@ -1,0 +1,198 @@
+{
+  "_credit": "CodeVita bonus video links sourced from the CodeVita 8-Week Plan by Padho with Pratyush. AFCAT revision modules prepared for AFCAT 01/2027.",
+  "sections": [
+    {
+      "id": "cv-patterns",
+      "title": "CodeVita Problem Patterns & Linked Lists",
+      "track": "CodeVita",
+      "description": "Essential patterns frequently tested in CodeVita and technical placement rounds.",
+      "items": [
+        {
+          "id": "cv-ll-1",
+          "title": "Linked List Basics for Beginners",
+          "topic": "Data Structures",
+          "url": "https://www.youtube.com/watch?v=NSh5oNElD84",
+          "track": "CodeVita"
+        },
+        {
+          "id": "cv-ll-2",
+          "title": "Linked List Slow–Fast Pointer Introduction",
+          "topic": "Two Pointers",
+          "url": "https://www.youtube.com/watch?v=IxxlDYwMrZ8",
+          "track": "CodeVita"
+        },
+        {
+          "id": "cv-ll-3",
+          "title": "Slow–Fast Pointer Important Questions (Ep 18)",
+          "topic": "Two Pointers",
+          "url": "https://www.youtube.com/watch?v=jDP1NkjVjWQ",
+          "track": "CodeVita"
+        },
+        {
+          "id": "cv-ll-4",
+          "title": "Slow–Fast Pointer Important Questions (Ep 20)",
+          "topic": "Two Pointers",
+          "url": "https://www.youtube.com/watch?v=RNpZBhZBtJc",
+          "track": "CodeVita"
+        },
+        {
+          "id": "cv-ll-5",
+          "title": "Slow–Fast Pointer Complete Revision (Ep 21)",
+          "topic": "Two Pointers",
+          "url": "https://www.youtube.com/watch?v=ftpI12-e3zs",
+          "track": "CodeVita"
+        },
+        {
+          "id": "cv-ll-6",
+          "title": "Start of Cycle Logic Explained (Ep 25)",
+          "topic": "Cycle Detection",
+          "url": "https://www.youtube.com/watch?v=p8efFVGuqyI",
+          "track": "CodeVita"
+        },
+        {
+          "id": "cv-ll-7",
+          "title": "Linked List Reversal in the Easiest Way",
+          "topic": "Data Structures",
+          "url": "https://www.youtube.com/watch?v=7gOCx1vbx0k",
+          "track": "CodeVita"
+        },
+        {
+          "id": "cv-ll-8",
+          "title": "Reverse Linked List Nodes in K Group",
+          "topic": "Hard Patterns",
+          "url": "https://www.youtube.com/watch?v=BdpT6_jotcM",
+          "track": "CodeVita"
+        },
+        {
+          "id": "cv-ll-9",
+          "title": "Rotate a Linked List",
+          "topic": "Data Structures",
+          "url": "https://www.youtube.com/watch?v=5IV8CgWnf04",
+          "track": "CodeVita"
+        },
+        {
+          "id": "cv-nqt-1",
+          "title": "TCS NQT 20 Days Plan — Crack a 12 LPA Job",
+          "topic": "Placement Strategy",
+          "url": "https://www.youtube.com/watch?v=xcNWU0B9h9E",
+          "track": "CodeVita"
+        },
+        {
+          "id": "cv-nqt-2",
+          "title": "Crack Infosys in 20 Days — Complete Plan",
+          "topic": "Placement Strategy",
+          "url": "https://www.youtube.com/watch?v=FIO31tYA8hU",
+          "track": "CodeVita"
+        }
+      ]
+    },
+    {
+      "id": "afcat-english",
+      "title": "AFCAT English Language Mastery",
+      "track": "AFCAT",
+      "description": "Root words, high-frequency vocabulary, and preposition rules for the 30-question English section.",
+      "items": [
+        {
+          "id": "afcat-eng-b1",
+          "title": "Root Words & 300 High-Frequency AFCAT Vocab List",
+          "topic": "Vocabulary",
+          "url": "",
+          "track": "AFCAT"
+        },
+        {
+          "id": "afcat-eng-b2",
+          "title": "Fixed Prepositions & Common Confusing Words Cheat Sheet",
+          "topic": "Grammar Rules",
+          "url": "",
+          "track": "AFCAT"
+        },
+        {
+          "id": "afcat-eng-b3",
+          "title": "Classical Idioms & Phrases with Defence Themes",
+          "topic": "Idioms",
+          "url": "",
+          "track": "AFCAT"
+        },
+        {
+          "id": "afcat-eng-b4",
+          "title": "One Word Substitution Master Capsule (250 High Yield)",
+          "topic": "OWS",
+          "url": "",
+          "track": "AFCAT"
+        }
+      ]
+    },
+    {
+      "id": "afcat-ca",
+      "title": "AFCAT Current Affairs & Defence Knowledge",
+      "track": "AFCAT",
+      "description": "Indian Air Force commands, weapon systems, missile arsenals, and military exercises.",
+      "items": [
+        {
+          "id": "afcat-ca-b1",
+          "title": "IAF Commands, Air Bases, Ranks & Officer Equivalent Structure",
+          "topic": "Defence Knowledge",
+          "url": "",
+          "track": "AFCAT"
+        },
+        {
+          "id": "afcat-ca-b2",
+          "title": "Joint Military Exercises 2026 (Garuda, Tarang Shakti, Pitch Black)",
+          "topic": "Defence Exercises",
+          "url": "",
+          "track": "AFCAT"
+        },
+        {
+          "id": "afcat-ca-b3",
+          "title": "Missiles & Aircraft of IAF: Rafale, Tejas MK1A, S-400, BrahMos",
+          "topic": "Military Hardware",
+          "url": "",
+          "track": "AFCAT"
+        },
+        {
+          "id": "afcat-ca-b4",
+          "title": "Major Sports Honors, Grand Slams & National Awards 2026",
+          "topic": "Static GK & Sports",
+          "url": "",
+          "track": "AFCAT"
+        }
+      ]
+    },
+    {
+      "id": "afcat-maths",
+      "title": "AFCAT Maths Shortcuts & Formula Sheets",
+      "track": "AFCAT",
+      "description": "Speed techniques, fraction-percentage tables, and two-line shortcuts for numerical ability.",
+      "items": [
+        {
+          "id": "afcat-math-b1",
+          "title": "Fraction to Percentage Speed Matrix (1/1 to 1/20 Recall)",
+          "topic": "Speed Maths",
+          "url": "",
+          "track": "AFCAT"
+        },
+        {
+          "id": "afcat-math-b2",
+          "title": "Relative Speed, Trains & Upstream/Downstream 2-Step Formulas",
+          "topic": "Time & Distance",
+          "url": "",
+          "track": "AFCAT"
+        },
+        {
+          "id": "afcat-math-b3",
+          "title": "SI vs CI 2-Year & 3-Year Difference Direct Formulas",
+          "topic": "Compound Interest",
+          "url": "",
+          "track": "AFCAT"
+        },
+        {
+          "id": "afcat-math-b4",
+          "title": "Alligation & Weighted Average Shortcut Rules",
+          "topic": "Mixtures",
+          "url": "",
+          "track": "AFCAT"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+/**
+ * ====================================================================
+ * TOKENS.CSS — Design System Tokens & Color Variables
+ * Theme: AFCAT (Sky Blue) + TCS CodeVita (Emerald) on Navy/Slate Base
+ * ====================================================================
+ */
+
+:root {
+  /* Fonts */
+  --font-ui: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-num: "JetBrains Mono", Consolas, Monaco, "Courier New", monospace;
+
+  /* Typography Scale */
+  --text-2xs: 0.6875rem; /* 11px */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.8438rem;  /* 13.5px */
+  --text-base: 0.9375rem;/* 15px */
+  --text-md: 1.0625rem;  /* 17px */
+  --text-lg: 1.25rem;    /* 20px */
+  --text-xl: 1.5rem;     /* 24px */
+  --text-2xl: 1.875rem;  /* 30px */
+  --text-3xl: 2.25rem;   /* 36px */
+
+  /* Line Heights */
+  --lh-tight: 1.15;
+  --lh-snug: 1.35;
+  --lh-normal: 1.6;
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+
+  /* Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+
+  /* Layout Max-Widths */
+  --max-w-content: 1140px;
+  --max-w-narrow: 760px;
+  --header-height: 60px;
+
+  /* Safe Area Insets (iOS) */
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+}
+
+/* ====================================================================
+   DARK THEME (Default & Preferred for Tactical Focus)
+   ==================================================================== */
+:root,
+:root[data-theme="dark"] {
+  /* Surfaces & Bases */
+  --bg: #0b1120;
+  --bg-alt: #0f172a;
+  --card: #162033;
+  --card-elevated: #1e2942;
+  --card-hover: #22324f;
+
+  /* Text & Ink */
+  --ink: #f8fafc;
+  --ink-secondary: #cbd5e1;
+  --ink-muted: #94a3b8;
+  --ink-faint: #64748b;
+  --ink-inverted: #0b1120;
+
+  /* Borders & Dividers */
+  --line: #1e293b;
+  --line-strong: #334155;
+  --line-hover: #475569;
+
+  /* Track 1: AFCAT (Sky Blue) */
+  --afcat: #38bdf8;
+  --afcat-deep: #0284c7;
+  --afcat-bg: rgba(56, 189, 248, 0.12);
+  --afcat-border: rgba(56, 189, 248, 0.35);
+  --afcat-glow: rgba(56, 189, 248, 0.2);
+
+  /* Track 2: TCS CodeVita (Emerald) */
+  --cv: #10b981;
+  --cv-deep: #059669;
+  --cv-bg: rgba(16, 185, 129, 0.12);
+  --cv-border: rgba(16, 185, 129, 0.35);
+  --cv-glow: rgba(16, 185, 129, 0.2);
+
+  /* Accent & Highlights (Amber) */
+  --amber: #f59e0b;
+  --amber-deep: #d97706;
+  --amber-bg: rgba(245, 158, 11, 0.12);
+  --amber-border: rgba(245, 158, 11, 0.35);
+  --amber-glow: rgba(245, 158, 11, 0.25);
+
+  /* Functional Utilities */
+  --danger: #ef4444;
+  --danger-bg: rgba(239, 68, 68, 0.12);
+  --purple: #a855f7;
+  --purple-bg: rgba(168, 85, 247, 0.12);
+  --link: #38bdf8;
+
+  /* Item Type Tags */
+  --tag-pyq: #fb923c;
+  --tag-pyq-bg: rgba(251, 146, 60, 0.14);
+  --tag-off: #c084fc;
+  --tag-off-bg: rgba(192, 132, 252, 0.14);
+  --tag-lc: #fbbf24;
+  --tag-lc-bg: rgba(251, 191, 36, 0.14);
+  --tag-other: #38bdf8;
+  --tag-other-bg: rgba(56, 189, 248, 0.14);
+  --tag-mock: #f43f5e;
+  --tag-mock-bg: rgba(244, 63, 94, 0.14);
+  --tag-stretch: #94a3b8;
+  --tag-stretch-bg: rgba(148, 163, 184, 0.1);
+  --tag-rest: #34d399;
+  --tag-rest-bg: rgba(52, 211, 153, 0.14);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.37);
+
+  /* Topbar frosted background */
+  --topbar-bg: rgba(11, 17, 32, 0.85);
+  --topbar-border: rgba(30, 41, 59, 0.8);
+}
+
+/* ====================================================================
+   LIGHT THEME
+   ==================================================================== */
+:root[data-theme="light"] {
+  /* Surfaces & Bases */
+  --bg: #f8fafc;
+  --bg-alt: #f1f5f9;
+  --card: #ffffff;
+  --card-elevated: #ffffff;
+  --card-hover: #f8fafc;
+
+  /* Text & Ink */
+  --ink: #0f172a;
+  --ink-secondary: #334155;
+  --ink-muted: #64748b;
+  --ink-faint: #94a3b8;
+  --ink-inverted: #f8fafc;
+
+  /* Borders & Dividers */
+  --line: #e2e8f0;
+  --line-strong: #cbd5e1;
+  --line-hover: #94a3b8;
+
+  /* Track 1: AFCAT (Sky Blue - WCAG AA compliant >= 5.9:1 on white) */
+  --afcat: #0369a1;
+  --afcat-deep: #0284c7;
+  --afcat-bg: #e0f2fe;
+  --afcat-border: #bae6fd;
+  --afcat-glow: rgba(3, 105, 161, 0.15);
+
+  /* Track 2: TCS CodeVita (Emerald - WCAG AA compliant >= 5.4:1 on white) */
+  --cv: #047857;
+  --cv-deep: #059669;
+  --cv-bg: #d1fae5;
+  --cv-border: #a7f3d0;
+  --cv-glow: rgba(4, 120, 87, 0.15);
+
+  /* Accent & Highlights (Amber - WCAG AA compliant >= 5.0:1 on white) */
+  --amber: #b45309;
+  --amber-deep: #92400e;
+  --amber-bg: #fef3c7;
+  --amber-border: #fde68a;
+  --amber-glow: rgba(180, 83, 9, 0.18);
+
+  /* Functional Utilities */
+  --danger: #dc2626;
+  --danger-bg: #fee2e2;
+  --purple: #9333ea;
+  --purple-bg: #f3e8ff;
+  --link: #0369a1;
+
+  /* Item Type Tags */
+  --tag-pyq: #c2410c;
+  --tag-pyq-bg: #ffedd5;
+  --tag-off: #7e22ce;
+  --tag-off-bg: #f3e8ff;
+  --tag-lc: #b45309;
+  --tag-lc-bg: #fef3c7;
+  --tag-other: #0369a1;
+  --tag-other-bg: #e0f2fe;
+  --tag-mock: #be123c;
+  --tag-mock-bg: #ffe4e6;
+  --tag-stretch: #64748b;
+  --tag-stretch-bg: #f1f5f9;
+  --tag-rest: #047857;
+  --tag-rest-bg: #d1fae5;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 8px 24px rgba(15, 23, 42, 0.12);
+  --shadow-glass: 0 8px 32px rgba(15, 23, 42, 0.06);
+
+  /* Topbar frosted background */
+  --topbar-bg: rgba(248, 250, 252, 0.88);
+  --topbar-border: rgba(226, 232, 240, 0.8);
+}
+

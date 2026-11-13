@@ -1,0 +1,2889 @@
+{
+  "_how_to_fill": "One object per site Day 1..56. items: {id, type: video|pyq|official|leetcode|other|mock|stretch, title, url, topic, level}. Sourced from the CodeVita 8-Week Plan (Padho with Pratyush). Original links preserved for attribution. Descriptive text/notes excluded.",
+  "days": [
+    {
+      "day": 1,
+      "items": [
+        {
+          "id": "d1-v1",
+          "type": "video",
+          "title": "The Best Way To Learn DSA in 2026 | DSA Patterns",
+          "url": "https://www.youtube.com/watch?v=DY649jWqidM",
+          "topic": "Register, Pick a Language, Build Your Template",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d1-v2",
+          "type": "video",
+          "title": "All Your DSA Doubts Answered in 10 Minutes — Best Language",
+          "url": "https://www.youtube.com/watch?v=AS7-JGjeL-U",
+          "topic": "Register, Pick a Language, Build Your Template",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d1-v3",
+          "type": "video",
+          "title": "DSA Patterns Roadmap (Beginner to Advanced)",
+          "url": "https://www.youtube.com/watch?v=S8tpzqrwnHk",
+          "topic": "Register, Pick a Language, Build Your Template",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d1-p1",
+          "type": "leetcode",
+          "title": "LC 1480 · Running Sum of 1d Array",
+          "url": "https://leetcode.com/problems/running-sum-of-1d-array/",
+          "topic": "Register, Pick a Language, Build Your Template",
+          "level": "Easy"
+        },
+        {
+          "id": "d1-p2",
+          "type": "leetcode",
+          "title": "LC 9 · Palindrome Number",
+          "url": "https://leetcode.com/problems/palindrome-number/",
+          "topic": "Register, Pick a Language, Build Your Template",
+          "level": "Easy"
+        },
+        {
+          "id": "d1-p3",
+          "type": "pyq",
+          "title": "String Pair",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=String%20Pair",
+          "topic": "Strings",
+          "level": "Easy"
+        },
+        {
+          "id": "d1-p4",
+          "type": "pyq",
+          "title": "Bank Compare",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=Bank%20Compare",
+          "topic": "Implementation / Math",
+          "level": "Easy"
+        },
+        {
+          "id": "d1-s1",
+          "type": "stretch",
+          "title": "DSA Basics Day 1 | C++ / Java / Python",
+          "url": "https://www.youtube.com/watch?v=mjuMIHHbkT8",
+          "topic": "Register, Pick a Language, Build Your Template",
+          "level": "Optional"
+        },
+        {
+          "id": "d1-s2",
+          "type": "stretch",
+          "title": "DSA Basics Day 2 | If-else, Loops",
+          "url": "https://www.youtube.com/watch?v=1bXdrfP5vwA",
+          "topic": "Register, Pick a Language, Build Your Template",
+          "level": "Optional"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "items": [
+        {
+          "id": "d2-v1",
+          "type": "video",
+          "title": "Master Time Complexity in Just 30 Minutes (DSA Patterns Ep 6)",
+          "url": "https://www.youtube.com/watch?v=oFwHwCkSoGw",
+          "topic": "Time Complexity & Array Basics",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d2-v2",
+          "type": "video",
+          "title": "If You Start DSA and Can't Move Past Arrays, Watch This!",
+          "url": "https://www.youtube.com/watch?v=ks-aCN8dzv0",
+          "topic": "Time Complexity & Array Basics",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d2-p1",
+          "type": "leetcode",
+          "title": "LC 26 · Remove Duplicates from Sorted Array",
+          "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
+          "topic": "Time Complexity & Array Basics",
+          "level": "Easy"
+        },
+        {
+          "id": "d2-p2",
+          "type": "leetcode",
+          "title": "LC 283 · Move Zeroes",
+          "url": "https://leetcode.com/problems/move-zeroes/",
+          "topic": "Time Complexity & Array Basics",
+          "level": "Easy"
+        },
+        {
+          "id": "d2-p3",
+          "type": "leetcode",
+          "title": "LC 121 · Best Time to Buy and Sell Stock",
+          "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+          "topic": "Time Complexity & Array Basics",
+          "level": "Easy"
+        },
+        {
+          "id": "d2-p4",
+          "type": "leetcode",
+          "title": "LC 189 · Rotate Array",
+          "url": "https://leetcode.com/problems/rotate-array/",
+          "topic": "Time Complexity & Array Basics",
+          "level": "Medium"
+        },
+        {
+          "id": "d2-s1",
+          "type": "stretch",
+          "title": "DSA Basics Day 3 | Functions",
+          "url": "https://www.youtube.com/watch?v=pPOjiA1NEPw",
+          "topic": "Time Complexity & Array Basics",
+          "level": "Optional"
+        },
+        {
+          "id": "d2-s2",
+          "type": "stretch",
+          "title": "DSA Basics Day 4 | Arrays and Linked List",
+          "url": "https://www.youtube.com/watch?v=jk_A6Aue98I",
+          "topic": "Time Complexity & Array Basics",
+          "level": "Optional"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "items": [
+        {
+          "id": "d3-v1",
+          "type": "video",
+          "title": "Master DSA Patterns with 2 Pointers Technique (Ep 3)",
+          "url": "https://www.youtube.com/watch?v=Fu7LD_mIo00",
+          "topic": "Two Pointers I",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d3-v2",
+          "type": "video",
+          "title": "2 Pointer Technique (Ep 4)",
+          "url": "https://www.youtube.com/watch?v=PvyEr3CeKzE",
+          "topic": "Two Pointers I",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d3-v3",
+          "type": "video",
+          "title": "2 Pointer DSA Pattern (Ep 5)",
+          "url": "https://www.youtube.com/watch?v=nPdxCoVHC90",
+          "topic": "Two Pointers I",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d3-p1",
+          "type": "leetcode",
+          "title": "LC 344 · Reverse String",
+          "url": "https://leetcode.com/problems/reverse-string/",
+          "topic": "Two Pointers I",
+          "level": "Easy"
+        },
+        {
+          "id": "d3-p2",
+          "type": "leetcode",
+          "title": "LC 125 · Valid Palindrome",
+          "url": "https://leetcode.com/problems/valid-palindrome/",
+          "topic": "Two Pointers I",
+          "level": "Easy"
+        },
+        {
+          "id": "d3-p3",
+          "type": "leetcode",
+          "title": "LC 977 · Squares of a Sorted Array",
+          "url": "https://leetcode.com/problems/squares-of-a-sorted-array/",
+          "topic": "Two Pointers I",
+          "level": "Easy"
+        },
+        {
+          "id": "d3-p4",
+          "type": "leetcode",
+          "title": "LC 167 · Two Sum II – Input Array Is Sorted",
+          "url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
+          "topic": "Two Pointers I",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "items": [
+        {
+          "id": "d4-v1",
+          "type": "video",
+          "title": "Two Pointers — More Interview Questions (Ep 7)",
+          "url": "https://www.youtube.com/watch?v=rM9EthMlXnw",
+          "topic": "Two Pointers II",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d4-v2",
+          "type": "video",
+          "title": "Two Pointers — Most Important Questions (Ep 8)",
+          "url": "https://www.youtube.com/watch?v=ljJJcYql6Bc",
+          "topic": "Two Pointers II",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d4-v3",
+          "type": "video",
+          "title": "Two Pointers — Complete Revision in One Video (Ep 9)",
+          "url": "https://www.youtube.com/watch?v=n7v0SokbF4I",
+          "topic": "Two Pointers II",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d4-p1",
+          "type": "leetcode",
+          "title": "LC 75 · Sort Colors",
+          "url": "https://leetcode.com/problems/sort-colors/",
+          "topic": "Two Pointers II",
+          "level": "Medium"
+        },
+        {
+          "id": "d4-p2",
+          "type": "leetcode",
+          "title": "LC 11 · Container With Most Water",
+          "url": "https://leetcode.com/problems/container-with-most-water/",
+          "topic": "Two Pointers II",
+          "level": "Medium"
+        },
+        {
+          "id": "d4-p3",
+          "type": "leetcode",
+          "title": "LC 15 · 3Sum",
+          "url": "https://leetcode.com/problems/3sum/",
+          "topic": "Two Pointers II",
+          "level": "Medium"
+        },
+        {
+          "id": "d4-s1",
+          "type": "stretch",
+          "title": "LC 42 · Trapping Rain Water",
+          "url": "https://leetcode.com/problems/trapping-rain-water/",
+          "topic": "Two Pointers II",
+          "level": "Hard"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "items": [
+        {
+          "id": "d5-v1",
+          "type": "video",
+          "title": "Prefix Sum Pattern Introduction (Ep 26)",
+          "url": "https://www.youtube.com/watch?v=F86WfZ5RUC8",
+          "topic": "Prefix Sum I",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d5-v2",
+          "type": "video",
+          "title": "Master LeetCode With Prefix Sum Patterns (Ep 27)",
+          "url": "https://www.youtube.com/watch?v=XLtRoHIDGs0",
+          "topic": "Prefix Sum I",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d5-v3",
+          "type": "video",
+          "title": "Prefix Sum Interview Questions (Lecture 28)",
+          "url": "https://www.youtube.com/watch?v=sh0Ng7sjscE",
+          "topic": "Prefix Sum I",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d5-p1",
+          "type": "leetcode",
+          "title": "LC 303 · Range Sum Query – Immutable",
+          "url": "https://leetcode.com/problems/range-sum-query-immutable/",
+          "topic": "Prefix Sum I",
+          "level": "Easy"
+        },
+        {
+          "id": "d5-p2",
+          "type": "leetcode",
+          "title": "LC 724 · Find Pivot Index",
+          "url": "https://leetcode.com/problems/find-pivot-index/",
+          "topic": "Prefix Sum I",
+          "level": "Easy"
+        },
+        {
+          "id": "d5-p3",
+          "type": "leetcode",
+          "title": "LC 560 · Subarray Sum Equals K",
+          "url": "https://leetcode.com/problems/subarray-sum-equals-k/",
+          "topic": "Prefix Sum I",
+          "level": "Medium"
+        },
+        {
+          "id": "d5-p4",
+          "type": "pyq",
+          "title": "Counting Rock Sample",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=Counting%20Rock%20Sample",
+          "topic": "Range counting",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "items": [
+        {
+          "id": "d6-m1",
+          "type": "mock",
+          "title": "Codeforces Div. 4 — Virtual Contest",
+          "url": "https://codeforces.com/contests",
+          "topic": "Contest Simulation",
+          "level": "Easy–Medium"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "items": [
+        {
+          "id": "d7-v1",
+          "type": "video",
+          "title": "DSA Bhool Jaate Ho? How to Revise DSA in 10 Minutes",
+          "url": "https://www.youtube.com/watch?v=TH9hWtklbNk",
+          "topic": "Week 1",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d7-s1",
+          "type": "stretch",
+          "title": "If You Are In A Tier 3 College, Watch This!",
+          "url": "https://www.youtube.com/watch?v=Y0LnY9ENVbg",
+          "topic": "Week 1",
+          "level": "Optional"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "items": [
+        {
+          "id": "d8-v1",
+          "type": "video",
+          "title": "The ABSOLUTE BEST Prefix Sum Pattern (Hard) — Lecture 29",
+          "url": "https://www.youtube.com/watch?v=EYpv5sypVdE",
+          "topic": "Harder Questions & 2D Prefix",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d8-v2",
+          "type": "video",
+          "title": "Master Prefix Sum Pattern in 10 Minutes (Lecture 30)",
+          "url": "https://www.youtube.com/watch?v=oZnLzJCOdPA",
+          "topic": "Harder Questions & 2D Prefix",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d8-p1",
+          "type": "leetcode",
+          "title": "LC 238 · Product of Array Except Self",
+          "url": "https://leetcode.com/problems/product-of-array-except-self/",
+          "topic": "Harder Questions & 2D Prefix",
+          "level": "Medium"
+        },
+        {
+          "id": "d8-p2",
+          "type": "leetcode",
+          "title": "LC 525 · Contiguous Array",
+          "url": "https://leetcode.com/problems/contiguous-array/",
+          "topic": "Harder Questions & 2D Prefix",
+          "level": "Medium"
+        },
+        {
+          "id": "d8-p3",
+          "type": "leetcode",
+          "title": "LC 974 · Subarray Sums Divisible by K",
+          "url": "https://leetcode.com/problems/subarray-sums-divisible-by-k/",
+          "topic": "Harder Questions & 2D Prefix",
+          "level": "Medium"
+        },
+        {
+          "id": "d8-p4",
+          "type": "leetcode",
+          "title": "LC 304 · Range Sum Query 2D – Immutable",
+          "url": "https://leetcode.com/problems/range-sum-query-2d-immutable/",
+          "topic": "Harder Questions & 2D Prefix",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "items": [
+        {
+          "id": "d9-v1",
+          "type": "video",
+          "title": "The Only Video You Need To Master HASHMAPS",
+          "url": "https://www.youtube.com/watch?v=9a4A6CbrLCo",
+          "topic": "Hashing (HashMap / HashSet)",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d9-v2",
+          "type": "video",
+          "title": "4 Questions to Master HASHMAPS",
+          "url": "https://www.youtube.com/watch?v=ICggOtnixBk",
+          "topic": "Hashing (HashMap / HashSet)",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d9-p1",
+          "type": "leetcode",
+          "title": "LC 1 · Two Sum",
+          "url": "https://leetcode.com/problems/two-sum/",
+          "topic": "Hashing (HashMap / HashSet)",
+          "level": "Easy"
+        },
+        {
+          "id": "d9-p2",
+          "type": "leetcode",
+          "title": "LC 242 · Valid Anagram",
+          "url": "https://leetcode.com/problems/valid-anagram/",
+          "topic": "Hashing (HashMap / HashSet)",
+          "level": "Easy"
+        },
+        {
+          "id": "d9-p3",
+          "type": "leetcode",
+          "title": "LC 49 · Group Anagrams",
+          "url": "https://leetcode.com/problems/group-anagrams/",
+          "topic": "Hashing (HashMap / HashSet)",
+          "level": "Medium"
+        },
+        {
+          "id": "d9-p4",
+          "type": "leetcode",
+          "title": "LC 128 · Longest Consecutive Sequence",
+          "url": "https://leetcode.com/problems/longest-consecutive-sequence/",
+          "topic": "Hashing (HashMap / HashSet)",
+          "level": "Medium"
+        },
+        {
+          "id": "d9-p5",
+          "type": "pyq",
+          "title": "Count Pairs",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=Count%20Pairs",
+          "topic": "Hashing / Sorting",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "items": [
+        {
+          "id": "d10-v1",
+          "type": "video",
+          "title": "Introduction to Sliding Window (Ep 10)",
+          "url": "https://www.youtube.com/watch?v=V6pRTnOZ7Mc",
+          "topic": "Sliding Window I",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d10-v2",
+          "type": "video",
+          "title": "Sliding Window — Easy & Medium Questions (Ep 11)",
+          "url": "https://www.youtube.com/watch?v=DL8LSXUsfWE",
+          "topic": "Sliding Window I",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d10-v3",
+          "type": "video",
+          "title": "Sliding Window — Core Interview Questions (Ep 12)",
+          "url": "https://www.youtube.com/watch?v=v4pIgiBQMh8",
+          "topic": "Sliding Window I",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d10-p1",
+          "type": "leetcode",
+          "title": "LC 643 · Maximum Average Subarray I",
+          "url": "https://leetcode.com/problems/maximum-average-subarray-i/",
+          "topic": "Sliding Window I",
+          "level": "Easy"
+        },
+        {
+          "id": "d10-p2",
+          "type": "leetcode",
+          "title": "LC 1456 · Max Vowels in a Substring",
+          "url": "https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/",
+          "topic": "Sliding Window I",
+          "level": "Medium"
+        },
+        {
+          "id": "d10-p3",
+          "type": "leetcode",
+          "title": "LC 209 · Minimum Size Subarray Sum",
+          "url": "https://leetcode.com/problems/minimum-size-subarray-sum/",
+          "topic": "Sliding Window I",
+          "level": "Medium"
+        },
+        {
+          "id": "d10-p4",
+          "type": "leetcode",
+          "title": "LC 3 · Longest Substring Without Repeating Characters",
+          "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+          "topic": "Sliding Window I",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "items": [
+        {
+          "id": "d11-v1",
+          "type": "video",
+          "title": "Sliding Window — Important Questions (Ep 13)",
+          "url": "https://www.youtube.com/watch?v=2HZ12B2ZPAQ",
+          "topic": "Sliding Window II",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d11-v2",
+          "type": "video",
+          "title": "Sliding Window Revision (Part 1)",
+          "url": "https://www.youtube.com/watch?v=lyZp-49pdzQ",
+          "topic": "Sliding Window II",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d11-v3",
+          "type": "video",
+          "title": "Sliding Window Revision (Part 2)",
+          "url": "https://www.youtube.com/watch?v=IR3oL6ltbJ8",
+          "topic": "Sliding Window II",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d11-v4",
+          "type": "video",
+          "title": "Sliding Window — Amazon Interview Questions (Ep 16)",
+          "url": "https://www.youtube.com/watch?v=9wc8HZH_sh4",
+          "topic": "Sliding Window II",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d11-p1",
+          "type": "leetcode",
+          "title": "LC 904 · Fruit Into Baskets",
+          "url": "https://leetcode.com/problems/fruit-into-baskets/",
+          "topic": "Sliding Window II",
+          "level": "Medium"
+        },
+        {
+          "id": "d11-p2",
+          "type": "leetcode",
+          "title": "LC 424 · Longest Repeating Character Replacement",
+          "url": "https://leetcode.com/problems/longest-repeating-character-replacement/",
+          "topic": "Sliding Window II",
+          "level": "Medium"
+        },
+        {
+          "id": "d11-p3",
+          "type": "leetcode",
+          "title": "LC 567 · Permutation in String",
+          "url": "https://leetcode.com/problems/permutation-in-string/",
+          "topic": "Sliding Window II",
+          "level": "Medium"
+        },
+        {
+          "id": "d11-s1",
+          "type": "stretch",
+          "title": "LC 76 · Minimum Window Substring",
+          "url": "https://leetcode.com/problems/minimum-window-substring/",
+          "topic": "Sliding Window II",
+          "level": "Hard"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "items": [
+        {
+          "id": "d12-v1",
+          "type": "video",
+          "title": "Kadane's Algorithm Pattern — Intuition (Ep 22)",
+          "url": "https://www.youtube.com/watch?v=N8vJ8RyQEes",
+          "topic": "Kadane's Algorithm",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d12-v2",
+          "type": "video",
+          "title": "Kadane's Algorithm — Most Important Questions (Ep 23)",
+          "url": "https://www.youtube.com/watch?v=JUV-Hdtuzsw",
+          "topic": "Kadane's Algorithm",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d12-v3",
+          "type": "video",
+          "title": "Kadane's Algorithm — Quick Revision (Ep 24)",
+          "url": "https://www.youtube.com/watch?v=Bt9rgQgGf64",
+          "topic": "Kadane's Algorithm",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d12-v4",
+          "type": "video",
+          "title": "Kadane With One Deletion — Best Explanation",
+          "url": "https://www.youtube.com/watch?v=jIz4zcFuUU8",
+          "topic": "Kadane's Algorithm",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d12-p1",
+          "type": "leetcode",
+          "title": "LC 53 · Maximum Subarray",
+          "url": "https://leetcode.com/problems/maximum-subarray/",
+          "topic": "Kadane's Algorithm",
+          "level": "Medium"
+        },
+        {
+          "id": "d12-p2",
+          "type": "leetcode",
+          "title": "LC 152 · Maximum Product Subarray",
+          "url": "https://leetcode.com/problems/maximum-product-subarray/",
+          "topic": "Kadane's Algorithm",
+          "level": "Medium"
+        },
+        {
+          "id": "d12-p3",
+          "type": "leetcode",
+          "title": "LC 918 · Maximum Sum Circular Subarray",
+          "url": "https://leetcode.com/problems/maximum-sum-circular-subarray/",
+          "topic": "Kadane's Algorithm",
+          "level": "Medium"
+        },
+        {
+          "id": "d12-s1",
+          "type": "stretch",
+          "title": "LC 1186 · Max Subarray Sum with One Deletion",
+          "url": "https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/",
+          "topic": "Kadane's Algorithm",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 13,
+      "items": [
+        {
+          "id": "d13-m1",
+          "type": "mock",
+          "title": "LeetCode Weekly Contest — Virtual",
+          "url": "https://leetcode.com/contest/",
+          "topic": "Contest Simulation",
+          "level": "Mixed"
+        },
+        {
+          "id": "d13-p1",
+          "type": "pyq",
+          "title": "Civil War",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=Civil%20War",
+          "topic": "Team selection",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 14,
+      "items": []
+    },
+    {
+      "day": 15,
+      "items": [
+        {
+          "id": "d15-p1",
+          "type": "leetcode",
+          "title": "LC 14 · Longest Common Prefix",
+          "url": "https://leetcode.com/problems/longest-common-prefix/",
+          "topic": "Strings & Input Parsing (CodeVita style)",
+          "level": "Easy"
+        },
+        {
+          "id": "d15-p2",
+          "type": "leetcode",
+          "title": "LC 151 · Reverse Words in a String",
+          "url": "https://leetcode.com/problems/reverse-words-in-a-string/",
+          "topic": "Strings & Input Parsing (CodeVita style)",
+          "level": "Medium"
+        },
+        {
+          "id": "d15-p3",
+          "type": "leetcode",
+          "title": "LC 443 · String Compression",
+          "url": "https://leetcode.com/problems/string-compression/",
+          "topic": "Strings & Input Parsing (CodeVita style)",
+          "level": "Medium"
+        },
+        {
+          "id": "d15-p4",
+          "type": "leetcode",
+          "title": "LC 8 · String to Integer (atoi)",
+          "url": "https://leetcode.com/problems/string-to-integer-atoi/",
+          "topic": "Strings & Input Parsing (CodeVita style)",
+          "level": "Medium"
+        },
+        {
+          "id": "d15-p5",
+          "type": "pyq",
+          "title": "Greedy Hostel Owner",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=Greedy%20Hostel%20Owner",
+          "topic": "String encoding",
+          "level": "Medium"
+        },
+        {
+          "id": "d15-s1",
+          "type": "stretch",
+          "title": "LC 6 · Zigzag Conversion",
+          "url": "https://leetcode.com/problems/zigzag-conversion/",
+          "topic": "Strings & Input Parsing (CodeVita style)",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 16,
+      "items": [
+        {
+          "id": "d16-p1",
+          "type": "other",
+          "title": "Sieve of Eratosthenes (cp-algorithms)",
+          "url": "https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html",
+          "topic": "Primes, Sieve, Factors, GCD",
+          "level": "Reading"
+        },
+        {
+          "id": "d16-p2",
+          "type": "other",
+          "title": "Euclid's GCD (cp-algorithms)",
+          "url": "https://cp-algorithms.com/algebra/euclid-algorithm.html",
+          "topic": "Primes, Sieve, Factors, GCD",
+          "level": "Reading"
+        },
+        {
+          "id": "d16-p3",
+          "type": "leetcode",
+          "title": "LC 204 · Count Primes",
+          "url": "https://leetcode.com/problems/count-primes/",
+          "topic": "Primes, Sieve, Factors, GCD",
+          "level": "Medium"
+        },
+        {
+          "id": "d16-p4",
+          "type": "leetcode",
+          "title": "LC 1979 · Find GCD of Array",
+          "url": "https://leetcode.com/problems/find-greatest-common-divisor-of-array/",
+          "topic": "Primes, Sieve, Factors, GCD",
+          "level": "Easy"
+        },
+        {
+          "id": "d16-p5",
+          "type": "leetcode",
+          "title": "LC 1492 · The kth Factor of n",
+          "url": "https://leetcode.com/problems/the-kth-factor-of-n/",
+          "topic": "Primes, Sieve, Factors, GCD",
+          "level": "Medium"
+        },
+        {
+          "id": "d16-p6",
+          "type": "pyq",
+          "title": "kth Largest Factor of N",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=kth%20Largest%20Factor%20of%20N",
+          "topic": "Factors",
+          "level": "Easy"
+        },
+        {
+          "id": "d16-p7",
+          "type": "pyq",
+          "title": "Consecutive Prime Sum",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=Consecutive%20Prime%20Sum",
+          "topic": "Sieve + prefix",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 17,
+      "items": [
+        {
+          "id": "d17-p1",
+          "type": "other",
+          "title": "Binary Exponentiation (cp-algorithms)",
+          "url": "https://cp-algorithms.com/algebra/binary-exp.html",
+          "topic": "Fast Power, Modulo, Counting",
+          "level": "Reading"
+        },
+        {
+          "id": "d17-p2",
+          "type": "other",
+          "title": "Binomial Coefficients (cp-algorithms)",
+          "url": "https://cp-algorithms.com/combinatorics/binomial-coefficients.html",
+          "topic": "Fast Power, Modulo, Counting",
+          "level": "Reading"
+        },
+        {
+          "id": "d17-p3",
+          "type": "leetcode",
+          "title": "LC 50 · Pow(x, n)",
+          "url": "https://leetcode.com/problems/powx-n/",
+          "topic": "Fast Power, Modulo, Counting",
+          "level": "Medium"
+        },
+        {
+          "id": "d17-p4",
+          "type": "leetcode",
+          "title": "LC 172 · Factorial Trailing Zeroes",
+          "url": "https://leetcode.com/problems/factorial-trailing-zeroes/",
+          "topic": "Fast Power, Modulo, Counting",
+          "level": "Medium"
+        },
+        {
+          "id": "d17-p5",
+          "type": "leetcode",
+          "title": "LC 1922 · Count Good Numbers",
+          "url": "https://leetcode.com/problems/count-good-numbers/",
+          "topic": "Fast Power, Modulo, Counting",
+          "level": "Medium"
+        },
+        {
+          "id": "d17-p6",
+          "type": "official",
+          "title": "Square Free Numbers",
+          "url": "https://codevita.tcsapps.com/#:~:text=SAMPLE%20QUESTIONS",
+          "topic": "Number theory",
+          "level": "Medium"
+        },
+        {
+          "id": "d17-s1",
+          "type": "stretch",
+          "title": "Codu and Sum Love",
+          "url": "https://codevita.tcsapps.com/#:~:text=SAMPLE%20QUESTIONS",
+          "topic": "Sequences / Math",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 18,
+      "items": [
+        {
+          "id": "d18-v1",
+          "type": "video",
+          "title": "Master Bit Manipulation in One Video — XOR Tricks",
+          "url": "https://www.youtube.com/watch?v=T56nhL8Y1po",
+          "topic": "Bit Manipulation",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d18-p1",
+          "type": "leetcode",
+          "title": "LC 136 · Single Number",
+          "url": "https://leetcode.com/problems/single-number/",
+          "topic": "Bit Manipulation",
+          "level": "Easy"
+        },
+        {
+          "id": "d18-p2",
+          "type": "leetcode",
+          "title": "LC 191 · Number of 1 Bits",
+          "url": "https://leetcode.com/problems/number-of-1-bits/",
+          "topic": "Bit Manipulation",
+          "level": "Easy"
+        },
+        {
+          "id": "d18-p3",
+          "type": "leetcode",
+          "title": "LC 268 · Missing Number",
+          "url": "https://leetcode.com/problems/missing-number/",
+          "topic": "Bit Manipulation",
+          "level": "Easy"
+        },
+        {
+          "id": "d18-p4",
+          "type": "leetcode",
+          "title": "LC 338 · Counting Bits",
+          "url": "https://leetcode.com/problems/counting-bits/",
+          "topic": "Bit Manipulation",
+          "level": "Easy"
+        },
+        {
+          "id": "d18-p5",
+          "type": "leetcode",
+          "title": "LC 78 · Subsets (try it with a bitmask)",
+          "url": "https://leetcode.com/problems/subsets/",
+          "topic": "Bit Manipulation",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 19,
+      "items": [
+        {
+          "id": "d19-p1",
+          "type": "leetcode",
+          "title": "LC 54 · Spiral Matrix",
+          "url": "https://leetcode.com/problems/spiral-matrix/",
+          "topic": "Simulation, Dates & Matrices",
+          "level": "Medium"
+        },
+        {
+          "id": "d19-p2",
+          "type": "leetcode",
+          "title": "LC 48 · Rotate Image",
+          "url": "https://leetcode.com/problems/rotate-image/",
+          "topic": "Simulation, Dates & Matrices",
+          "level": "Medium"
+        },
+        {
+          "id": "d19-p3",
+          "type": "leetcode",
+          "title": "LC 1360 · Number of Days Between Two Dates",
+          "url": "https://leetcode.com/problems/number-of-days-between-two-dates/",
+          "topic": "Simulation, Dates & Matrices",
+          "level": "Easy"
+        },
+        {
+          "id": "d19-p4",
+          "type": "pyq",
+          "title": "Date Time",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=Date%20Time",
+          "topic": "Simulation",
+          "level": "Medium"
+        },
+        {
+          "id": "d19-p5",
+          "type": "pyq",
+          "title": "Digital Time",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=Digital%20Time",
+          "topic": "Simulation",
+          "level": "Medium"
+        },
+        {
+          "id": "d19-s1",
+          "type": "stretch",
+          "title": "LC 289 · Game of Life",
+          "url": "https://leetcode.com/problems/game-of-life/",
+          "topic": "Simulation, Dates & Matrices",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 20,
+      "items": [
+        {
+          "id": "d20-p1",
+          "type": "pyq",
+          "title": "Elections",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=Elections",
+          "topic": "Queue simulation",
+          "level": "Medium"
+        },
+        {
+          "id": "d20-p2",
+          "type": "pyq",
+          "title": "Constellation",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=Constellation",
+          "topic": "Grid pattern matching",
+          "level": "Medium"
+        },
+        {
+          "id": "d20-p3",
+          "type": "pyq",
+          "title": "Seating Arrangement",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=Seating%20Arrangement",
+          "topic": "Combinatorics / Simulation",
+          "level": "Medium"
+        },
+        {
+          "id": "d20-p4",
+          "type": "leetcode",
+          "title": "LC 36 · Valid Sudoku",
+          "url": "https://leetcode.com/problems/valid-sudoku/",
+          "topic": "CodeVita PYQ Set",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 21,
+      "items": []
+    },
+    {
+      "day": 22,
+      "items": [
+        {
+          "id": "d22-v1",
+          "type": "video",
+          "title": "Master STACK — Introduction",
+          "url": "https://www.youtube.com/watch?v=V0wJuik3WSE",
+          "topic": "Stack Basics",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d22-v2",
+          "type": "video",
+          "title": "Master Stack With This Simple Trick",
+          "url": "https://www.youtube.com/watch?v=K1idN2Rqcmw",
+          "topic": "Stack Basics",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d22-v3",
+          "type": "video",
+          "title": "Most Important STACK Question for FAANG",
+          "url": "https://www.youtube.com/watch?v=YutYOZFt6sQ",
+          "topic": "Stack Basics",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d22-p1",
+          "type": "leetcode",
+          "title": "LC 20 · Valid Parentheses",
+          "url": "https://leetcode.com/problems/valid-parentheses/",
+          "topic": "Stack Basics",
+          "level": "Easy"
+        },
+        {
+          "id": "d22-p2",
+          "type": "leetcode",
+          "title": "LC 1047 · Remove All Adjacent Duplicates In String",
+          "url": "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/",
+          "topic": "Stack Basics",
+          "level": "Easy"
+        },
+        {
+          "id": "d22-p3",
+          "type": "leetcode",
+          "title": "LC 155 · Min Stack",
+          "url": "https://leetcode.com/problems/min-stack/",
+          "topic": "Stack Basics",
+          "level": "Medium"
+        },
+        {
+          "id": "d22-p4",
+          "type": "leetcode",
+          "title": "LC 150 · Evaluate Reverse Polish Notation",
+          "url": "https://leetcode.com/problems/evaluate-reverse-polish-notation/",
+          "topic": "Stack Basics",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 23,
+      "items": [
+        {
+          "id": "d23-v1",
+          "type": "video",
+          "title": "Next Greater Element — Stack & Queue Pattern",
+          "url": "https://www.youtube.com/watch?v=gFqOIPfAEjw",
+          "topic": "Monotonic Stack",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d23-v2",
+          "type": "video",
+          "title": "Master Stack Pattern With 3 Questions",
+          "url": "https://www.youtube.com/watch?v=mMKZmo3iyyM",
+          "topic": "Monotonic Stack",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d23-v3",
+          "type": "video",
+          "title": "Revise Stack in 10 Minutes",
+          "url": "https://www.youtube.com/watch?v=XpHIIQwVxvI",
+          "topic": "Monotonic Stack",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d23-p1",
+          "type": "leetcode",
+          "title": "LC 496 · Next Greater Element I",
+          "url": "https://leetcode.com/problems/next-greater-element-i/",
+          "topic": "Monotonic Stack",
+          "level": "Easy"
+        },
+        {
+          "id": "d23-p2",
+          "type": "leetcode",
+          "title": "LC 739 · Daily Temperatures",
+          "url": "https://leetcode.com/problems/daily-temperatures/",
+          "topic": "Monotonic Stack",
+          "level": "Medium"
+        },
+        {
+          "id": "d23-p3",
+          "type": "leetcode",
+          "title": "LC 901 · Online Stock Span",
+          "url": "https://leetcode.com/problems/online-stock-span/",
+          "topic": "Monotonic Stack",
+          "level": "Medium"
+        },
+        {
+          "id": "d23-s1",
+          "type": "stretch",
+          "title": "LC 84 · Largest Rectangle in Histogram",
+          "url": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+          "topic": "Monotonic Stack",
+          "level": "Hard"
+        }
+      ]
+    },
+    {
+      "day": 24,
+      "items": [
+        {
+          "id": "d24-v1",
+          "type": "video",
+          "title": "Master Merge Intervals (L31)",
+          "url": "https://www.youtube.com/watch?v=aH5aeejuJU8",
+          "topic": "Sorting & Merge Intervals",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d24-v2",
+          "type": "video",
+          "title": "Merge Interval LeetCode (L32)",
+          "url": "https://www.youtube.com/watch?v=yAopxaHmRn0",
+          "topic": "Sorting & Merge Intervals",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d24-v3",
+          "type": "video",
+          "title": "Merge Intervals Master (L33)",
+          "url": "https://www.youtube.com/watch?v=yoh0p_Ag7Q4",
+          "topic": "Sorting & Merge Intervals",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d24-v4",
+          "type": "video",
+          "title": "Merge Overlapping Intervals (L34)",
+          "url": "https://www.youtube.com/watch?v=b-qtjXsGfqo",
+          "topic": "Sorting & Merge Intervals",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d24-p1",
+          "type": "leetcode",
+          "title": "LC 56 · Merge Intervals",
+          "url": "https://leetcode.com/problems/merge-intervals/",
+          "topic": "Sorting & Merge Intervals",
+          "level": "Medium"
+        },
+        {
+          "id": "d24-p2",
+          "type": "leetcode",
+          "title": "LC 57 · Insert Interval",
+          "url": "https://leetcode.com/problems/insert-interval/",
+          "topic": "Sorting & Merge Intervals",
+          "level": "Medium"
+        },
+        {
+          "id": "d24-p3",
+          "type": "leetcode",
+          "title": "LC 435 · Non-overlapping Intervals",
+          "url": "https://leetcode.com/problems/non-overlapping-intervals/",
+          "topic": "Sorting & Merge Intervals",
+          "level": "Medium"
+        },
+        {
+          "id": "d24-p4",
+          "type": "pyq",
+          "title": "Railway Station",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=Railway%20Station",
+          "topic": "Platform scheduling",
+          "level": "Medium"
+        },
+        {
+          "id": "d24-s1",
+          "type": "stretch",
+          "title": "LC 452 · Minimum Arrows to Burst Balloons",
+          "url": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
+          "topic": "Sorting & Merge Intervals",
+          "level": "Medium"
+        },
+        {
+          "id": "d24-s2",
+          "type": "stretch",
+          "title": "Master Merge Interval With Interview Questions (L35)",
+          "url": "https://www.youtube.com/watch?v=o-ozvzzFpKA",
+          "topic": "Sorting & Merge Intervals",
+          "level": "Optional"
+        }
+      ]
+    },
+    {
+      "day": 25,
+      "items": [
+        {
+          "id": "d25-v1",
+          "type": "video",
+          "title": "Believe Me, You DON'T Know Binary Search",
+          "url": "https://www.youtube.com/watch?v=S0E1Ix67qbc",
+          "topic": "Binary Search I",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d25-v2",
+          "type": "video",
+          "title": "The Best Intro To Binary Search",
+          "url": "https://www.youtube.com/watch?v=zEEwwS9_fwA",
+          "topic": "Binary Search I",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d25-v3",
+          "type": "video",
+          "title": "Most Important Binary Search Question — Mountain Peak",
+          "url": "https://www.youtube.com/watch?v=RuBcXYteHj0",
+          "topic": "Binary Search I",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d25-v4",
+          "type": "video",
+          "title": "I Will Make Binary Search Easy For You",
+          "url": "https://www.youtube.com/watch?v=91qkzhmEO48",
+          "topic": "Binary Search I",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d25-p1",
+          "type": "leetcode",
+          "title": "LC 704 · Binary Search",
+          "url": "https://leetcode.com/problems/binary-search/",
+          "topic": "Binary Search I",
+          "level": "Easy"
+        },
+        {
+          "id": "d25-p2",
+          "type": "leetcode",
+          "title": "LC 35 · Search Insert Position",
+          "url": "https://leetcode.com/problems/search-insert-position/",
+          "topic": "Binary Search I",
+          "level": "Easy"
+        },
+        {
+          "id": "d25-p3",
+          "type": "leetcode",
+          "title": "LC 34 · First and Last Position in Sorted Array",
+          "url": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
+          "topic": "Binary Search I",
+          "level": "Medium"
+        },
+        {
+          "id": "d25-p4",
+          "type": "leetcode",
+          "title": "LC 162 · Find Peak Element",
+          "url": "https://leetcode.com/problems/find-peak-element/",
+          "topic": "Binary Search I",
+          "level": "Medium"
+        },
+        {
+          "id": "d25-s1",
+          "type": "stretch",
+          "title": "LC 33 · Search in Rotated Sorted Array",
+          "url": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+          "topic": "Binary Search I",
+          "level": "Medium"
+        },
+        {
+          "id": "d25-s2",
+          "type": "stretch",
+          "title": "Binary Search on 2D Array",
+          "url": "https://www.youtube.com/watch?v=stji3QvQ-OU",
+          "topic": "Binary Search I",
+          "level": "Optional"
+        }
+      ]
+    },
+    {
+      "day": 26,
+      "items": [
+        {
+          "id": "d26-v1",
+          "type": "video",
+          "title": "One Video To Solve All Binary Search Interview Questions",
+          "url": "https://www.youtube.com/watch?v=0Kxg0LPGwFo",
+          "topic": "Binary Search on the Answer",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d26-v2",
+          "type": "video",
+          "title": "Aggressive Cows — Binary Search on Answer",
+          "url": "https://www.youtube.com/watch?v=TF53eWL47ws",
+          "topic": "Binary Search on the Answer",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d26-v3",
+          "type": "video",
+          "title": "Do Not Miss This Amazon Interview Question — Binary Search",
+          "url": "https://www.youtube.com/watch?v=TqxB7zruBm4",
+          "topic": "Binary Search on the Answer",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d26-v4",
+          "type": "video",
+          "title": "I Failed a 40 LPA Interview Because Of This Binary Search Question",
+          "url": "https://www.youtube.com/watch?v=DSGtYGZKEZ4",
+          "topic": "Binary Search on the Answer",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d26-p1",
+          "type": "leetcode",
+          "title": "LC 875 · Koko Eating Bananas",
+          "url": "https://leetcode.com/problems/koko-eating-bananas/",
+          "topic": "Binary Search on the Answer",
+          "level": "Medium"
+        },
+        {
+          "id": "d26-p2",
+          "type": "leetcode",
+          "title": "LC 1011 · Capacity To Ship Packages Within D Days",
+          "url": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/",
+          "topic": "Binary Search on the Answer",
+          "level": "Medium"
+        },
+        {
+          "id": "d26-p3",
+          "type": "other",
+          "title": "SPOJ · Aggressive Cows (AGGRCOW)",
+          "url": "https://www.spoj.com/problems/AGGRCOW/",
+          "topic": "Binary Search on the Answer",
+          "level": "Medium"
+        },
+        {
+          "id": "d26-s1",
+          "type": "stretch",
+          "title": "LC 410 · Split Array Largest Sum",
+          "url": "https://leetcode.com/problems/split-array-largest-sum/",
+          "topic": "Binary Search on the Answer",
+          "level": "Hard"
+        },
+        {
+          "id": "d26-s2",
+          "type": "stretch",
+          "title": "Don't Miss This Binary Search Interview Question",
+          "url": "https://www.youtube.com/watch?v=TIBZsd-Qlrg",
+          "topic": "Binary Search on the Answer",
+          "level": "Optional"
+        }
+      ]
+    },
+    {
+      "day": 27,
+      "items": [
+        {
+          "id": "d27-m1",
+          "type": "mock",
+          "title": "Codeforces Div. 3 — Virtual Contest",
+          "url": "https://codeforces.com/contests",
+          "topic": "Contest Simulation",
+          "level": "Mixed"
+        },
+        {
+          "id": "d27-p1",
+          "type": "official",
+          "title": "Sport Stadium",
+          "url": "https://codevita.tcsapps.com/#:~:text=SAMPLE%20QUESTIONS",
+          "topic": "Optimisation",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 28,
+      "items": []
+    },
+    {
+      "day": 29,
+      "items": [
+        {
+          "id": "d29-v1",
+          "type": "video",
+          "title": "Greedy Algorithms From Zero to Interview-Ready (1 h)",
+          "url": "https://www.youtube.com/watch?v=OaHw9ZZHknw",
+          "topic": "Greedy Algorithms",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d29-p1",
+          "type": "leetcode",
+          "title": "LC 455 · Assign Cookies",
+          "url": "https://leetcode.com/problems/assign-cookies/",
+          "topic": "Greedy Algorithms",
+          "level": "Easy"
+        },
+        {
+          "id": "d29-p2",
+          "type": "leetcode",
+          "title": "LC 860 · Lemonade Change",
+          "url": "https://leetcode.com/problems/lemonade-change/",
+          "topic": "Greedy Algorithms",
+          "level": "Easy"
+        },
+        {
+          "id": "d29-p3",
+          "type": "leetcode",
+          "title": "LC 55 · Jump Game",
+          "url": "https://leetcode.com/problems/jump-game/",
+          "topic": "Greedy Algorithms",
+          "level": "Medium"
+        },
+        {
+          "id": "d29-p4",
+          "type": "leetcode",
+          "title": "LC 45 · Jump Game II",
+          "url": "https://leetcode.com/problems/jump-game-ii/",
+          "topic": "Greedy Algorithms",
+          "level": "Medium"
+        },
+        {
+          "id": "d29-p5",
+          "type": "pyq",
+          "title": "Minimum Gifts",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=Minimum%20Gifts",
+          "topic": "Greedy (like LC 135 Candy)",
+          "level": "Medium"
+        },
+        {
+          "id": "d29-s1",
+          "type": "stretch",
+          "title": "LC 135 · Candy",
+          "url": "https://leetcode.com/problems/candy/",
+          "topic": "Greedy Algorithms",
+          "level": "Hard"
+        }
+      ]
+    },
+    {
+      "day": 30,
+      "items": [
+        {
+          "id": "d30-v1",
+          "type": "video",
+          "title": "Introduction To Heap DSA Pattern",
+          "url": "https://www.youtube.com/watch?v=_1AbrkD8pak",
+          "topic": "Priority Queue & Top-K",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d30-v2",
+          "type": "video",
+          "title": "The Best Video To Learn HEAP Data Structure",
+          "url": "https://www.youtube.com/watch?v=zzu-k85RLGs",
+          "topic": "Priority Queue & Top-K",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d30-v3",
+          "type": "video",
+          "title": "HEAP On Pairs Explained in One Shot",
+          "url": "https://www.youtube.com/watch?v=I1-0ALAJxZI",
+          "topic": "Priority Queue & Top-K",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d30-v4",
+          "type": "video",
+          "title": "Solve Any HEAP Question By This Template — Top K Frequent",
+          "url": "https://www.youtube.com/watch?v=5Net0Dd7NAA",
+          "topic": "Priority Queue & Top-K",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d30-p1",
+          "type": "leetcode",
+          "title": "LC 1046 · Last Stone Weight",
+          "url": "https://leetcode.com/problems/last-stone-weight/",
+          "topic": "Priority Queue & Top-K",
+          "level": "Easy"
+        },
+        {
+          "id": "d30-p2",
+          "type": "leetcode",
+          "title": "LC 215 · Kth Largest Element in an Array",
+          "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+          "topic": "Priority Queue & Top-K",
+          "level": "Medium"
+        },
+        {
+          "id": "d30-p3",
+          "type": "leetcode",
+          "title": "LC 347 · Top K Frequent Elements",
+          "url": "https://leetcode.com/problems/top-k-frequent-elements/",
+          "topic": "Priority Queue & Top-K",
+          "level": "Medium"
+        },
+        {
+          "id": "d30-p4",
+          "type": "leetcode",
+          "title": "LC 973 · K Closest Points to Origin",
+          "url": "https://leetcode.com/problems/k-closest-points-to-origin/",
+          "topic": "Priority Queue & Top-K",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 31,
+      "items": [
+        {
+          "id": "d31-v1",
+          "type": "video",
+          "title": "5 Step Template To Solve any HEAP Problem",
+          "url": "https://www.youtube.com/watch?v=ks8rocoXbJk",
+          "topic": "Heap + Greedy",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d31-v2",
+          "type": "video",
+          "title": "The HEAP Greedy DSA Pattern",
+          "url": "https://www.youtube.com/watch?v=SCe8N_v-8Ls",
+          "topic": "Heap + Greedy",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d31-v3",
+          "type": "video",
+          "title": "Google Interview Question on Heap — IPO",
+          "url": "https://www.youtube.com/watch?v=DYBWbmhisiM",
+          "topic": "Heap + Greedy",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d31-v4",
+          "type": "video",
+          "title": "Merge K Sorted Lists — Heap Pattern",
+          "url": "https://www.youtube.com/watch?v=55aenUfSIhQ",
+          "topic": "Heap + Greedy",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d31-p1",
+          "type": "leetcode",
+          "title": "LC 1962 · Remove Stones to Minimize the Total",
+          "url": "https://leetcode.com/problems/remove-stones-to-minimize-the-total/",
+          "topic": "Heap + Greedy",
+          "level": "Medium"
+        },
+        {
+          "id": "d31-p2",
+          "type": "leetcode",
+          "title": "LC 621 · Task Scheduler",
+          "url": "https://leetcode.com/problems/task-scheduler/",
+          "topic": "Heap + Greedy",
+          "level": "Medium"
+        },
+        {
+          "id": "d31-p3",
+          "type": "pyq",
+          "title": "Minimize the Sum",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=Minimize%20the%20Sum",
+          "topic": "Heap",
+          "level": "Medium"
+        },
+        {
+          "id": "d31-p4",
+          "type": "official",
+          "title": "Sorting Boxes",
+          "url": "https://codevita.tcsapps.com/#:~:text=SAMPLE%20QUESTIONS",
+          "topic": "Sorting / swap cost",
+          "level": "Medium"
+        },
+        {
+          "id": "d31-s1",
+          "type": "stretch",
+          "title": "LC 502 · IPO",
+          "url": "https://leetcode.com/problems/ipo/",
+          "topic": "Heap + Greedy",
+          "level": "Hard"
+        }
+      ]
+    },
+    {
+      "day": 32,
+      "items": [
+        {
+          "id": "d32-v1",
+          "type": "video",
+          "title": "Intro To Recursion DSA Pattern",
+          "url": "https://www.youtube.com/watch?v=HdPb_thlF5s",
+          "topic": "Recursion I",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d32-v2",
+          "type": "video",
+          "title": "Recursion Fixed Template For All Questions",
+          "url": "https://www.youtube.com/watch?v=Qh_U6NYf99o",
+          "topic": "Recursion I",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d32-v3",
+          "type": "video",
+          "title": "Recursion & Backtracking Explained Once and For All",
+          "url": "https://www.youtube.com/watch?v=I081UkZCLlc",
+          "topic": "Recursion I",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d32-v4",
+          "type": "video",
+          "title": "Learn Recursion Like A Pro",
+          "url": "https://www.youtube.com/watch?v=j4wjZqzhMqc",
+          "topic": "Recursion I",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d32-p1",
+          "type": "leetcode",
+          "title": "LC 509 · Fibonacci Number",
+          "url": "https://leetcode.com/problems/fibonacci-number/",
+          "topic": "Recursion I",
+          "level": "Easy"
+        },
+        {
+          "id": "d32-p2",
+          "type": "leetcode",
+          "title": "LC 231 · Power of Two (solve it recursively)",
+          "url": "https://leetcode.com/problems/power-of-two/",
+          "topic": "Recursion I",
+          "level": "Easy"
+        },
+        {
+          "id": "d32-p3",
+          "type": "leetcode",
+          "title": "LC 77 · Combinations",
+          "url": "https://leetcode.com/problems/combinations/",
+          "topic": "Recursion I",
+          "level": "Medium"
+        },
+        {
+          "id": "d32-p4",
+          "type": "leetcode",
+          "title": "LC 46 · Permutations",
+          "url": "https://leetcode.com/problems/permutations/",
+          "topic": "Recursion I",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 33,
+      "items": [
+        {
+          "id": "d33-v1",
+          "type": "video",
+          "title": "Master Recursion in 3 Easy Questions",
+          "url": "https://www.youtube.com/watch?v=-gC-QEdpvO4",
+          "topic": "Backtracking",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d33-v2",
+          "type": "video",
+          "title": "Start Learning Backtracking With This Question",
+          "url": "https://www.youtube.com/watch?v=PqwlS4bcr1Y",
+          "topic": "Backtracking",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d33-v3",
+          "type": "video",
+          "title": "5 Point Template To Crack any Recursion Question",
+          "url": "https://www.youtube.com/watch?v=IKfIT6uFOcs",
+          "topic": "Backtracking",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d33-v4",
+          "type": "video",
+          "title": "Combination Sum Explained Simply",
+          "url": "https://www.youtube.com/watch?v=AflRvP5LFFc",
+          "topic": "Backtracking",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d33-p1",
+          "type": "leetcode",
+          "title": "LC 39 · Combination Sum",
+          "url": "https://leetcode.com/problems/combination-sum/",
+          "topic": "Backtracking",
+          "level": "Medium"
+        },
+        {
+          "id": "d33-p2",
+          "type": "leetcode",
+          "title": "LC 17 · Letter Combinations of a Phone Number",
+          "url": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+          "topic": "Backtracking",
+          "level": "Medium"
+        },
+        {
+          "id": "d33-p3",
+          "type": "leetcode",
+          "title": "LC 79 · Word Search",
+          "url": "https://leetcode.com/problems/word-search/",
+          "topic": "Backtracking",
+          "level": "Medium"
+        },
+        {
+          "id": "d33-p4",
+          "type": "pyq",
+          "title": "Possible Legal Subsets",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=Possible%20Legal%20Subsets",
+          "topic": "Subsets / Ranking",
+          "level": "Hard"
+        },
+        {
+          "id": "d33-s1",
+          "type": "stretch",
+          "title": "LC 51 · N-Queens",
+          "url": "https://leetcode.com/problems/n-queens/",
+          "topic": "Backtracking",
+          "level": "Hard"
+        }
+      ]
+    },
+    {
+      "day": 34,
+      "items": [
+        {
+          "id": "d34-m1",
+          "type": "mock",
+          "title": "Codeforces Div. 3 — Virtual Contest",
+          "url": "https://codeforces.com/contests",
+          "topic": "Contest Simulation",
+          "level": "Mixed"
+        },
+        {
+          "id": "d34-p1",
+          "type": "leetcode",
+          "title": "LC 1376 · Time Needed to Inform All Employees",
+          "url": "https://leetcode.com/problems/time-needed-to-inform-all-employees/",
+          "topic": "MOCK 2 — Full 3-Hour Simulation",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 35,
+      "items": [
+        {
+          "id": "d35-v1",
+          "type": "video",
+          "title": "Revise HEAP With Task Scheduler",
+          "url": "https://www.youtube.com/watch?v=1yax0YQOb8w",
+          "topic": "Week 5",
+          "level": "Tutorial"
+        }
+      ]
+    },
+    {
+      "day": 36,
+      "items": [
+        {
+          "id": "d36-v1",
+          "type": "video",
+          "title": "Starting TREE Series!",
+          "url": "https://www.youtube.com/watch?v=VdujirLGDDE",
+          "topic": "Traversals",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d36-v2",
+          "type": "video",
+          "title": "Tree Traversals: Preorder, Inorder, Postorder",
+          "url": "https://www.youtube.com/watch?v=ZvYJT_QwnEw",
+          "topic": "Traversals",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d36-v3",
+          "type": "video",
+          "title": "Level Order Traversal — Intuition & Template",
+          "url": "https://www.youtube.com/watch?v=-g6h0Ok1Buk",
+          "topic": "Traversals",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d36-v4",
+          "type": "video",
+          "title": "One Pattern To Solve Any Tree Question",
+          "url": "https://www.youtube.com/watch?v=nkWopJZsqXc",
+          "topic": "Traversals",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d36-p1",
+          "type": "leetcode",
+          "title": "LC 144 · Binary Tree Preorder Traversal",
+          "url": "https://leetcode.com/problems/binary-tree-preorder-traversal/",
+          "topic": "Traversals",
+          "level": "Easy"
+        },
+        {
+          "id": "d36-p2",
+          "type": "leetcode",
+          "title": "LC 94 · Binary Tree Inorder Traversal",
+          "url": "https://leetcode.com/problems/binary-tree-inorder-traversal/",
+          "topic": "Traversals",
+          "level": "Easy"
+        },
+        {
+          "id": "d36-p3",
+          "type": "leetcode",
+          "title": "LC 104 · Maximum Depth of Binary Tree",
+          "url": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+          "topic": "Traversals",
+          "level": "Easy"
+        },
+        {
+          "id": "d36-p4",
+          "type": "leetcode",
+          "title": "LC 102 · Binary Tree Level Order Traversal",
+          "url": "https://leetcode.com/problems/binary-tree-level-order-traversal/",
+          "topic": "Traversals",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 37,
+      "items": [
+        {
+          "id": "d37-v1",
+          "type": "video",
+          "title": "Check for Symmetrical Binary Trees (Ep 05)",
+          "url": "https://www.youtube.com/watch?v=dXJdiFMLdZQ",
+          "topic": "Height, Paths & LCA",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d37-v2",
+          "type": "video",
+          "title": "3 TREE HEIGHT Problems",
+          "url": "https://www.youtube.com/watch?v=yj70M7NwVYE",
+          "topic": "Height, Paths & LCA",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d37-v3",
+          "type": "video",
+          "title": "LCA in Binary Tree",
+          "url": "https://www.youtube.com/watch?v=_UoIHF3KUpE",
+          "topic": "Height, Paths & LCA",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d37-v4",
+          "type": "video",
+          "title": "Diameter of Binary Tree | Check Complete Binary Tree",
+          "url": "https://www.youtube.com/watch?v=_V7J7exlyzk",
+          "topic": "Height, Paths & LCA",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d37-v5",
+          "type": "video",
+          "title": "Path Sum Problem in 5 Minutes",
+          "url": "https://www.youtube.com/watch?v=Sat-0sqezpM",
+          "topic": "Height, Paths & LCA",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d37-p1",
+          "type": "leetcode",
+          "title": "LC 101 · Symmetric Tree",
+          "url": "https://leetcode.com/problems/symmetric-tree/",
+          "topic": "Height, Paths & LCA",
+          "level": "Easy"
+        },
+        {
+          "id": "d37-p2",
+          "type": "leetcode",
+          "title": "LC 110 · Balanced Binary Tree",
+          "url": "https://leetcode.com/problems/balanced-binary-tree/",
+          "topic": "Height, Paths & LCA",
+          "level": "Easy"
+        },
+        {
+          "id": "d37-p3",
+          "type": "leetcode",
+          "title": "LC 543 · Diameter of Binary Tree",
+          "url": "https://leetcode.com/problems/diameter-of-binary-tree/",
+          "topic": "Height, Paths & LCA",
+          "level": "Easy"
+        },
+        {
+          "id": "d37-p4",
+          "type": "leetcode",
+          "title": "LC 112 · Path Sum",
+          "url": "https://leetcode.com/problems/path-sum/",
+          "topic": "Height, Paths & LCA",
+          "level": "Easy"
+        },
+        {
+          "id": "d37-p5",
+          "type": "leetcode",
+          "title": "LC 236 · LCA of a Binary Tree",
+          "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",
+          "topic": "Height, Paths & LCA",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 38,
+      "items": [
+        {
+          "id": "d38-v1",
+          "type": "video",
+          "title": "Introduction to Binary Search Tree",
+          "url": "https://www.youtube.com/watch?v=CDo0V5Jbb2o",
+          "topic": "Binary Search Trees & Tree Construction",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d38-v2",
+          "type": "video",
+          "title": "LCA in Binary Search Tree",
+          "url": "https://www.youtube.com/watch?v=QopDohCvJVA",
+          "topic": "Binary Search Trees & Tree Construction",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d38-v3",
+          "type": "video",
+          "title": "Two Sum in Binary Search Tree",
+          "url": "https://www.youtube.com/watch?v=Zr2z8DD6TuQ",
+          "topic": "Binary Search Trees & Tree Construction",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d38-v4",
+          "type": "video",
+          "title": "The BST Validation Problem Everyone Gets Wrong",
+          "url": "https://www.youtube.com/watch?v=5PrzZfhk1OQ",
+          "topic": "Binary Search Trees & Tree Construction",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d38-v5",
+          "type": "video",
+          "title": "Construct a Binary Tree from Preorder & Inorder",
+          "url": "https://www.youtube.com/watch?v=14NH9aD7XeY",
+          "topic": "Binary Search Trees & Tree Construction",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d38-p1",
+          "type": "leetcode",
+          "title": "LC 700 · Search in a Binary Search Tree",
+          "url": "https://leetcode.com/problems/search-in-a-binary-search-tree/",
+          "topic": "Binary Search Trees & Tree Construction",
+          "level": "Easy"
+        },
+        {
+          "id": "d38-p2",
+          "type": "leetcode",
+          "title": "LC 235 · LCA of a BST",
+          "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
+          "topic": "Binary Search Trees & Tree Construction",
+          "level": "Medium"
+        },
+        {
+          "id": "d38-p3",
+          "type": "leetcode",
+          "title": "LC 653 · Two Sum IV – Input is a BST",
+          "url": "https://leetcode.com/problems/two-sum-iv-input-is-a-bst/",
+          "topic": "Binary Search Trees & Tree Construction",
+          "level": "Easy"
+        },
+        {
+          "id": "d38-p4",
+          "type": "leetcode",
+          "title": "LC 98 · Validate Binary Search Tree",
+          "url": "https://leetcode.com/problems/validate-binary-search-tree/",
+          "topic": "Binary Search Trees & Tree Construction",
+          "level": "Medium"
+        },
+        {
+          "id": "d38-s1",
+          "type": "stretch",
+          "title": "LC 105 · Construct Tree from Preorder & Inorder",
+          "url": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
+          "topic": "Binary Search Trees & Tree Construction",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 39,
+      "items": [
+        {
+          "id": "d39-v1",
+          "type": "video",
+          "title": "Intro To Graphs — Master Graphs in 12 Days",
+          "url": "https://www.youtube.com/watch?v=vcx1HWoHK1o",
+          "topic": "Representation, BFS & DFS",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d39-v2",
+          "type": "video",
+          "title": "Graph Representation: Adjacency Matrix vs List",
+          "url": "https://www.youtube.com/watch?v=WR-hWofGb_U",
+          "topic": "Representation, BFS & DFS",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d39-v3",
+          "type": "video",
+          "title": "Master DFS / BFS in Graphs",
+          "url": "https://www.youtube.com/watch?v=O04KAy7cLBs",
+          "topic": "Representation, BFS & DFS",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d39-v4",
+          "type": "video",
+          "title": "Number of Islands — Most Asked Graph Question",
+          "url": "https://www.youtube.com/watch?v=mbSYZzBjs4U",
+          "topic": "Representation, BFS & DFS",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d39-p1",
+          "type": "leetcode",
+          "title": "LC 733 · Flood Fill",
+          "url": "https://leetcode.com/problems/flood-fill/",
+          "topic": "Representation, BFS & DFS",
+          "level": "Easy"
+        },
+        {
+          "id": "d39-p2",
+          "type": "leetcode",
+          "title": "LC 200 · Number of Islands",
+          "url": "https://leetcode.com/problems/number-of-islands/",
+          "topic": "Representation, BFS & DFS",
+          "level": "Medium"
+        },
+        {
+          "id": "d39-p3",
+          "type": "leetcode",
+          "title": "LC 695 · Max Area of Island",
+          "url": "https://leetcode.com/problems/max-area-of-island/",
+          "topic": "Representation, BFS & DFS",
+          "level": "Medium"
+        },
+        {
+          "id": "d39-p4",
+          "type": "leetcode",
+          "title": "LC 547 · Number of Provinces",
+          "url": "https://leetcode.com/problems/number-of-provinces/",
+          "topic": "Representation, BFS & DFS",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 40,
+      "items": [
+        {
+          "id": "d40-v1",
+          "type": "video",
+          "title": "Rotten Oranges: Multi-Source BFS",
+          "url": "https://www.youtube.com/watch?v=4L4MYtxGh9s",
+          "topic": "Multi-Source BFS & Grid Shortest Paths",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d40-v2",
+          "type": "video",
+          "title": "Surrounded Regions",
+          "url": "https://www.youtube.com/watch?v=6ZtNHvGeEu4",
+          "topic": "Multi-Source BFS & Grid Shortest Paths",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d40-v3",
+          "type": "video",
+          "title": "Shortest Path in Unweighted Graph (Ep 10)",
+          "url": "https://www.youtube.com/watch?v=HBI6DQOT_qk",
+          "topic": "Multi-Source BFS & Grid Shortest Paths",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d40-p1",
+          "type": "leetcode",
+          "title": "LC 994 · Rotting Oranges",
+          "url": "https://leetcode.com/problems/rotting-oranges/",
+          "topic": "Multi-Source BFS & Grid Shortest Paths",
+          "level": "Medium"
+        },
+        {
+          "id": "d40-p2",
+          "type": "leetcode",
+          "title": "LC 130 · Surrounded Regions",
+          "url": "https://leetcode.com/problems/surrounded-regions/",
+          "topic": "Multi-Source BFS & Grid Shortest Paths",
+          "level": "Medium"
+        },
+        {
+          "id": "d40-p3",
+          "type": "leetcode",
+          "title": "LC 542 · 01 Matrix",
+          "url": "https://leetcode.com/problems/01-matrix/",
+          "topic": "Multi-Source BFS & Grid Shortest Paths",
+          "level": "Medium"
+        },
+        {
+          "id": "d40-p4",
+          "type": "leetcode",
+          "title": "LC 1091 · Shortest Path in Binary Matrix",
+          "url": "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
+          "topic": "Multi-Source BFS & Grid Shortest Paths",
+          "level": "Medium"
+        },
+        {
+          "id": "d40-p5",
+          "type": "official",
+          "title": "Obstacle Game",
+          "url": "https://codevita.tcsapps.com/#:~:text=SAMPLE%20QUESTIONS",
+          "topic": "Grid paths",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 41,
+      "items": [
+        {
+          "id": "d41-m1",
+          "type": "mock",
+          "title": "CodeChef Starters — past contests",
+          "url": "https://www.codechef.com/contests",
+          "topic": "Contest Simulation",
+          "level": "Mixed"
+        }
+      ]
+    },
+    {
+      "day": 42,
+      "items": [
+        {
+          "id": "d42-s1",
+          "type": "stretch",
+          "title": "Never Fail Any Interview Again — Everything I Learnt After 12+ Interviews",
+          "url": "https://www.youtube.com/watch?v=4RvxPipmBPU",
+          "topic": "Week 6",
+          "level": "Optional"
+        }
+      ]
+    },
+    {
+      "day": 43,
+      "items": [
+        {
+          "id": "d43-v1",
+          "type": "video",
+          "title": "DFS Cycle Detection — Basics to Advanced",
+          "url": "https://www.youtube.com/watch?v=D5jgZ4PnU5o",
+          "topic": "Cycles, Topological Sort, Bipartite",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d43-v2",
+          "type": "video",
+          "title": "Topological Sort Like Never Before",
+          "url": "https://www.youtube.com/watch?v=OSYgRvaWFSI",
+          "topic": "Cycles, Topological Sort, Bipartite",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d43-v3",
+          "type": "video",
+          "title": "Bipartite Graph / Graph Colouring",
+          "url": "https://www.youtube.com/watch?v=LIGrIglQ7TY",
+          "topic": "Cycles, Topological Sort, Bipartite",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d43-p1",
+          "type": "leetcode",
+          "title": "LC 207 · Course Schedule",
+          "url": "https://leetcode.com/problems/course-schedule/",
+          "topic": "Cycles, Topological Sort, Bipartite",
+          "level": "Medium"
+        },
+        {
+          "id": "d43-p2",
+          "type": "leetcode",
+          "title": "LC 210 · Course Schedule II",
+          "url": "https://leetcode.com/problems/course-schedule-ii/",
+          "topic": "Cycles, Topological Sort, Bipartite",
+          "level": "Medium"
+        },
+        {
+          "id": "d43-p3",
+          "type": "leetcode",
+          "title": "LC 785 · Is Graph Bipartite?",
+          "url": "https://leetcode.com/problems/is-graph-bipartite/",
+          "topic": "Cycles, Topological Sort, Bipartite",
+          "level": "Medium"
+        },
+        {
+          "id": "d43-s1",
+          "type": "stretch",
+          "title": "LC 802 · Find Eventual Safe States",
+          "url": "https://leetcode.com/problems/find-eventual-safe-states/",
+          "topic": "Cycles, Topological Sort, Bipartite",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 44,
+      "items": [
+        {
+          "id": "d44-v1",
+          "type": "video",
+          "title": "Dijkstra's Algorithm Explained",
+          "url": "https://www.youtube.com/watch?v=93copdtW4ZQ",
+          "topic": "Dijkstra & Bellman-Ford",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d44-v2",
+          "type": "video",
+          "title": "2 Most Important Dijkstra Questions",
+          "url": "https://www.youtube.com/watch?v=Mb01XUSuLjE",
+          "topic": "Dijkstra & Bellman-Ford",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d44-v3",
+          "type": "video",
+          "title": "Let's Study Bellman-Ford",
+          "url": "https://www.youtube.com/watch?v=A3sZWwalzz4",
+          "topic": "Dijkstra & Bellman-Ford",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d44-v4",
+          "type": "video",
+          "title": "Bellman-Ford: Cheapest Flights Within K Stops",
+          "url": "https://www.youtube.com/watch?v=-AEEZEWOA-E",
+          "topic": "Dijkstra & Bellman-Ford",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d44-p1",
+          "type": "leetcode",
+          "title": "LC 743 · Network Delay Time",
+          "url": "https://leetcode.com/problems/network-delay-time/",
+          "topic": "Dijkstra & Bellman-Ford",
+          "level": "Medium"
+        },
+        {
+          "id": "d44-p2",
+          "type": "leetcode",
+          "title": "LC 1631 · Path With Minimum Effort",
+          "url": "https://leetcode.com/problems/path-with-minimum-effort/",
+          "topic": "Dijkstra & Bellman-Ford",
+          "level": "Medium"
+        },
+        {
+          "id": "d44-p3",
+          "type": "leetcode",
+          "title": "LC 787 · Cheapest Flights Within K Stops",
+          "url": "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
+          "topic": "Dijkstra & Bellman-Ford",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 45,
+      "items": [
+        {
+          "id": "d45-v1",
+          "type": "video",
+          "title": "Prim's Algorithm — Minimum Spanning Tree",
+          "url": "https://www.youtube.com/watch?v=u0SH8wO85m0",
+          "topic": "MST, Union-Find & Bridges",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d45-v2",
+          "type": "video",
+          "title": "Swim in Rising Water (Hard)",
+          "url": "https://www.youtube.com/watch?v=Gq81OeJNTwI",
+          "topic": "MST, Union-Find & Bridges",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d45-v3",
+          "type": "video",
+          "title": "Word Ladder Explained Like a Pro",
+          "url": "https://www.youtube.com/watch?v=HpsjPUwQHfw",
+          "topic": "MST, Union-Find & Bridges",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d45-p1",
+          "type": "other",
+          "title": "Disjoint Set Union (cp-algorithms)",
+          "url": "https://cp-algorithms.com/data_structures/disjoint_set_union.html",
+          "topic": "MST, Union-Find & Bridges",
+          "level": "Reading"
+        },
+        {
+          "id": "d45-p2",
+          "type": "other",
+          "title": "Finding bridges in a graph (cp-algorithms)",
+          "url": "https://cp-algorithms.com/graph/bridge-searching.html",
+          "topic": "MST, Union-Find & Bridges",
+          "level": "Reading"
+        },
+        {
+          "id": "d45-p3",
+          "type": "leetcode",
+          "title": "LC 1584 · Min Cost to Connect All Points",
+          "url": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
+          "topic": "MST, Union-Find & Bridges",
+          "level": "Medium"
+        },
+        {
+          "id": "d45-p4",
+          "type": "leetcode",
+          "title": "LC 684 · Redundant Connection",
+          "url": "https://leetcode.com/problems/redundant-connection/",
+          "topic": "MST, Union-Find & Bridges",
+          "level": "Medium"
+        },
+        {
+          "id": "d45-p5",
+          "type": "pyq",
+          "title": "Critical Planets",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=Critical%20Planets",
+          "topic": "Graph connectivity / bridges",
+          "level": "Hard"
+        },
+        {
+          "id": "d45-s1",
+          "type": "stretch",
+          "title": "LC 778 · Swim in Rising Water",
+          "url": "https://leetcode.com/problems/swim-in-rising-water/",
+          "topic": "MST, Union-Find & Bridges",
+          "level": "Hard"
+        },
+        {
+          "id": "d45-s2",
+          "type": "stretch",
+          "title": "LC 127 · Word Ladder",
+          "url": "https://leetcode.com/problems/word-ladder/",
+          "topic": "MST, Union-Find & Bridges",
+          "level": "Hard"
+        }
+      ]
+    },
+    {
+      "day": 46,
+      "items": [
+        {
+          "id": "d46-v1",
+          "type": "video",
+          "title": "Introduction To Dynamic Programming (Ep 1)",
+          "url": "https://www.youtube.com/watch?v=cmSh2xbyX7g",
+          "topic": "What DP Is + 1D DP",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d46-v2",
+          "type": "video",
+          "title": "When And How To Use DP (Ep 2)",
+          "url": "https://www.youtube.com/watch?v=-CvRpL_iUKo",
+          "topic": "What DP Is + 1D DP",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d46-v3",
+          "type": "video",
+          "title": "Climbing Stairs — 1D DP (Ep 3)",
+          "url": "https://www.youtube.com/watch?v=JLdrJE7udZo",
+          "topic": "What DP Is + 1D DP",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d46-p1",
+          "type": "leetcode",
+          "title": "LC 70 · Climbing Stairs",
+          "url": "https://leetcode.com/problems/climbing-stairs/",
+          "topic": "What DP Is + 1D DP",
+          "level": "Easy"
+        },
+        {
+          "id": "d46-p2",
+          "type": "leetcode",
+          "title": "LC 746 · Min Cost Climbing Stairs",
+          "url": "https://leetcode.com/problems/min-cost-climbing-stairs/",
+          "topic": "What DP Is + 1D DP",
+          "level": "Easy"
+        },
+        {
+          "id": "d46-p3",
+          "type": "leetcode",
+          "title": "LC 1137 · N-th Tribonacci Number",
+          "url": "https://leetcode.com/problems/n-th-tribonacci-number/",
+          "topic": "What DP Is + 1D DP",
+          "level": "Easy"
+        },
+        {
+          "id": "d46-s1",
+          "type": "stretch",
+          "title": "LC 91 · Decode Ways",
+          "url": "https://leetcode.com/problems/decode-ways/",
+          "topic": "What DP Is + 1D DP",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 47,
+      "items": [
+        {
+          "id": "d47-v1",
+          "type": "video",
+          "title": "House Robber (Ep 4)",
+          "url": "https://www.youtube.com/watch?v=FMhXZU-eUNQ",
+          "topic": "House Robber & 0/1 Knapsack",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d47-v2",
+          "type": "video",
+          "title": "0/1 Knapsack (Ep 5)",
+          "url": "https://www.youtube.com/watch?v=Yp1G_KY7-wY",
+          "topic": "House Robber & 0/1 Knapsack",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d47-v3",
+          "type": "video",
+          "title": "Tabulation Like Never Before (Ep 6)",
+          "url": "https://www.youtube.com/watch?v=yEwnsPI_tUY",
+          "topic": "House Robber & 0/1 Knapsack",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d47-p1",
+          "type": "leetcode",
+          "title": "LC 198 · House Robber",
+          "url": "https://leetcode.com/problems/house-robber/",
+          "topic": "House Robber & 0/1 Knapsack",
+          "level": "Medium"
+        },
+        {
+          "id": "d47-p2",
+          "type": "leetcode",
+          "title": "LC 213 · House Robber II",
+          "url": "https://leetcode.com/problems/house-robber-ii/",
+          "topic": "House Robber & 0/1 Knapsack",
+          "level": "Medium"
+        },
+        {
+          "id": "d47-p3",
+          "type": "other",
+          "title": "GFG · 0/1 Knapsack",
+          "url": "https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1",
+          "topic": "House Robber & 0/1 Knapsack",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 48,
+      "items": [
+        {
+          "id": "d48-m1",
+          "type": "mock",
+          "title": "Codeforces Div. 3 — Virtual Contest",
+          "url": "https://codeforces.com/contests",
+          "topic": "Contest Simulation",
+          "level": "Mixed"
+        },
+        {
+          "id": "d48-p1",
+          "type": "pyq",
+          "title": "Prime Time Again",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=Prime%20Time%20Again",
+          "topic": "Primes / Simulation",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 49,
+      "items": []
+    },
+    {
+      "day": 50,
+      "items": [
+        {
+          "id": "d50-v1",
+          "type": "video",
+          "title": "0-1 Knapsack Tabulation (Ep 7)",
+          "url": "https://www.youtube.com/watch?v=LWDYXNN4SHU",
+          "topic": "Subset Sum & Coin Change",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d50-v2",
+          "type": "video",
+          "title": "Subset Sum Equals to Target (Ep 8)",
+          "url": "https://www.youtube.com/watch?v=M0XjVs41H2s",
+          "topic": "Subset Sum & Coin Change",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d50-v3",
+          "type": "video",
+          "title": "3 Problems in 30 Minutes (Ep 9)",
+          "url": "https://www.youtube.com/watch?v=QqDR0Fo9ayM",
+          "topic": "Subset Sum & Coin Change",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d50-p1",
+          "type": "leetcode",
+          "title": "LC 416 · Partition Equal Subset Sum",
+          "url": "https://leetcode.com/problems/partition-equal-subset-sum/",
+          "topic": "Subset Sum & Coin Change",
+          "level": "Medium"
+        },
+        {
+          "id": "d50-p2",
+          "type": "leetcode",
+          "title": "LC 494 · Target Sum",
+          "url": "https://leetcode.com/problems/target-sum/",
+          "topic": "Subset Sum & Coin Change",
+          "level": "Medium"
+        },
+        {
+          "id": "d50-p3",
+          "type": "leetcode",
+          "title": "LC 322 · Coin Change",
+          "url": "https://leetcode.com/problems/coin-change/",
+          "topic": "Subset Sum & Coin Change",
+          "level": "Medium"
+        },
+        {
+          "id": "d50-s1",
+          "type": "stretch",
+          "title": "LC 518 · Coin Change II",
+          "url": "https://leetcode.com/problems/coin-change-ii/",
+          "topic": "Subset Sum & Coin Change",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 51,
+      "items": [
+        {
+          "id": "d51-v1",
+          "type": "video",
+          "title": "Longest Increasing Subsequence Part 1 (Ep 10)",
+          "url": "https://www.youtube.com/watch?v=CdGBURVBMn4",
+          "topic": "LIS & LCS",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d51-v2",
+          "type": "video",
+          "title": "LIS: From Recursion to Tabulation (Ep 11)",
+          "url": "https://www.youtube.com/watch?v=w9qndpVOHks",
+          "topic": "LIS & LCS",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d51-v3",
+          "type": "video",
+          "title": "LCS in 20 Minutes (Ep 12)",
+          "url": "https://www.youtube.com/watch?v=YkM-xfnZ4DY",
+          "topic": "LIS & LCS",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d51-p1",
+          "type": "leetcode",
+          "title": "LC 300 · Longest Increasing Subsequence",
+          "url": "https://leetcode.com/problems/longest-increasing-subsequence/",
+          "topic": "LIS & LCS",
+          "level": "Medium"
+        },
+        {
+          "id": "d51-p2",
+          "type": "leetcode",
+          "title": "LC 1143 · Longest Common Subsequence",
+          "url": "https://leetcode.com/problems/longest-common-subsequence/",
+          "topic": "LIS & LCS",
+          "level": "Medium"
+        },
+        {
+          "id": "d51-p3",
+          "type": "leetcode",
+          "title": "LC 72 · Edit Distance",
+          "url": "https://leetcode.com/problems/edit-distance/",
+          "topic": "LIS & LCS",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 52,
+      "items": [
+        {
+          "id": "d52-v1",
+          "type": "video",
+          "title": "Easiest DP Question Ever! (Ep 14)",
+          "url": "https://www.youtube.com/watch?v=lAdOVqukPCI",
+          "topic": "Grid DP + Full DP Revision",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d52-v2",
+          "type": "video",
+          "title": "Today You Will Know Why I Am The Best DSA Teacher (DP Ep 14)",
+          "url": "https://www.youtube.com/watch?v=6XSrjOmTJio",
+          "topic": "Grid DP + Full DP Revision",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d52-v3",
+          "type": "video",
+          "title": "The HARD Problem Most Teachers Skip (Ep 15)",
+          "url": "https://www.youtube.com/watch?v=wKao8Ttesqk",
+          "topic": "Grid DP + Full DP Revision",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d52-v4",
+          "type": "video",
+          "title": "DP Full Revision and Next Steps (Ep 16)",
+          "url": "https://www.youtube.com/watch?v=dyG4JBKh6tA",
+          "topic": "Grid DP + Full DP Revision",
+          "level": "Tutorial"
+        },
+        {
+          "id": "d52-p1",
+          "type": "leetcode",
+          "title": "LC 62 · Unique Paths",
+          "url": "https://leetcode.com/problems/unique-paths/",
+          "topic": "Grid DP + Full DP Revision",
+          "level": "Medium"
+        },
+        {
+          "id": "d52-p2",
+          "type": "leetcode",
+          "title": "LC 64 · Minimum Path Sum",
+          "url": "https://leetcode.com/problems/minimum-path-sum/",
+          "topic": "Grid DP + Full DP Revision",
+          "level": "Medium"
+        },
+        {
+          "id": "d52-p3",
+          "type": "leetcode",
+          "title": "LC 120 · Triangle",
+          "url": "https://leetcode.com/problems/triangle/",
+          "topic": "Grid DP + Full DP Revision",
+          "level": "Medium"
+        },
+        {
+          "id": "d52-s1",
+          "type": "stretch",
+          "title": "LC 221 · Maximal Square",
+          "url": "https://leetcode.com/problems/maximal-square/",
+          "topic": "Grid DP + Full DP Revision",
+          "level": "Medium"
+        }
+      ]
+    },
+    {
+      "day": 53,
+      "items": [
+        {
+          "id": "d53-p1",
+          "type": "other",
+          "title": "Basic geometry: points, lines, area (cp-algorithms)",
+          "url": "https://cp-algorithms.com/geometry/basic-geometry.html",
+          "topic": "Geometry & String Matching (hard-set prep)",
+          "level": "Reading"
+        },
+        {
+          "id": "d53-p2",
+          "type": "other",
+          "title": "Polygon area — Shoelace formula (cp-algorithms)",
+          "url": "https://cp-algorithms.com/geometry/area-of-simple-polygon.html",
+          "topic": "Geometry & String Matching (hard-set prep)",
+          "level": "Reading"
+        },
+        {
+          "id": "d53-p3",
+          "type": "other",
+          "title": "Prefix function / KMP (cp-algorithms)",
+          "url": "https://cp-algorithms.com/string/prefix-function.html",
+          "topic": "Geometry & String Matching (hard-set prep)",
+          "level": "Reading"
+        },
+        {
+          "id": "d53-p4",
+          "type": "leetcode",
+          "title": "LC 1232 · Check If It Is a Straight Line",
+          "url": "https://leetcode.com/problems/check-if-it-is-a-straight-line/",
+          "topic": "Geometry & String Matching (hard-set prep)",
+          "level": "Easy"
+        },
+        {
+          "id": "d53-p5",
+          "type": "leetcode",
+          "title": "LC 812 · Largest Triangle Area",
+          "url": "https://leetcode.com/problems/largest-triangle-area/",
+          "topic": "Geometry & String Matching (hard-set prep)",
+          "level": "Easy"
+        },
+        {
+          "id": "d53-p6",
+          "type": "leetcode",
+          "title": "LC 28 · Find the Index of the First Occurrence",
+          "url": "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/",
+          "topic": "Geometry & String Matching (hard-set prep)",
+          "level": "Easy"
+        },
+        {
+          "id": "d53-p7",
+          "type": "pyq",
+          "title": "Polygon with Maximum Area",
+          "url": "https://www.lets-code.co.in/previousyearcodingquestion/tcs-codevita-previous-year-coding-questions/#:~:text=Polygon%20with%20Maximum%20Area",
+          "topic": "Geometry",
+          "level": "Hard"
+        },
+        {
+          "id": "d53-s1",
+          "type": "stretch",
+          "title": "On A Cube",
+          "url": "https://codevita.tcsapps.com/#:~:text=SAMPLE%20QUESTIONS",
+          "topic": "3D geometry",
+          "level": "Hard"
+        },
+        {
+          "id": "d53-s2",
+          "type": "stretch",
+          "title": "Water Cistern",
+          "url": "https://codevita.tcsapps.com/#:~:text=SAMPLE%20QUESTIONS",
+          "topic": "Geometry",
+          "level": "Hard"
+        }
+      ]
+    },
+    {
+      "day": 54,
+      "items": [
+        {
+          "id": "d54-m1",
+          "type": "mock",
+          "title": "Official MockVita (when live)",
+          "url": "https://codevita.tcsapps.com/",
+          "topic": "Contest Simulation",
+          "level": "Mixed"
+        },
+        {
+          "id": "d54-m2",
+          "type": "stretch",
+          "title": "Codeforces Div. 3 — Virtual Contest",
+          "url": "https://codeforces.com/contests",
+          "topic": "Contest Simulation",
+          "level": "Mixed"
+        }
+      ]
+    },
+    {
+      "day": 55,
+      "items": [
+        {
+          "id": "d55-s1",
+          "type": "stretch",
+          "title": "DSA Bhool Jaate Ho? How to Revise DSA",
+          "url": "https://www.youtube.com/watch?v=TH9hWtklbNk",
+          "topic": "Final Revision",
+          "level": "Optional"
+        },
+        {
+          "id": "d55-s2",
+          "type": "stretch",
+          "title": "Two Pointers — Complete Revision",
+          "url": "https://www.youtube.com/watch?v=n7v0SokbF4I",
+          "topic": "Final Revision",
+          "level": "Optional"
+        },
+        {
+          "id": "d55-s3",
+          "type": "stretch",
+          "title": "Revise Stack in 10 Minutes",
+          "url": "https://www.youtube.com/watch?v=XpHIIQwVxvI",
+          "topic": "Final Revision",
+          "level": "Optional"
+        },
+        {
+          "id": "d55-s4",
+          "type": "stretch",
+          "title": "DP Full Revision",
+          "url": "https://www.youtube.com/watch?v=dyG4JBKh6tA",
+          "topic": "Final Revision",
+          "level": "Optional"
+        }
+      ]
+    },
+    {
+      "day": 56,
+      "items": [
+        {
+          "id": "d56-v1",
+          "type": "video",
+          "title": "How (NOT) To Cheat In Online Coding Rounds",
+          "url": "https://www.youtube.com/watch?v=Wj5bX2uva4E",
+          "topic": "Rules, Checklist, Sleep",
+          "level": "Tutorial"
+        }
+      ]
+    }
+  ]
+}

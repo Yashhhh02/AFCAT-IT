@@ -1,0 +1,17 @@
+# Local scratch tools and temporary verification scripts
+scratch/
+
+# Test capture and design verification screenshots
+screenshots/
+
+# System logs and telemetry
+.system_generated/
+*.log
+
+# OS metadata
+Thumbs.db
+.DS_Store
+
+# Local dependencies if any
+node_modules/
+
