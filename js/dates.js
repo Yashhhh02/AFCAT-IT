@@ -11,6 +11,36 @@ export const CV_REG_DEADLINE = new Date("2026-11-13T23:59:59+05:30");
 export const TOTAL_PLAN_DAYS = 77; // 11 weeks * 7 days
 export const CV_TOTAL_DAYS = 56;   // 8 weeks * 7 days
 
+let internalMockDate = null;
+
+/**
+ * Sets or clears mock date for testing/simulations.
+ * Also checks window.__MOCK_DATE__ if present.
+ * @param {string | Date | null} mockDate
+ */
+export function setMockDate(mockDate) {
+  internalMockDate = mockDate ? new Date(mockDate) : null;
+  if (typeof window !== "undefined") {
+    if (mockDate) {
+      window.__MOCK_DATE__ = mockDate;
+    } else {
+      delete window.__MOCK_DATE__;
+    }
+  }
+}
+
+/**
+ * Returns current Date object, respecting mock clock if set.
+ * @returns {Date}
+ */
+export function getNow() {
+  if (internalMockDate) return new Date(internalMockDate);
+  if (typeof window !== "undefined" && window.__MOCK_DATE__) {
+    return new Date(window.__MOCK_DATE__);
+  }
+  return new Date();
+}
+
 /**
  * Parses YYYY-MM-DD string into a local Date object set to midnight (00:00:00).
  * Prevents timezone shifting bugs caused by Date.parse() treating date strings as UTC.
@@ -104,11 +134,57 @@ export function getDateForDay(day, startISO = "2026-11-16") {
  * @returns {number}
  */
 export function jumpToToday(startISO = "2026-11-16", totalDays = TOTAL_PLAN_DAYS, testDate = null) {
-  const refDate = testDate ? parseISODate(testDate) : new Date();
+  const refDate = testDate ? parseISODate(testDate) : getNow();
   const cur = dayNumber(refDate, startISO);
   if (cur < 1) return 1;
   if (cur > totalDays) return totalDays;
   return cur;
+}
+
+/**
+ * Checks if a specific date or ISO string matches the real/mock local date today.
+ * @param {Date | string} dateOrISO
+ * @returns {boolean}
+ */
+export function isDateToday(dateOrISO) {
+  const d = typeof dateOrISO === "string" ? parseISODate(dateOrISO) : dateOrISO;
+  const now = getNow();
+  return d.getFullYear() === now.getFullYear() &&
+         d.getMonth() === now.getMonth() &&
+         d.getDate() === now.getDate();
+}
+
+/**
+ * Returns pre-start banner info if today is strictly before start date.
+ * E.g., "Plan starts Mon 16 Nov 2026 (in 3 days)"
+ * @param {string} [startISO="2026-11-16"]
+ * @returns {{ isBeforeStart: boolean, daysUntil: number, message: string, dateFormatted: string }}
+ */
+export function getPlanPreStartInfo(startISO = "2026-11-16") {
+  const now = getNow();
+  const start = parseISODate(startISO);
+  const nowMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0);
+  const daysUntil = daysBetween(nowMidnight, start);
+
+  if (daysUntil > 0) {
+    const daysArr = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const monthsArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const dateFormatted = `${daysArr[start.getDay()]} ${start.getDate()} ${monthsArr[start.getMonth()]} ${start.getFullYear()}`;
+    const unit = daysUntil === 1 ? "day" : "days";
+    return {
+      isBeforeStart: true,
+      daysUntil,
+      dateFormatted,
+      message: `Plan starts ${dateFormatted} (in ${daysUntil} ${unit})`
+    };
+  }
+
+  return {
+    isBeforeStart: false,
+    daysUntil: 0,
+    dateFormatted: "",
+    message: ""
+  };
 }
 
 /**

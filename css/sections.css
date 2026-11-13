@@ -996,6 +996,51 @@
   opacity: 0.85;
 }
 
+/* Plan Pre-Start Banner */
+.plan-prestart-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: rgba(245, 179, 1, 0.12);
+  border: 1px solid var(--amber-border);
+  color: var(--amber-text);
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.plan-prestart-banner .banner-icon {
+  font-size: 1.1rem;
+}
+
+/* CodeVita Item Links */
+.cv-item-link {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
+}
+
+.cv-item-link:hover {
+  color: var(--link-hover, #60a5fa);
+}
+
+.cv-item-link .ext-icon {
+  font-size: 0.85em;
+  opacity: 0.8;
+  margin-left: 2px;
+}
+
+.task-item-label.checked .cv-item-link {
+  text-decoration: line-through;
+  opacity: 0.75;
+}
+
 /* CodeVita Core & Extra Practice Groups */
 .cv-group {
   margin-bottom: var(--space-2);
@@ -2676,7 +2721,7 @@ body.focus-bonus .site-footer {
 }
 
 .slot-now-badge {
-  display: inline-block;
+  display: none;
   font-family: var(--font-mono);
   font-size: 10px;
   font-weight: 800;
@@ -2693,6 +2738,10 @@ body.focus-bonus .site-footer {
 .timetable-row.active {
   background: rgba(16, 185, 129, 0.12) !important;
   border-left: 4px solid var(--cv);
+}
+
+.timetable-row.active .slot-now-badge:not([hidden]) {
+  display: inline-block;
 }
 
 .timetable-row.active .time-text {

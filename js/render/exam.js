@@ -11,6 +11,7 @@
  */
 
 import { isDone, setDone, subscribe } from "../store.js";
+import { getNow } from "../dates.js";
 
 let cachedPlanData = null;
 let timetableTimer = null;
@@ -410,7 +411,7 @@ export function parseSlotMinutes(timeStr) {
  * @param {Array<{ time: string, task: string }>} [timetable]
  * @returns {number}
  */
-export function getCurrentSlotIndex(nowDate = new Date(), timetable = []) {
+export function getCurrentSlotIndex(nowDate = getNow(), timetable = []) {
   const dayOfWeek = nowDate.getDay(); // 0 = Sunday, 6 = Saturday
   if (dayOfWeek === 0 || dayOfWeek === 6) {
     return -1; // Weekend pause
@@ -449,7 +450,7 @@ function initTimetableClock(timetable) {
   }
 
   function update() {
-    const now = new Date();
+    const now = getNow();
     const clockText = document.getElementById("liveClockText");
     if (clockText) {
       const hStr = String(now.getHours()).padStart(2, "0");

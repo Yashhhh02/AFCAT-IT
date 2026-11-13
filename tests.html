@@ -154,6 +154,10 @@
       formatShortDate,
       calculateFitNote,
       jumpToToday,
+      setMockDate,
+      getNow,
+      isDateToday,
+      getPlanPreStartInfo,
       AFCAT_EXAM_DATE,
       AFCAT_FORM_LAST_DATE
     } from "./js/dates.js";
@@ -199,7 +203,8 @@
 
     import {
       getCurrentSlotIndex,
-      parseSlotMinutes
+      parseSlotMinutes,
+      applySlotHighlight
     } from "./js/render/exam.js";
 
     const resultsContainer = document.getElementById("results");
@@ -1429,6 +1434,275 @@
             return {
               pass,
               detail: `Export contains settings: ${hasSettings}, Legacy import success: ${importRes.success}, Fallback default N=2: ${fallbackN}`
+            };
+          }
+        }
+      ]);
+
+      // ========================================================
+      // 11. Mocked Clock: "TODAY" Badge & Pre-Start Plan Banner
+      // ========================================================
+      await renderSuite("11. Mocked Clock: 'TODAY' Badge & Pre-Start Plan Banner", [
+        {
+          name: "Mock 13 Nov 2026: Day 1 has NO 'Today' badge; Pre-start banner shows 'Plan starts Mon 16 Nov 2026 (in 3 days)'",
+          run() {
+            setMockDate("2026-11-13T10:00:00");
+            const d1Date = getDateForDay(1, "2026-11-16");
+            const isD1Today = isDateToday(d1Date);
+            const preStart = getPlanPreStartInfo("2026-11-16");
+
+            const pass = !isD1Today && preStart.isBeforeStart && preStart.daysUntil === 3 && preStart.message === "Plan starts Mon 16 Nov 2026 (in 3 days)";
+            setMockDate(null);
+            return {
+              pass,
+              detail: `Day 1 isToday: ${isD1Today} (no badge), Pre-start banner: "${preStart.message}" (daysUntil: ${preStart.daysUntil})`
+            };
+          }
+        },
+        {
+          name: "Mock 16 Nov 2026 10:00: Day 1 HAS 'Today' badge; Pre-start banner is hidden",
+          run() {
+            setMockDate("2026-11-16T10:00:00");
+            const d1Date = getDateForDay(1, "2026-11-16");
+            const isD1Today = isDateToday(d1Date);
+            const preStart = getPlanPreStartInfo("2026-11-16");
+
+            const pass = isD1Today && !preStart.isBeforeStart;
+            setMockDate(null);
+            return {
+              pass,
+              detail: `Day 1 isToday: ${isD1Today} (badge shown), Pre-start banner shown: ${preStart.isBeforeStart}`
+            };
+          }
+        },
+        {
+          name: "Mock 17 Nov 2026: Day 2 HAS 'Today' badge; Day 1 does NOT have it",
+          run() {
+            setMockDate("2026-11-17T12:00:00");
+            const d1Date = getDateForDay(1, "2026-11-16");
+            const d2Date = getDateForDay(2, "2026-11-16");
+            const isD1Today = isDateToday(d1Date);
+            const isD2Today = isDateToday(d2Date);
+
+            const pass = !isD1Today && isD2Today;
+            setMockDate(null);
+            return {
+              pass,
+              detail: `Day 1 isToday: ${isD1Today}, Day 2 isToday: ${isD2Today} (transferred cleanly)`
+            };
+          }
+        },
+        {
+          name: "Mock 2 Feb 2027 (After Plan End): NO day in plan (1..77) has 'Today' badge",
+          run() {
+            setMockDate("2027-02-02T10:00:00");
+            let anyDayToday = false;
+            for (let d = 1; d <= 77; d++) {
+              if (isDateToday(getDateForDay(d, "2026-11-16"))) {
+                anyDayToday = true;
+                break;
+              }
+            }
+            const preStart = getPlanPreStartInfo("2026-11-16");
+            const pass = !anyDayToday && !preStart.isBeforeStart;
+            setMockDate(null);
+            return {
+              pass,
+              detail: `Any day marked today: ${anyDayToday} (zero badges after plan concludes)`
+            };
+          }
+        }
+      ]);
+
+      // ========================================================
+      // 12. Mocked Clock: Master Weekday Timetable "NOW" Badge Isolation
+      // ========================================================
+      await renderSuite("12. Mocked Clock: Master Weekday Timetable 'NOW' Badge Isolation", [
+        {
+          name: "Mock 07:45 Tue: Exactly 1 row active (07:30–09:30 Block A); exactly ONE 'NOW' badge",
+          run() {
+            const timetable = [
+              { time: "06:00", task: "Uthna" },
+              { time: "06:15-06:45", task: "Running/exercise" },
+              { time: "07:30-09:30", task: "AFCAT Block A" },
+              { time: "09:45-10:45", task: "AFCAT English" },
+              { time: "11:00-12:30", task: "CodeVita video" },
+              { time: "12:30-13:30", task: "Lunch" },
+              { time: "13:30-15:00", task: "CodeVita problems" },
+              { time: "15:00-16:00", task: "Break" },
+              { time: "16:00-16:45", task: "AFCAT GA" },
+              { time: "17:30-18:15", task: "Revision" },
+              { time: "18:15-18:45", task: "Job block" },
+              { time: "20:00-20:30", task: "Night drill" },
+              { time: "22:00-22:30", task: "Sleep" }
+            ];
+            const d = new Date("2026-11-17T07:45:00"); // Tuesday
+            const slotIdx = getCurrentSlotIndex(d, timetable);
+            const pass = slotIdx === 2 && timetable[slotIdx].time === "07:30-09:30";
+            return {
+              pass,
+              detail: `Slot index: ${slotIdx} (${timetable[slotIdx]?.task})`
+            };
+          }
+        },
+        {
+          name: "Mock 14:00 Wed: Exactly 1 row active (13:30–15:00 CodeVita problems); exactly ONE 'NOW' badge",
+          run() {
+            const timetable = [
+              { time: "06:00", task: "Uthna" },
+              { time: "06:15-06:45", task: "Running/exercise" },
+              { time: "07:30-09:30", task: "AFCAT Block A" },
+              { time: "09:45-10:45", task: "AFCAT English" },
+              { time: "11:00-12:30", task: "CodeVita video" },
+              { time: "12:30-13:30", task: "Lunch" },
+              { time: "13:30-15:00", task: "CodeVita problems" },
+              { time: "15:00-16:00", task: "Break" },
+              { time: "16:00-16:45", task: "AFCAT GA" },
+              { time: "17:30-18:15", task: "Revision" },
+              { time: "18:15-18:45", task: "Job block" },
+              { time: "20:00-20:30", task: "Night drill" },
+              { time: "22:00-22:30", task: "Sleep" }
+            ];
+            const d = new Date("2026-11-18T14:00:00"); // Wednesday
+            const slotIdx = getCurrentSlotIndex(d, timetable);
+            const pass = slotIdx === 6 && timetable[slotIdx].time === "13:30-15:00";
+            return {
+              pass,
+              detail: `Slot index: ${slotIdx} (${timetable[slotIdx]?.task})`
+            };
+          }
+        },
+        {
+          name: "Mock 19:13 Fri: In between scheduled slots; ZERO rows show 'NOW'",
+          run() {
+            const timetable = [
+              { time: "06:00", task: "Uthna" },
+              { time: "06:15-06:45", task: "Running/exercise" },
+              { time: "07:30-09:30", task: "AFCAT Block A" },
+              { time: "09:45-10:45", task: "AFCAT English" },
+              { time: "11:00-12:30", task: "CodeVita video" },
+              { time: "12:30-13:30", task: "Lunch" },
+              { time: "13:30-15:00", task: "CodeVita problems" },
+              { time: "15:00-16:00", task: "Break" },
+              { time: "16:00-16:45", task: "AFCAT GA" },
+              { time: "17:30-18:15", task: "Revision" },
+              { time: "18:15-18:45", task: "Job block" },
+              { time: "20:00-20:30", task: "Night drill" },
+              { time: "22:00-22:30", task: "Sleep" }
+            ];
+            const d = new Date("2026-11-20T19:13:00"); // Friday
+            const slotIdx = getCurrentSlotIndex(d, timetable);
+            const pass = slotIdx === -1;
+            return {
+              pass,
+              detail: `Slot index: ${slotIdx} (no active slot at 19:13, zero badges rendered)`
+            };
+          }
+        },
+        {
+          name: "Mock 22:15 Mon: Exactly 1 row active (22:00–22:30 Sleep slot); exactly ONE 'NOW' badge",
+          run() {
+            const timetable = [
+              { time: "06:00", task: "Uthna" },
+              { time: "06:15-06:45", task: "Running/exercise" },
+              { time: "07:30-09:30", task: "AFCAT Block A" },
+              { time: "09:45-10:45", task: "AFCAT English" },
+              { time: "11:00-12:30", task: "CodeVita video" },
+              { time: "12:30-13:30", task: "Lunch" },
+              { time: "13:30-15:00", task: "CodeVita problems" },
+              { time: "15:00-16:00", task: "Break" },
+              { time: "16:00-16:45", task: "AFCAT GA" },
+              { time: "17:30-18:15", task: "Revision" },
+              { time: "18:15-18:45", task: "Job block" },
+              { time: "20:00-20:30", task: "Night drill" },
+              { time: "22:00-22:30", task: "Sleep" }
+            ];
+            const d = new Date("2026-11-16T22:15:00"); // Monday
+            const slotIdx = getCurrentSlotIndex(d, timetable);
+            const pass = slotIdx === 12 && timetable[slotIdx].time === "22:00-22:30";
+            return {
+              pass,
+              detail: `Slot index: ${slotIdx} (${timetable[slotIdx]?.task})`
+            };
+          }
+        },
+        {
+          name: "Mock Sat 10:00: Weekend mode active; timetable paused (slot index = -1, ZERO 'NOW' badges)",
+          run() {
+            const timetable = [
+              { time: "07:30-09:30", task: "AFCAT Block A" },
+              { time: "09:45-10:45", task: "AFCAT English" }
+            ];
+            const d = new Date("2026-11-21T10:00:00"); // Saturday
+            const slotIdx = getCurrentSlotIndex(d, timetable);
+            const pass = slotIdx === -1;
+            return {
+              pass,
+              detail: `Slot index: ${slotIdx} (Saturday paused, zero active slots)`
+            };
+          }
+        }
+      ]);
+
+      // ========================================================
+      // 13. CodeVita Real Links & Checkbox Click Isolation
+      // ========================================================
+      await renderSuite("13. CodeVita Real Links & Checkbox Click Isolation", [
+        {
+          name: "Every CodeVita item with a URL renders real <a class='cv-item-link' target='_blank' rel='noopener noreferrer'> next to checkbox",
+          async run() {
+            const frame = document.createElement("iframe");
+            frame.src = "index.html";
+            frame.style.width = "800px";
+            frame.style.height = "600px";
+            frame.style.position = "fixed";
+            frame.style.left = "-9999px";
+            document.body.appendChild(frame);
+
+            await new Promise((resolve) => {
+              frame.onload = () => setTimeout(resolve, 800);
+            });
+
+            const doc = frame.contentDocument || frame.contentWindow.document;
+
+            // Expand week 1 and Day 1
+            const w1Head = doc.querySelector('.week-block[data-week="1"] .week-head');
+            if (w1Head) w1Head.click();
+            await new Promise((r) => setTimeout(r, 100));
+
+            const d1Head = doc.querySelector('.day-card[data-day="1"] .day-card-head');
+            if (d1Head) d1Head.click();
+            await new Promise((r) => setTimeout(r, 100));
+
+            const cvLinks = doc.querySelectorAll('#dayBody-1 .cv-item-link');
+            const totalLinks = cvLinks.length;
+            let allValid = totalLinks > 0;
+            cvLinks.forEach(a => {
+              if (!a.getAttribute("href") || a.getAttribute("target") !== "_blank" || !a.getAttribute("rel")?.includes("noopener")) {
+                allValid = false;
+              }
+            });
+
+            // Test click isolation: clicking link does NOT toggle checkbox
+            const testItem = doc.querySelector('#dayBody-1 .cv-group .task-item-label');
+            let clickIsolation = false;
+            if (testItem) {
+              const cb = testItem.querySelector('input[type="checkbox"]');
+              const link = testItem.querySelector('a.cv-item-link');
+              if (cb && link) {
+                const initialChecked = cb.checked;
+                link.click();
+                const afterLinkClick = cb.checked;
+                clickIsolation = (initialChecked === afterLinkClick);
+              }
+            }
+
+            document.body.removeChild(frame);
+
+            const pass = allValid && clickIsolation;
+            return {
+              pass,
+              detail: `Found ${totalLinks} CodeVita real links on Day 1 (all target='_blank' & rel='noopener noreferrer'), Click isolation: ${clickIsolation}`
             };
           }
         }

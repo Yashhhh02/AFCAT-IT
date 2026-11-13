@@ -405,7 +405,7 @@ export function buildCountableRegistry(planData, cvDaysData) {
             let problemIdx = 0;
             userCvItems.forEach((item, itemIdx) => {
               const stableKey = item.id || `d${day}-i${itemIdx + 1}`;
-              const isStretch = item.type === "stretch" || item.s === true;
+              const isStretch = item.type === "stretch" || item.type === "optional" || item.s === true;
               if (isStretch) {
                 registerItem({
                   id: makeItemId(day, "stretch", stableKey),
@@ -420,19 +420,35 @@ export function buildCountableRegistry(planData, cvDaysData) {
                   isExtra: false
                 }, false);
               } else if (item.type === "video" || item.type === "mock") {
-                // Videos (not optional) & mocks (Day 54) are always CORE
-                registerItem({
-                  id: makeItemId(day, "cv", stableKey),
-                  day,
-                  week: weekNum,
-                  track: "cv",
-                  title: item.title,
-                  url: item.url,
-                  type: item.type,
-                  isStretch: false,
-                  isCore: true,
-                  isExtra: false
-                }, true);
+                // Videos & core mocks (d54-m1 on Day 54) are CORE
+                const isCoreMock = (day === 54 ? item.id === "d54-m1" : true);
+                if (isCoreMock) {
+                  registerItem({
+                    id: makeItemId(day, "cv", stableKey),
+                    day,
+                    week: weekNum,
+                    track: "cv",
+                    title: item.title,
+                    url: item.url,
+                    type: item.type,
+                    isStretch: false,
+                    isCore: true,
+                    isExtra: false
+                  }, true);
+                } else {
+                  registerItem({
+                    id: makeItemId(day, "stretch", stableKey),
+                    day,
+                    week: weekNum,
+                    track: "cv",
+                    title: item.title,
+                    url: item.url,
+                    type: item.type,
+                    isStretch: true,
+                    isCore: false,
+                    isExtra: false
+                  }, false);
+                }
               } else if (CV_PROBLEM_TYPES.has(item.type)) {
                 // Problem items (leetcode, pyq, official, other)
                 problemIdx++;
@@ -494,7 +510,7 @@ export function buildCountableRegistry(planData, cvDaysData) {
           userSatItems.forEach((item, itemIdx) => {
             const stableKey = item.id || `d${satDay}-i${itemIdx + 1}`;
             // Day 55 CodeVita items are strictly non-countable (like rest)
-            const isStretch = isFinalRevisionDay || item.type === "stretch" || item.s === true;
+            const isStretch = isFinalRevisionDay || item.type === "stretch" || item.type === "optional" || item.s === true;
             registerItem({
               id: makeItemId(satDay, isStretch ? "stretch" : "cv", stableKey),
               day: satDay,

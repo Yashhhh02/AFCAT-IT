@@ -11,6 +11,8 @@ import {
   formatShortDate,
   toISODate,
   jumpToToday,
+  isDateToday,
+  getPlanPreStartInfo,
   getDayScheduleType,
   weekNumber,
   CV_TOTAL_DAYS,
@@ -68,8 +70,17 @@ export function renderPlan(planData, cvDaysData, afcatLecturesData) {
   // Apply initial track filter to document body
   document.body.setAttribute("data-track-filter", getTrackFilter());
 
+  const preStart = getPlanPreStartInfo(startISO);
+  const preStartBannerHTML = preStart.isBeforeStart
+    ? `<div id="planPreStartBanner" class="plan-prestart-banner" role="status">
+        <span class="banner-icon">📅</span>
+        <span class="banner-text">${escapeHTML(preStart.message)}</span>
+      </div>`
+    : "";
+
   // 1. Build Plan Controls & Legend Shell
   container.innerHTML = `
+    ${preStartBannerHTML}
     <!-- CONTROLS ROW -->
     <div class="plan-controls-row">
       <div class="plan-info-badges">
@@ -332,7 +343,7 @@ export function lazyRenderWeekDays(weekNum) {
   for (let i = 0; i < 7; i++) {
     const day = weekStartDay + i;
     const date = getDateForDay(day, startISO);
-    const isToday = day === todayDayIndex;
+    const isToday = isDateToday(date);
     const defaultOpen = isToday;
     const open = isDayOpen(day, defaultOpen);
     const sched = getDayScheduleType(day);
@@ -472,6 +483,7 @@ function renderDayCardBody(day, weekNum, dayOffsetInWeek, weekData, sched, isExa
 
     const getItemBadge = (item, isStretch) => {
       if (isStretch) return '<span class="tag stretch">Stretch</span>';
+      if (item.type === "optional") return '<span class="tag stretch">Optional</span>';
       if (item.type === "video") return '<span class="tag vid">Video</span>';
       if (item.type === "mock") return '<span class="tag mock">Mock</span>';
       if (item.type === "official") return '<span class="tag official">Official</span>';
@@ -479,6 +491,21 @@ function renderDayCardBody(day, weekNum, dayOffsetInWeek, weekData, sched, isExa
       if (item.type === "pyq") return '<span class="tag pyq">PYQ</span>';
       if (item.type === "other") return '<span class="tag other">Other</span>';
       return '<span class="tag cv">DSA</span>';
+    };
+
+    const renderCvItem = (item, isStretch = false, customKind = null, timeSlot = "") => {
+      const stableId = item.id;
+      const isActuallyStretch = isStretch || item.type === "stretch" || item.type === "optional" || item.s === true;
+      const badge = getItemBadge(item, isActuallyStretch);
+      const titleLink = item.url
+        ? `<a class="cv-item-link" href="${escapeHTML(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">${escapeHTML(item.title)} <span class="ext-icon" aria-hidden="true">↗</span></a>`
+        : `<span class="task-title-text">${escapeHTML(item.title)}</span>`;
+      const diff = item.level && item.level !== "Tutorial" && item.level !== "Practice"
+        ? `<span class="diff-badge">${escapeHTML(item.level)}</span>`
+        : "";
+      const textHtml = `${badge} ${titleLink}${diff ? ' ' + diff : ''}`;
+      const kind = customKind || (isActuallyStretch ? "stretch" : "cv");
+      return renderTaskCheckboxItem(day, kind, stableId, textHtml, timeSlot || item.topic || "");
     };
 
     if (sched.isSunday) {
@@ -495,11 +522,8 @@ function renderDayCardBody(day, weekNum, dayOffsetInWeek, weekData, sched, isExa
       `;
       // Preserve any Sunday items (e.g. Day 7, Day 35, Day 56 videos) without silently dropping them
       if (userCvItems && userCvItems.length > 0) {
-        userCvItems.forEach((item, itemIdx) => {
-          const stableId = item.id || `d${day}-i${itemIdx + 1}`;
-          const link = item.url ? `<a href="${escapeHTML(item.url)}" target="_blank" rel="noopener">↗</a>` : "";
-          const badge = getItemBadge(item, true);
-          html += renderTaskCheckboxItem(day, "stretch", stableId, `${badge} ${item.title} ${link}`, item.topic || "");
+        userCvItems.forEach((item) => {
+          html += renderCvItem(item, true);
         });
       }
       html += `</ul>`;
@@ -518,12 +542,9 @@ function renderDayCardBody(day, weekNum, dayOffsetInWeek, weekData, sched, isExa
         `;
       }
       if (userCvItems && userCvItems.length > 0) {
-        userCvItems.forEach((item, itemIdx) => {
-          const stableId = item.id || `d${day}-i${itemIdx + 1}`;
-          const isStretch = isFinalRevisionDay || item.type === "stretch" || item.s === true;
-          const link = item.url ? `<a href="${escapeHTML(item.url)}" target="_blank" rel="noopener">↗</a>` : "";
-          const badge = getItemBadge(item, isStretch);
-          html += renderTaskCheckboxItem(day, isStretch ? "stretch" : "cv", stableId, `${badge} ${item.title} ${link}`, item.topic || "");
+        userCvItems.forEach((item) => {
+          const isStretch = isFinalRevisionDay || item.type === "stretch" || item.type === "optional" || item.s === true;
+          html += renderCvItem(item, isStretch);
         });
       } else if (isFinalRevisionDay) {
         html += renderTaskCheckboxItem(day, "stretch", `d${day}-revision`, "CodeVita Final Revision: Review error log & formula sheets", "Early sleep");
@@ -543,7 +564,7 @@ function renderDayCardBody(day, weekNum, dayOffsetInWeek, weekData, sched, isExa
       if (userCvItems && userCvItems.length > 0) {
         let probCount = 0;
         userCvItems.forEach((item, itemIdx) => {
-          const isStretch = item.type === "stretch" || item.s === true;
+          const isStretch = item.type === "stretch" || item.type === "optional" || item.s === true;
           if (isStretch) {
             stretchItems.push({ item, itemIdx });
           } else if (item.type === "video" || item.type === "mock") {
@@ -566,11 +587,8 @@ function renderDayCardBody(day, weekNum, dayOffsetInWeek, weekData, sched, isExa
             <span class="cv-group-title">Core</span>
             <ul class="task-items-list core-list">
         `;
-        coreItems.forEach(({ item, itemIdx }) => {
-          const stableId = item.id || `d${day}-i${itemIdx + 1}`;
-          const link = item.url ? `<a href="${escapeHTML(item.url)}" target="_blank" rel="noopener">↗</a>` : "";
-          const badge = getItemBadge(item, false);
-          html += renderTaskCheckboxItem(day, "cv", stableId, `${badge} ${item.title} ${link}`, item.topic || "");
+        coreItems.forEach(({ item }) => {
+          html += renderCvItem(item, false);
         });
         html += `</ul></div>`;
 
@@ -585,17 +603,11 @@ function renderDayCardBody(day, weekNum, dayOffsetInWeek, weekData, sched, isExa
               </summary>
               <ul class="task-items-list extra-list">
           `;
-          extraItems.forEach(({ item, itemIdx }) => {
-            const stableId = item.id || `d${day}-i${itemIdx + 1}`;
-            const link = item.url ? `<a href="${escapeHTML(item.url)}" target="_blank" rel="noopener">↗</a>` : "";
-            const badge = getItemBadge(item, false);
-            html += renderTaskCheckboxItem(day, "cv", stableId, `${badge} ${item.title} ${link}`, item.topic || "");
+          extraItems.forEach(({ item }) => {
+            html += renderCvItem(item, false);
           });
-          stretchItems.forEach(({ item, itemIdx }) => {
-            const stableId = item.id || `d${day}-i${itemIdx + 1}`;
-            const link = item.url ? `<a href="${escapeHTML(item.url)}" target="_blank" rel="noopener">↗</a>` : "";
-            const badge = getItemBadge(item, true);
-            html += renderTaskCheckboxItem(day, "stretch", stableId, `${badge} ${item.title} ${link}`, item.topic || "");
+          stretchItems.forEach(({ item }) => {
+            html += renderCvItem(item, true);
           });
           html += `</ul></details>`;
         }
@@ -608,12 +620,12 @@ function renderDayCardBody(day, weekNum, dayOffsetInWeek, weekData, sched, isExa
             <ul class="task-items-list core-list">
               ${renderTaskCheckboxItem(
                 day, "cv", `d${day}-v1`,
-                `Site Day ${day}: Video lecture <a href="${refLink}" target="_blank" rel="noopener">Open Day ${day} on reference site ↗</a>`,
+                `Site Day ${day}: Video lecture <a class="cv-item-link" href="${refLink}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">Open Day ${day} on reference site <span class="ext-icon" aria-hidden="true">↗</span></a>`,
                 "11:00–12:30"
               )}
               ${renderTaskCheckboxItem(
                 day, "cv", `d${day}-p1`,
-                `Site Day ${day}: Problem solving <a href="${refLink}" target="_blank" rel="noopener">Open problems on reference site ↗</a>`,
+                `Site Day ${day}: Problem solving <a class="cv-item-link" href="${refLink}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">Open problems on reference site <span class="ext-icon" aria-hidden="true">↗</span></a>`,
                 "13:30–15:00"
               )}
             </ul>
