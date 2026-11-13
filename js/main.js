@@ -10,7 +10,7 @@ import { initStore, buildCountableRegistry } from "./store.js";
 import { renderHero } from "./render/hero.js";
 import { renderExam } from "./render/exam.js";
 import { renderPlan } from "./render/plan.js";
-import { renderPYQ } from "./render/pyq.js";
+import { renderPyq } from "./render/pyq.js";
 import { renderMocks } from "./render/mocks.js";
 import { renderBonus } from "./render/bonus.js";
 import { renderChecklist } from "./render/checklist.js";
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (data) {
       renderPlan(data.planData, data.cvDaysData);
     }
-    renderPYQ(data ? data.questionsData : null);
+    renderPyq(data ? data.questionsData : null);
     renderMocks();
     renderBonus(data ? data.bonusData : null);
     renderChecklist(data ? data.planData : null);

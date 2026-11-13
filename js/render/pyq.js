@@ -410,3 +410,5 @@ function escapeHTML(str) {
     "'": "&#39;"
   }[c]));
 }
+
+export { renderPyq as renderPYQ };
