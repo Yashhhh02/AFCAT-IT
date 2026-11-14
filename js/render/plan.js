@@ -440,10 +440,14 @@ function renderDayCardBody(day, weekNum, dayOffsetInWeek, weekData, sched, isExa
     const dayLectures = (cachedAfcatLecturesData && cachedAfcatLecturesData.days && cachedAfcatLecturesData.days[String(day)]) || null;
 
     const makeLectureLink = (kindKey, topicText) => {
-      if (!dayLectures || !dayLectures[kindKey] || !dayLectures[kindKey].url) return "";
+      if (!dayLectures || !dayLectures[kindKey] || !dayLectures[kindKey].url || dayLectures[kindKey].no_video_found) return "";
       const lec = dayLectures[kindKey];
       const ariaTopic = lec.title || topicText || "topic";
-      return `<a class="lecture-link" href="${escapeHTML(lec.url)}" target="_blank" rel="noopener noreferrer" aria-label="Search lecture on YouTube for ${escapeHTML(ariaTopic)}" onclick="event.stopPropagation();">Lecture ▶</a>`;
+      let labelText = "Lecture ▶";
+      if (lec.channel && lec.duration) {
+        labelText = `Lecture ▶ ${lec.channel}, ${lec.duration}${lec.long ? " (long)" : ""}`;
+      }
+      return `<a class="lecture-link" href="${escapeHTML(lec.url)}" target="_blank" rel="noopener noreferrer" aria-label="Watch lecture on YouTube: ${escapeHTML(ariaTopic)}" onclick="event.stopPropagation();">${escapeHTML(labelText)}</a>`;
     };
 
     if (topics.blockA && topics.blockA !== "-") {
