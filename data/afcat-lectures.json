@@ -1,5 +1,5 @@
 {
-  "_note": "Verified AFCAT lecture videos from Defence Wallah and Defence Adda247. Keyed by plan day number (1-35 weekdays). Includes channel, duration, long flag, topic_match, and verification status.",
+  "_note": "Verified AFCAT lecture videos from Defence Wallah and Defence Adda247. Keyed by plan day number (1-35 weekdays). Includes channel, duration, long flag, watch_part timestamps, exact topic_match quote, and verification status.",
   "days": {
     "1": {
       "blockA": {
@@ -9,7 +9,7 @@
         "duration": "47 min",
         "uploadDate": "Streamed 2y ago",
         "long": false,
-        "topic_match": "Covers Maths: Number system, BODMAS, simplification for AFCAT from Defence Adda247.",
+        "topic_match": "Number System, Decimal, Fractions & Simplification",
         "no_video_found": false
       },
       "english": {
@@ -19,8 +19,9 @@
         "duration": "131 min",
         "uploadDate": "Streamed 4mo ago",
         "long": true,
-        "topic_match": "Covers Tenses (basics) for AFCAT from Defence Wallah.",
-        "no_video_found": false
+        "topic_match": "Tenses & Preposition For AFCAT",
+        "no_video_found": false,
+        "watch_part": "00:00-40:00"
       },
       "ga": {
         "title": "AFCAT 2 2021 | General Awareness | ANCIENT HISTORY OF INDIA [ TOP 50 QUESTIONS]",
@@ -29,7 +30,7 @@
         "duration": "36 min",
         "uploadDate": "Streamed 5y ago",
         "long": false,
-        "topic_match": "Covers History: Ancient for AFCAT from Defence Adda247.",
+        "topic_match": "ANCIENT HISTORY OF INDIA",
         "no_video_found": false
       }
     },
@@ -41,8 +42,9 @@
         "duration": "113 min",
         "uploadDate": "Streamed 1y ago",
         "long": true,
-        "topic_match": "Covers Reasoning: Series (number/alphabet), analogy for AFCAT from Defence Wallah.",
-        "no_video_found": false
+        "topic_match": "Alphabet Test, Coding & Decoding, Analogy",
+        "no_video_found": false,
+        "watch_part": "00:00-50:00"
       },
       "english": {
         "title": "All Concepts | Subject Verb Agreement | English | AFCAT & CDS Exams Preparation 2020",
@@ -51,7 +53,7 @@
         "duration": "33 min",
         "uploadDate": "6y ago",
         "long": false,
-        "topic_match": "Covers Subject-verb agreement for AFCAT from Defence Adda247.",
+        "topic_match": "Subject Verb Agreement",
         "no_video_found": false
       },
       "ga": {
@@ -61,8 +63,9 @@
         "duration": "202 min",
         "uploadDate": "Streamed 10mo ago",
         "long": true,
-        "topic_match": "Covers History: Medieval for AFCAT from Defence Wallah.",
-        "no_video_found": false
+        "topic_match": "Complete Medieval & Modern History",
+        "no_video_found": false,
+        "watch_part": "00:00-40:00"
       }
     },
     "3": {
@@ -73,7 +76,7 @@
         "duration": "17 min",
         "uploadDate": "Streamed 2mo ago",
         "long": false,
-        "topic_match": "Covers Maths: Percentage + fraction table for AFCAT from Defence Adda247.",
+        "topic_match": "Percentage Fraction Tricks | Percentage concepts",
         "no_video_found": false
       },
       "english": {
@@ -83,8 +86,9 @@
         "duration": "49 min",
         "uploadDate": "Streamed 5y ago",
         "long": true,
-        "topic_match": "Covers Articles, prepositions for AFCAT from Defence Adda247.",
-        "no_video_found": false
+        "topic_match": "Fixed Prepositions For AFCAT | ENGLISH Grammar",
+        "no_video_found": false,
+        "watch_part": "00:00-35:00"
       },
       "ga": {
         "title": "AFCAT 2 2021 | General Knowledge | Modern History (Indian National Movement)",
@@ -93,19 +97,19 @@
         "duration": "31 min",
         "uploadDate": "Streamed 5y ago",
         "long": false,
-        "topic_match": "Covers History: Modern (1857-1947) for AFCAT from Defence Adda247.",
+        "topic_match": "Modern History (Indian National Movement)",
         "no_video_found": false
       }
     },
     "4": {
       "blockA": {
-        "title": "Alphabet Test, Coding & Decoding, Analogy & Odd One Out | Reasoning for AFCAT/CGCAT 1.0 2025 🔥",
-        "url": "https://www.youtube.com/watch?v=Y6I5xp7xdlc",
-        "channel": "Defence Wallah",
-        "duration": "113 min",
-        "uploadDate": "Streamed 1y ago",
-        "long": true,
-        "topic_match": "Covers Reasoning: Coding-decoding, odd one out for AFCAT from Defence Wallah.",
+        "title": "AFCAT 2 2021 | Reasoning | Coding Decoding #1",
+        "url": "https://www.youtube.com/watch?v=FkID_ZK16fs",
+        "channel": "Defence Adda247",
+        "duration": "57 min",
+        "uploadDate": "Streamed 5y ago",
+        "long": false,
+        "topic_match": "Reasoning | Coding Decoding #1",
         "no_video_found": false
       },
       "english": {
@@ -115,7 +119,7 @@
         "duration": "34 min",
         "uploadDate": "3w ago",
         "long": false,
-        "topic_match": "Covers Error spotting practice for AFCAT from Defence Wallah.",
+        "topic_match": "Complete Error Spotting in One Class",
         "no_video_found": false
       },
       "ga": {
@@ -125,8 +129,9 @@
         "duration": "52 min",
         "uploadDate": "Streamed 5y ago",
         "long": true,
-        "topic_match": "Covers Polity 1: Preamble, FR, DPSP for AFCAT from Defence Adda247.",
-        "no_video_found": false
+        "topic_match": "Polity Preparation | Preamble",
+        "no_video_found": false,
+        "watch_part": "00:00-40:00"
       }
     },
     "5": {
@@ -137,7 +142,7 @@
         "duration": "58 min",
         "uploadDate": "Streamed 2y ago",
         "long": false,
-        "topic_match": "Covers Maths: Ratio, proportion, average for AFCAT from Defence Wallah.",
+        "topic_match": "Average | AFCAT 2024 Preparation",
         "no_video_found": false
       },
       "english": {
@@ -147,8 +152,9 @@
         "duration": "126 min",
         "uploadDate": "Streamed 1y ago",
         "long": true,
-        "topic_match": "Covers Synonyms-antonyms (10 words/day start) for AFCAT from Defence Wallah.",
-        "no_video_found": false
+        "topic_match": "Synonyms, Antonyms and Idioms",
+        "no_video_found": false,
+        "watch_part": "00:00-40:00"
       },
       "ga": {
         "title": "Indian Polity for AFCAT, CDS, CAPF 2022 |  Indian Polity ( President & Governors ) Mcq's",
@@ -157,8 +163,9 @@
         "duration": "48 min",
         "uploadDate": "Streamed 4y ago",
         "long": true,
-        "topic_match": "Covers Polity 2: President, PM, Parliament, judiciary for AFCAT from Defence Adda247.",
-        "no_video_found": false
+        "topic_match": "Indian Polity ( President & Governors )",
+        "no_video_found": false,
+        "watch_part": "00:00-40:00"
       }
     },
     "8": {
@@ -169,17 +176,18 @@
         "duration": "102 min",
         "uploadDate": "Streamed 1y ago",
         "long": true,
-        "topic_match": "Covers Maths: Profit-loss, discount for AFCAT from Defence Wallah.",
-        "no_video_found": false
+        "topic_match": "Percentage, Profit & Loss",
+        "no_video_found": false,
+        "watch_part": "00:00-55:00"
       },
       "english": {
-        "title": "AFCAT English 🔥 Complete Error Spotting in One Class | Grammar Tricks & Questions | Defence English",
-        "url": "https://www.youtube.com/watch?v=-jtYfQI3IhQ",
-        "channel": "Defence Wallah",
-        "duration": "34 min",
-        "uploadDate": "3w ago",
+        "title": "AFCAT 2 2024 | AFCAT English Classes | Pronoun ( Practice Question ) | By Vishal Sir",
+        "url": "https://www.youtube.com/watch?v=LLJSa_5bD7Y",
+        "channel": "Defence Adda247",
+        "duration": "35 min",
+        "uploadDate": "Streamed 2y ago",
         "long": false,
-        "topic_match": "Covers Pronouns, adjectives for AFCAT from Defence Wallah.",
+        "topic_match": "AFCAT English Classes | Pronoun ( Practice Question )",
         "no_video_found": false
       },
       "ga": {
@@ -189,8 +197,9 @@
         "duration": "123 min",
         "uploadDate": "Streamed 1y ago",
         "long": true,
-        "topic_match": "Covers Polity 3: Amendments, bodies + Economy basics for AFCAT from Defence Wallah.",
-        "no_video_found": false
+        "topic_match": "Important Amendments and Bodies",
+        "no_video_found": false,
+        "watch_part": "00:00-40:00"
       }
     },
     "9": {
@@ -201,8 +210,9 @@
         "duration": "180 min",
         "uploadDate": "Streamed 3mo ago",
         "long": true,
-        "topic_match": "Covers Reasoning: Blood relations, direction for AFCAT from Defence Wallah.",
-        "no_video_found": false
+        "topic_match": "Blood Relation, Direction Test",
+        "no_video_found": false,
+        "watch_part": "00:00-55:00"
       },
       "english": {
         "title": "AFCAT 2 2024 | AFCAT English Classes | Reading Comprehension 1 by Vishal Sir",
@@ -211,17 +221,18 @@
         "duration": "36 min",
         "uploadDate": "Streamed 2y ago",
         "long": false,
-        "topic_match": "Covers Reading comprehension (1 passage) for AFCAT from Defence Adda247.",
+        "topic_match": "Reading Comprehension 1",
         "no_video_found": false
       },
       "ga": {
-        "title": "NDA Geography : Climatology, Atmosphere, Temperature, Pressure Belts & Winds for NDA 2026 ✅ NDA GAT",
-        "url": "https://www.youtube.com/watch?v=BzrzoLKTqyI",
-        "channel": "Defence Wallah",
-        "duration": "230 min",
-        "uploadDate": "Streamed 8mo ago",
+        "title": "UPSC CAPF AC 2021 | General Knowledge | Atmosphere , Winds, And Cyclone",
+        "url": "https://www.youtube.com/watch?v=QyMvCimaj68",
+        "channel": "Defence Adda247",
+        "duration": "41 min",
+        "uploadDate": "Streamed 5y ago",
         "long": true,
-        "topic_match": "Covers Geography 1: Earth, atmosphere, winds for AFCAT from Defence Wallah.",
+        "watch_part": "00:00-40:00",
+        "topic_match": "Atmosphere , Winds, And Cyclone",
         "no_video_found": false
       }
     },
@@ -233,8 +244,9 @@
         "duration": "74 min",
         "uploadDate": "Streamed 2y ago",
         "long": true,
-        "topic_match": "Covers Maths: SI and CI for AFCAT from Defence Wallah.",
-        "no_video_found": false
+        "topic_match": "Compound Interest | AFCAT 2024 Preparation",
+        "no_video_found": false,
+        "watch_part": "00:00-55:00"
       },
       "english": {
         "title": "CDS/AFCAT/Airforce 2021 Exam | Para Jumbles Short Tricks | English Special For All Defence Exams",
@@ -243,29 +255,30 @@
         "duration": "46 min",
         "uploadDate": "Streamed 5y ago",
         "long": true,
-        "topic_match": "Covers Para jumbles for AFCAT from Defence Adda247.",
-        "no_video_found": false
+        "topic_match": "Para Jumbles Short Tricks",
+        "no_video_found": false,
+        "watch_part": "00:00-35:00"
       },
       "ga": {
-        "title": "NDA Geography : Indian Geography Via Maps 🗺️ Complete Geography Revision 🎯 NDA Geography One Shot ✅",
-        "url": "https://www.youtube.com/watch?v=6yg2r7uYC9Q",
-        "channel": "Defence Wallah",
-        "duration": "12 min",
-        "uploadDate": "7mo ago",
+        "title": "AFCAT (2) 2020 | General Awareness | Indian River System | Defence Adda247",
+        "url": "https://www.youtube.com/watch?v=wss7wZ0NTvw",
+        "channel": "Defence Adda247",
+        "duration": "33 min",
+        "uploadDate": "Streamed 5y ago",
         "long": false,
-        "topic_match": "Covers Geography 2: India (rivers, soils, climate) for AFCAT from Defence Wallah.",
+        "topic_match": "General Awareness | Indian River System",
         "no_video_found": false
       }
     },
     "11": {
       "blockA": {
-        "title": "CUET PG MBA 2027 Reasoning | Syllogism Part-2 | Complete Preparation | Vishwas- Day 4",
-        "url": "https://www.youtube.com/watch?v=0neIuN6sO4s",
+        "title": "AFCAT 2 2024 | AFCAT Reasoning Classes | Syllogism #1 | Reasoning By Ravi Sir",
+        "url": "https://www.youtube.com/watch?v=Vs0_mzOWO3Q",
         "channel": "Defence Adda247",
-        "duration": "50 min",
-        "uploadDate": "Streamed 5mo ago",
+        "duration": "52 min",
+        "uploadDate": "Streamed 2y ago",
         "long": false,
-        "topic_match": "Covers Reasoning: Syllogism, Venn for AFCAT from Defence Adda247.",
+        "topic_match": "AFCAT Reasoning Classes | Syllogism #1",
         "no_video_found": false
       },
       "english": {
@@ -275,7 +288,7 @@
         "duration": "29 min",
         "uploadDate": "Streamed 6y ago",
         "long": false,
-        "topic_match": "Covers Cloze test for AFCAT from Defence Adda247.",
+        "topic_match": "Air Force English Class | Cloze Test",
         "no_video_found": false
       },
       "ga": {
@@ -285,7 +298,7 @@
         "duration": "33 min",
         "uploadDate": "Streamed 6y ago",
         "long": false,
-        "topic_match": "Covers Geography 3: Agriculture, minerals, parks for AFCAT from Defence Adda247.",
+        "topic_match": "Soil, Agriculture and Minerals",
         "no_video_found": false
       }
     },
@@ -297,8 +310,9 @@
         "duration": "132 min",
         "uploadDate": "Streamed 1y ago",
         "long": true,
-        "topic_match": "Covers Maths: Time and work, pipes for AFCAT from Defence Wallah.",
-        "no_video_found": false
+        "topic_match": "Time and work & Pipes and Cistern",
+        "no_video_found": false,
+        "watch_part": "00:00-55:00"
       },
       "english": {
         "title": "CDS/AFCAT Idioms And Phrases From The Hindu",
@@ -307,7 +321,7 @@
         "duration": "16 min",
         "uploadDate": "Streamed 6y ago",
         "long": false,
-        "topic_match": "Covers Idioms (30) for AFCAT from Defence Adda247.",
+        "topic_match": "Idioms And Phrases From The Hindu",
         "no_video_found": false
       },
       "ga": {
@@ -317,7 +331,7 @@
         "duration": "40 min",
         "uploadDate": "3y ago",
         "long": false,
-        "topic_match": "Covers Physics 1: Motion, force, light for AFCAT from Defence Wallah.",
+        "topic_match": "Science 26 : Motion in a Plane",
         "no_video_found": false
       }
     },
@@ -329,7 +343,7 @@
         "duration": "48 min",
         "uploadDate": "Streamed 6y ago",
         "long": false,
-        "topic_match": "Covers Maths: Time-speed-distance, trains for AFCAT from Defence Adda247.",
+        "topic_match": "Speed Distance & Time (Part 1)",
         "no_video_found": false
       },
       "english": {
@@ -339,7 +353,7 @@
         "duration": "32 min",
         "uploadDate": "Streamed 6y ago",
         "long": false,
-        "topic_match": "Covers Sentence improvement for AFCAT from Defence Adda247.",
+        "topic_match": "Sentence Improvement | AFCAT English",
         "no_video_found": false
       },
       "ga": {
@@ -349,8 +363,9 @@
         "duration": "117 min",
         "uploadDate": "Streamed 2y ago",
         "long": true,
-        "topic_match": "Covers Physics 2: Electricity, heat, sound, units for AFCAT from Defence Wallah.",
-        "no_video_found": false
+        "topic_match": "Light, Sound & Wave, Electricity, Heat",
+        "no_video_found": false,
+        "watch_part": "00:00-40:00"
       }
     },
     "16": {
@@ -361,17 +376,17 @@
         "duration": "48 min",
         "uploadDate": "Streamed 3y ago",
         "long": false,
-        "topic_match": "Covers Reasoning: Ranking, order, basic puzzles for AFCAT from Defence Adda247.",
+        "topic_match": "Order & Ranking | AFCAT Reasoning",
         "no_video_found": false
       },
       "english": {
-        "title": "Synonyms, Antonyms and Idioms | English for AFCAT/CGCAT 1.0 2025 🔥",
-        "url": "https://www.youtube.com/watch?v=EnD5DLo0Ifw",
-        "channel": "Defence Wallah",
-        "duration": "126 min",
-        "uploadDate": "Streamed 1y ago",
-        "long": true,
-        "topic_match": "Covers Synonyms-antonyms (30) for AFCAT from Defence Wallah.",
+        "title": "Synonyms and Antonyms | AFCAT English Preparation 2020",
+        "url": "https://www.youtube.com/watch?v=yJ3N-3Nc_r0",
+        "channel": "Defence Adda247",
+        "duration": "35 min",
+        "uploadDate": "Streamed 6y ago",
+        "long": false,
+        "topic_match": "Synonyms and Antonyms | AFCAT English Preparation",
         "no_video_found": false
       },
       "ga": {
@@ -381,8 +396,9 @@
         "duration": "47 min",
         "uploadDate": "Streamed 4y ago",
         "long": true,
-        "topic_match": "Covers Chemistry: Acids, metals, everyday for AFCAT from Defence Adda247.",
-        "no_video_found": false
+        "topic_match": "CHEMISTRY for AFCAT | General Science",
+        "no_video_found": false,
+        "watch_part": "00:00-40:00"
       }
     },
     "17": {
@@ -393,7 +409,7 @@
         "duration": "34 min",
         "uploadDate": "Streamed 5y ago",
         "long": false,
-        "topic_match": "Covers Maths: Boats-streams, alligation for AFCAT from Defence Adda247.",
+        "topic_match": "Maths | Boats & Streams #1",
         "no_video_found": false
       },
       "english": {
@@ -403,7 +419,7 @@
         "duration": "33 min",
         "uploadDate": "Streamed 6y ago",
         "long": false,
-        "topic_match": "Covers One-word substitution for AFCAT from Defence Adda247.",
+        "topic_match": "One Word Substitution | AFCAT English",
         "no_video_found": false
       },
       "ga": {
@@ -413,7 +429,7 @@
         "duration": "38 min",
         "uploadDate": "Streamed 4y ago",
         "long": false,
-        "topic_match": "Covers Biology: Human body, vitamins, diseases for AFCAT from Defence Adda247.",
+        "topic_match": "HUMAN BLOOD CONCEPT +QUESTION",
         "no_video_found": false
       }
     },
@@ -425,8 +441,9 @@
         "duration": "96 min",
         "uploadDate": "Streamed 1y ago",
         "long": true,
-        "topic_match": "Covers Reasoning: Non-verbal series, patterns for AFCAT from Defence Wallah.",
-        "no_video_found": false
+        "topic_match": "Non Verbal Series in One Shot",
+        "no_video_found": false,
+        "watch_part": "00:00-50:00"
       },
       "english": {
         "title": "CAPF English Grammar | AFCAT | NARRATION & PASSIVE VOICE",
@@ -435,8 +452,9 @@
         "duration": "47 min",
         "uploadDate": "Streamed 5y ago",
         "long": true,
-        "topic_match": "Covers Active-passive, narration for AFCAT from Defence Adda247.",
-        "no_video_found": false
+        "topic_match": "NARRATION & PASSIVE VOICE",
+        "no_video_found": false,
+        "watch_part": "00:00-35:00"
       },
       "ga": {
         "title": "AFCAT General Awareness: Static GK For AFCAT Exam |  Environment Art & Culture For AFCAT 2 2026 Exam",
@@ -445,8 +463,9 @@
         "duration": "103 min",
         "uploadDate": "Streamed 3mo ago",
         "long": true,
-        "topic_match": "Covers Environment + Static GK for AFCAT from Defence Wallah.",
-        "no_video_found": false
+        "topic_match": "Environment Art & Culture For AFCAT",
+        "no_video_found": false,
+        "watch_part": "00:00-40:00"
       }
     },
     "19": {
@@ -457,7 +476,7 @@
         "duration": "58 min",
         "uploadDate": "Streamed 3y ago",
         "long": false,
-        "topic_match": "Covers Maths: HCF-LCM, divisibility for AFCAT from Defence Adda247.",
+        "topic_match": "Maths - HCF & LCM #1",
         "no_video_found": false
       },
       "english": {
@@ -467,17 +486,18 @@
         "duration": "40 min",
         "uploadDate": "Streamed 6y ago",
         "long": false,
-        "topic_match": "Covers RC (2 passages) for AFCAT from Defence Adda247.",
+        "topic_match": "Cloze Test + Unseen Passage",
         "no_video_found": false
       },
       "ga": {
-        "title": "AFCAT 2 2025: History, Geography, Polity & Economics | GA for AFCAT | AFCAT/CGCAT (II) Prithvi 2025",
-        "url": "https://www.youtube.com/watch?v=zvF-F8T9OZc",
-        "channel": "Defence Wallah",
-        "duration": "294 min",
-        "uploadDate": "Streamed 1y ago",
+        "title": "Saturday Special | AFCAT का महासंग्राम | GENERAL AWARENESS MARATHON | Defence Adda247",
+        "url": "https://www.youtube.com/watch?v=FcnsKBvEnTo",
+        "channel": "Defence Adda247",
+        "duration": "79 min",
+        "uploadDate": "Streamed 5y ago",
         "long": true,
-        "topic_match": "Covers Revision: History, Polity, Geography (25 Q) for AFCAT from Defence Wallah.",
+        "watch_part": "00:00-35:00",
+        "topic_match": "AFCAT का महासंग्राम | GENERAL AWARENESS MARATHON",
         "no_video_found": false
       }
     },
@@ -489,7 +509,7 @@
         "duration": "48 min",
         "uploadDate": "Streamed 10mo ago",
         "long": false,
-        "topic_match": "Covers Maths: Mensuration for AFCAT from Defence Wallah.",
+        "topic_match": "Mensuration - Area & Perimeter",
         "no_video_found": false
       },
       "english": {
@@ -499,7 +519,7 @@
         "duration": "40 min",
         "uploadDate": "Streamed 5y ago",
         "long": false,
-        "topic_match": "Covers Vocab revision (idioms, OWS) for AFCAT from Defence Adda247.",
+        "topic_match": "ANTONYM -SYNONYMS, IDIOMS & OWS",
         "no_video_found": false
       },
       "ga": {
@@ -509,7 +529,7 @@
         "duration": "16 min",
         "uploadDate": "2y ago",
         "long": false,
-        "topic_match": "Covers Defence 1: IAF history, commands, ranks for AFCAT from Defence Wallah.",
+        "topic_match": "All About Indian Air Force | History, Commands",
         "no_video_found": false
       }
     },
@@ -521,49 +541,51 @@
         "duration": "59 min",
         "uploadDate": "Streamed 5y ago",
         "long": false,
-        "topic_match": "Covers Reasoning: Mirror/water image, paper folding for AFCAT from Defence Adda247.",
+        "topic_match": "Mirror and Water Image",
         "no_video_found": false
       },
       "english": {
-        "title": "AFCAT English 🔥 Complete Error Spotting in One Class | Grammar Tricks & Questions | Defence English",
-        "url": "https://www.youtube.com/watch?v=-jtYfQI3IhQ",
-        "channel": "Defence Wallah",
-        "duration": "34 min",
-        "uploadDate": "3w ago",
-        "long": false,
-        "topic_match": "Covers Error spotting (mixed) for AFCAT from Defence Wallah.",
+        "title": "AFCAT 1 2022 | English | Top Error spotting Tricks Questions | Rules | Explanation #6",
+        "url": "https://www.youtube.com/watch?v=0Qe09wQDRyI",
+        "channel": "Defence Adda247",
+        "duration": "47 min",
+        "uploadDate": "Streamed 4y ago",
+        "long": true,
+        "watch_part": "00:00-40:00",
+        "topic_match": "Top Error spotting Tricks Questions | Rules | Explanation",
         "no_video_found": false
       },
       "ga": {
-        "title": "Future of the Indian Air Force 🇮🇳 | Su-57 vs F-35: Which Fighter Jet is Better ⁉️ | Join IAF | DW",
-        "url": "https://www.youtube.com/watch?v=9gZXmFPn-3k",
+        "title": "Top 5 Fighter Jets of the Indian Air Force | Detailed Classification & Full Breakdown",
+        "url": "https://www.youtube.com/watch?v=jiDYhMX8myg",
         "channel": "Defence Wallah",
-        "duration": "23 min",
-        "uploadDate": "4mo ago",
+        "duration": "8 min",
+        "uploadDate": "1y ago",
         "long": false,
-        "topic_match": "Covers Defence 2: Aircraft for AFCAT from Defence Wallah.",
+        "topic_match": "Fighter Jets of the Indian Air Force | Detailed Classification",
         "no_video_found": false
       }
     },
     "24": {
       "blockA": {
-        "title": "CDS/CAPF/AFCAT | Maths - Concept of Numbers | Defence Adda247",
-        "url": "https://www.youtube.com/watch?v=4Xor4NsCRlM",
-        "channel": "Defence Adda247",
-        "duration": "66 min",
-        "uploadDate": "Streamed 3y ago",
-        "long": false,
-        "topic_match": "Covers Maths: Algebra, geometry basics for AFCAT from Defence Adda247.",
+        "title": "Algebra, Part- 1 | Maths for CDS 1, 2025 | CDS Vikrant 1.0, 2025🤩",
+        "url": "https://www.youtube.com/watch?v=_hNkQjnl-hU",
+        "channel": "Defence Wallah",
+        "duration": "114 min",
+        "uploadDate": "Streamed 1y ago",
+        "long": true,
+        "watch_part": "00:00-50:00",
+        "topic_match": "Algebra, Part- 1 | Maths for CDS 1, 2025",
         "no_video_found": false
       },
       "english": {
-        "title": "AFCAT 2-2020 Preparation | Air Force English Class | Cloze Test",
-        "url": "https://www.youtube.com/watch?v=BwUJcTzW_0k",
+        "title": "AFCAT 2 2024 | AFCAT English Classes | Cloze Test by Vishal Sir",
+        "url": "https://www.youtube.com/watch?v=3Hh1tMbfUjc",
         "channel": "Defence Adda247",
-        "duration": "29 min",
-        "uploadDate": "Streamed 6y ago",
+        "duration": "40 min",
+        "uploadDate": "Streamed 2y ago",
         "long": false,
-        "topic_match": "Covers Cloze test for AFCAT from Defence Adda247.",
+        "topic_match": "AFCAT English Classes | Cloze Test",
         "no_video_found": false
       },
       "ga": {
@@ -573,7 +595,7 @@
         "duration": "39 min",
         "uploadDate": "Streamed 5y ago",
         "long": false,
-        "topic_match": "Covers Defence 3: Missiles, DRDO, HAL for AFCAT from Defence Adda247.",
+        "topic_match": "Indian Missile Programme",
         "no_video_found": false
       }
     },
@@ -585,17 +607,18 @@
         "duration": "44 min",
         "uploadDate": "Streamed 3y ago",
         "long": false,
-        "topic_match": "Covers Reasoning: Dice, cubes, embedded figures for AFCAT from Defence Adda247.",
+        "topic_match": "Embedded Figure | AFCAT Reasoning",
         "no_video_found": false
       },
       "english": {
-        "title": "CDS/AFCAT/Airforce 2021 Exam | Para Jumbles Short Tricks | English Special For All Defence Exams",
-        "url": "https://www.youtube.com/watch?v=o4Lkt1tUhNU",
+        "title": "How To Solve Parajumbles For Defence Exam | English Parajumbles | English By Harsh Sir",
+        "url": "https://www.youtube.com/watch?v=qEf0fWwlGCU",
         "channel": "Defence Adda247",
         "duration": "46 min",
-        "uploadDate": "Streamed 5y ago",
+        "uploadDate": "Streamed 1y ago",
         "long": true,
-        "topic_match": "Covers Para jumbles for AFCAT from Defence Adda247.",
+        "watch_part": "00:00-35:00",
+        "topic_match": "How To Solve Parajumbles For Defence Exam | English Parajumbles",
         "no_video_found": false
       },
       "ga": {
@@ -605,19 +628,19 @@
         "duration": "36 min",
         "uploadDate": "Streamed 3mo ago",
         "long": false,
-        "topic_match": "Covers Defence 4: Exercises, operations, awards for AFCAT from Defence Adda247.",
+        "topic_match": "Military Exercises 2026 | Defence Current Affairs",
         "no_video_found": false
       }
     },
     "26": {
       "blockA": {
-        "title": "Mensuration | Numerical Ability for AFCAT/CGCAT 1.0 2025 🔥",
-        "url": "https://www.youtube.com/watch?v=3KjmnAB_3oI",
-        "channel": "Defence Wallah",
-        "duration": "109 min",
-        "uploadDate": "Streamed 1y ago",
-        "long": true,
-        "topic_match": "Covers Maths: Data interpretation for AFCAT from Defence Wallah.",
+        "title": "CDS 1 2022 | CDS Maths Preparation | DATA INTEPRETATION | By Gopal Sharma",
+        "url": "https://www.youtube.com/watch?v=2LrxLtihr_8",
+        "channel": "Defence Adda247",
+        "duration": "36 min",
+        "uploadDate": "Streamed 4y ago",
+        "long": false,
+        "topic_match": "CDS Maths Preparation | DATA INTEPRETATION",
         "no_video_found": false
       },
       "english": {
@@ -627,30 +650,30 @@
         "duration": "39 min",
         "uploadDate": "Streamed 6y ago",
         "long": false,
-        "topic_match": "Covers RC (2 timed passages) for AFCAT from Defence Adda247.",
+        "topic_match": "Reading Comprehension",
         "no_video_found": false
       },
       "ga": {
-        "title": "Awards & Honours 2026 (Jan to Jun) | Complete Current Affairs for All Defence Exam & Govt Exams 2026",
-        "url": "https://www.youtube.com/watch?v=V1ZVRvgSpI4",
-        "channel": "Defence Wallah",
-        "duration": "22 min",
-        "uploadDate": "3mo ago",
+        "title": "No verified single video strictly matching Jun-Aug 2026 Defence CA",
+        "url": null,
+        "channel": "None",
+        "duration": "—",
+        "uploadDate": "—",
         "long": false,
-        "topic_match": "Covers Current affairs: Jun-Aug 2026 for AFCAT from Defence Wallah.",
-        "no_video_found": false
+        "topic_match": "Honest empty row: No verified lecture strictly matching Jun-Aug 2026",
+        "no_video_found": true
       }
     },
     "29": {
       "blockA": {
-        "title": "Maths For CDS/AFCAT/ CAPF AC 2025 | Maths Top 30 Questions For All Defence Exam | By Tarun Sir",
-        "url": "https://www.youtube.com/watch?v=q7i4GOH7-LE",
-        "channel": "Defence Adda247",
-        "duration": "76 min",
-        "uploadDate": "Streamed 2y ago",
-        "long": true,
-        "topic_match": "Covers Maths: DI + approximation for AFCAT from Defence Adda247.",
-        "no_video_found": false
+        "title": "No dedicated lecture for DI + approximation on target channels (see Day 26 DI)",
+        "url": null,
+        "channel": "None",
+        "duration": "—",
+        "uploadDate": "—",
+        "long": false,
+        "topic_match": "Honest empty row: No dedicated lecture for DI + approximation",
+        "no_video_found": true
       },
       "english": {
         "title": "Sentence Correction  | CAPF AC 2022 English Grammar | How to Solve Sentence Correction Questions",
@@ -659,17 +682,18 @@
         "duration": "40 min",
         "uploadDate": "Streamed 4y ago",
         "long": false,
-        "topic_match": "Covers Sentence correction for AFCAT from Defence Adda247.",
+        "topic_match": "Sentence Correction | CAPF AC 2022",
         "no_video_found": false
       },
       "ga": {
-        "title": "AFCAT Current Affairs: Complete Current Affairs For AFCAT 1, 2026 Exam | AFCAT Exam 2026 | AFCAT CA",
-        "url": "https://www.youtube.com/watch?v=E4FcNSEIWLU",
+        "title": "October 2026 Monthly Current Affairs For Defence Exams | Current Affairs For All Defence Exam 2027",
+        "url": "https://www.youtube.com/watch?v=FXPkmOhg2s4",
         "channel": "Defence Wallah",
-        "duration": "52 min",
-        "uploadDate": "Streamed 9mo ago",
+        "duration": "83 min",
+        "uploadDate": "Streamed Nov 2026",
         "long": true,
-        "topic_match": "Covers Current affairs: Sep-Oct 2026 for AFCAT from Defence Wallah.",
+        "watch_part": "00:00-40:00",
+        "topic_match": "October 2026 Monthly Current Affairs For Defence Exams",
         "no_video_found": false
       }
     },
@@ -681,7 +705,7 @@
         "duration": "45 min",
         "uploadDate": "2 yr ago",
         "long": false,
-        "topic_match": "Covers AFCAT Military Aptitude & Spatial Orientation (Dot Situation) from Defence Adda247.",
+        "topic_match": "Dot Situation Test | AFCAT Reasoning",
         "no_video_found": false
       },
       "english": {
@@ -691,18 +715,18 @@
         "duration": "16 min",
         "uploadDate": "11mo ago",
         "long": false,
-        "topic_match": "Covers Vocab (50 words revision) for AFCAT from Defence Wallah.",
+        "topic_match": "Vocab Master Pack for All Defence Exams",
         "no_video_found": false
       },
       "ga": {
-        "title": "AFCAT Current Affairs: Complete Current Affairs For AFCAT 1, 2026 Exam | AFCAT Exam 2026 | AFCAT CA",
-        "url": "https://www.youtube.com/watch?v=E4FcNSEIWLU",
-        "channel": "Defence Wallah",
-        "duration": "52 min",
-        "uploadDate": "Streamed 9mo ago",
-        "long": true,
-        "topic_match": "Covers Current affairs: Nov 2026 + Static GK for AFCAT from Defence Wallah.",
-        "no_video_found": false
+        "title": "Current Affairs for Nov 2026 does not exist yet in mid-Nov 2026",
+        "url": null,
+        "channel": "None",
+        "duration": "—",
+        "uploadDate": "—",
+        "long": false,
+        "topic_match": "Honest empty row: Mid-Nov 2026 (monthly CA not yet released)",
+        "no_video_found": true
       }
     },
     "31": {
@@ -713,7 +737,7 @@
         "duration": "53 min",
         "uploadDate": "Streamed 3y ago",
         "long": false,
-        "topic_match": "Covers Maths: Number series, speed-math tables for AFCAT from Defence Adda247.",
+        "topic_match": "Number Series Reasoning Tricks",
         "no_video_found": false
       },
       "english": {
@@ -723,7 +747,7 @@
         "duration": "40 min",
         "uploadDate": "Streamed 3y ago",
         "long": false,
-        "topic_match": "Covers RC (3 passages) for AFCAT from Defence Adda247.",
+        "topic_match": "Passage & PQRS ( DAY- 9 )",
         "no_video_found": false
       },
       "ga": {
@@ -733,7 +757,7 @@
         "duration": "37 min",
         "uploadDate": "Streamed 4y ago",
         "long": false,
-        "topic_match": "Covers Revision: Science + Environment (25 Q) for AFCAT from Defence Adda247.",
+        "topic_match": "Science & Technology | Final Revision",
         "no_video_found": false
       }
     },
@@ -745,7 +769,7 @@
         "duration": "44 min",
         "uploadDate": "Streamed 2y ago",
         "long": false,
-        "topic_match": "Covers Reasoning: Puzzles, seating for AFCAT from Defence Adda247.",
+        "topic_match": "Seating Arrangement Part - 1",
         "no_video_found": false
       },
       "english": {
@@ -755,8 +779,9 @@
         "duration": "134 min",
         "uploadDate": "Streamed 10mo ago",
         "long": true,
-        "topic_match": "Covers Error spotting + idioms for AFCAT from Defence Wallah.",
-        "no_video_found": false
+        "topic_match": "Spotting Errors & Idioms For AFCAT 1, 2026",
+        "no_video_found": false,
+        "watch_part": "00:00-40:00"
       },
       "ga": {
         "title": "Defence Current Affairs | AFCAT CDS CAPF GK Series | Final Revision | Defence Adda 247",
@@ -765,7 +790,7 @@
         "duration": "27 min",
         "uploadDate": "Streamed 4y ago",
         "long": false,
-        "topic_match": "Covers Revision: Defence (25 Q) for AFCAT from Defence Adda247.",
+        "topic_match": "Defence Current Affairs | Final Revision",
         "no_video_found": false
       }
     },
@@ -777,8 +802,9 @@
         "duration": "73 min",
         "uploadDate": "Streamed 5y ago",
         "long": true,
-        "topic_match": "Covers Maths: Weak topics (from error log) for AFCAT from Defence Adda247.",
-        "no_video_found": false
+        "topic_match": "Maths | 100+ MOST Expected Maths Questions",
+        "no_video_found": false,
+        "watch_part": "00:00-55:00"
       },
       "english": {
         "title": "AFCAT (2) 2021 |AFCAT IMPORTANT ENGLISH QUESTIONS | ENGLISH Grammar | Defence Adda247",
@@ -787,8 +813,9 @@
         "duration": "41 min",
         "uploadDate": "Streamed 5y ago",
         "long": true,
-        "topic_match": "Covers Weak English topics for AFCAT from Defence Adda247.",
-        "no_video_found": false
+        "topic_match": "AFCAT IMPORTANT ENGLISH QUESTIONS",
+        "no_video_found": false,
+        "watch_part": "00:00-35:00"
       },
       "ga": {
         "title": "NDA-1 2023 | महायुद्ध (GAT) | HISTORY/POLITY/GEOGRAPHY MARATHON CLASS | BY JIVESH SIR",
@@ -797,7 +824,7 @@
         "duration": "40 min",
         "uploadDate": "Streamed 3y ago",
         "long": false,
-        "topic_match": "Covers Revision: History, Polity, Geography (25 Q) for AFCAT from Defence Adda247.",
+        "topic_match": "HISTORY/POLITY/GEOGRAPHY MARATHON CLASS",
         "no_video_found": false
       }
     }
